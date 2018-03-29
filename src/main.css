@@ -1,0 +1,161 @@
+html,
+body {
+    overflow: hidden
+}
+
+/* 左侧导航固定宽度 */
+
+.left-menu {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #33394c;
+    border-right: 1px solid #e9e9e9;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.left-menu .title {
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #fff;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.left-menu .back-icon {
+    color: #4db6da;
+}
+
+.left-menu .icon {
+    color: #4db6da;
+    font-size: 15px;
+}
+
+.left-menu .ant-menu-submenu-inline {
+    background-color: #33394c;
+    border-top: 1px solid #000;
+}
+
+.left-menu .ant-menu-submenu-title {
+    color: #fff;
+}
+
+.left-menu .ant-menu-submenu-inline .ant-menu {
+    background-color: #3b4156;
+}
+
+.left-menu .ant-menu-item-selected .icon {
+    color: #fff;
+}
+
+/* 右侧宽度自适应 */
+
+.right-wrap {
+    width: calc(100% - 300px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 300px;
+    right: 0;
+    bottom: 0;
+    overflow: atuo;
+}
+
+.right-wrap .ant-menu-submenu {
+    float: right;
+}
+
+.right-wrap .right-wrap-title {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #33394c;
+}
+
+.right-wrap .right-wrap-title .collapsed-btn {
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #4db6da;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.right-wrap .right-wrap-title .title-content {
+    width: calc(100% - 350px);
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 170px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.right-wrap .right-wrap-title .my-work-btn {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 100px;
+    color: #4db6da;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.right-wrap .right-wrap-title .user-drop-list {
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 15px;
+    background-color: #33394c;
+    line-height: 50px;
+}
+
+/* 右侧页面容器 */
+
+.right-box {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    overflow: auto;
+}
+
+/* 我的作业结点样式 */
+
+.my-work-node {
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -505px;
+    bottom: 0;
+    background-color: #fff;
+    -webkit-box-shadow: -5px 0 5px #d3d3d3;
+    -moz-box-shadow: -5px 0 5px #d3d3d3;
+    -o-box-shadow: -5px 0 5px #d3d3d3;
+    box-shadow: -5px 0 5px #d3d3d3;
+}
