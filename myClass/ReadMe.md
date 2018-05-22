@@ -1,4 +1,4 @@
-使用react+antd实现的单页面系统
+使用react+ant Design实现的单页面系统
 
 安装：
 npm install
