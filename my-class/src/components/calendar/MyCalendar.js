@@ -17,7 +17,7 @@ export default class myCalendar extends React.Component {
         return <div>自定义月数据 {value.getMonth()}</div>
     }
 
-    render () {
+    render() {
         return (
             <Calendar defaultValue={new Date('2018-03-27')}
                 dateCellRender={this.dateCellRender} monthCellRender={this.monthCellRender} />

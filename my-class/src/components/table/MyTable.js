@@ -17,7 +17,7 @@ export default class myTable extends React.Component {
         }
     }
 
-    componentDidMount () {
+    componentDidMount() {
         const data = []
 
         for (let i = 0; i < 50; i++) {
@@ -42,7 +42,7 @@ export default class myTable extends React.Component {
         this.setState({ selectedRowKeys })
     }
 
-    render () {
+    render() {
         const columns = [{
             title: '姓名',
             width: '20%',
@@ -59,7 +59,7 @@ export default class myTable extends React.Component {
             title: '备注',
             width: '20%',
             dataIndex: 'remark',
-            render (text) {
+            render(text) {
                 return <a href={text} target="_blank">百度</a>
             }
         }, {
@@ -78,10 +78,10 @@ export default class myTable extends React.Component {
         const pagination = {
             total: this.state.tDate.length,
             showSizeChanger: true,
-            onShowSizeChange (current, pageSize) {
+            onShowSizeChange(current, pageSize) {
                 console.log('Current: ', current, '; PageSize: ', pageSize)
             },
-            onChange (current) {
+            onChange(current) {
                 console.log('Current: ', current)
             }
         }

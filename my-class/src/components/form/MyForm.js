@@ -44,7 +44,7 @@ class myForm extends React.Component {
         this.setState({ visible: false })
     }
 
-    render () {
+    render() {
         const { getFieldProps } = this.props.form
 
         const formItemLayout = {

@@ -41,7 +41,7 @@ class mainPage extends React.Component {
         }
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.getUser()
     }
 
@@ -89,7 +89,7 @@ class mainPage extends React.Component {
      * 改变右侧面板的开关状态
      * @param {} state 
      */
-    changeOpenState (state) {
+    changeOpenState(state) {
         this.setState({
             isMyWrokOpen: state
         })
@@ -98,7 +98,7 @@ class mainPage extends React.Component {
     /**
      * 渲染界面
      */
-    render () {
+    render() {
         return (
             <div>
                 <div className="left-menu">

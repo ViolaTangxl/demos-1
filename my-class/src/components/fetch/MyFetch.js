@@ -26,11 +26,11 @@ export default class myCard extends React.Component {
             .catch((e) => { console.log(e.message) })
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.fetchFn()
     }
 
-    render () {
+    render() {
         return (
             <Card title="资源导航" style={{ width: "800px", margin: "0 auto" }} className="animated zoomIn">
                 {

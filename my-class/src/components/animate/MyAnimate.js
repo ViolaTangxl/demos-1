@@ -12,7 +12,7 @@ export default class myAnimate extends React.Component {
     constructor(props) {
         super(props)
     }
-    render () {
+    render() {
         return (
             <div className="ani-box">
                 <img src="./src/assets/images/image.jpg" width="100" className="animated fadeInUp last-pic" />
