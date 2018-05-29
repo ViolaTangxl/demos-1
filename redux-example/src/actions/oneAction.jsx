@@ -2,6 +2,8 @@
 export const PAGE_ONE_ADD_ONE = "PAGE_ONE_ADD_ONE";
 // 减一
 export const PAGE_ONE_REDUCE_ONE = "PAGE_ONE_REDUCE_ONE";
+// 改变loading值
+export const LOADING_CHANGE = "LOADING_CHANGE";
 
 // export function addOne() {
 //     return {
@@ -10,22 +12,40 @@ export const PAGE_ONE_REDUCE_ONE = "PAGE_ONE_REDUCE_ONE";
 //     }
 // }
 
-// 异步方法
-export const addOne = () => new Promise(function (resolve, reject) {
-    const timeOut = setTimeout(() => {
-        clearTimeout(timeOut);
-        resolve({
+export async function addOne() {
+    const response = await waitSomeTime();
+    if (response.status === 200) {
+        return {
             type: PAGE_ONE_ADD_ONE,
             payload: "page one add one"
-        });
-    }, 1000);
-})
+        };
+    }
+}
+
+// 异步方法
+function waitSomeTime() {
+    return new Promise(function (resolve, reject) {
+        const timeOut = setTimeout(() => {
+            clearTimeout(timeOut);
+            resolve({
+                status: 200
+            });
+        }, 1000);
+    });
+}
 
 export function reduceOne() {
     return {
         type: PAGE_ONE_REDUCE_ONE,
         payload: "page one reduce one"
-    }
+    };
+}
+
+export function loadingChange(isShow) {
+    return {
+        type: LOADING_CHANGE,
+        payload: isShow
+    };
 }
 // // 添加到cart
 // export const ADD_TO_CART = "ADD_TO_CART";

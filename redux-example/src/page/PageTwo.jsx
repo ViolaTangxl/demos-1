@@ -39,9 +39,11 @@ class PageTwo extends Component {
         const { count, addOne, reduceOne } = this.props;
         return (
             <div className="page-two animated zoomIn">
-                <div>总数：{count}</div>
-                <Button type="primary" onClick={addOne}>加一</Button>
-                <Button type="danger" onClick={reduceOne}>减一</Button>
+                <div className="num-container">总数：{count}</div>
+                <div className="btn-container">
+                    <Button type="primary" onClick={addOne}>加一（同步）</Button>
+                    <Button type="danger" style={{ left: "10px" }} onClick={reduceOne}>减一（同步）</Button>
+                </div>
             </div>
         );
     };
