@@ -54,7 +54,7 @@ class LayoutPage extends Component {
                         </Switch>
                     </Content>
                     <Footer className="app-footer">
-                        Reat + Redus Demo @2018 Created By Jiaiyizhen
+                        Reat + Redux Demo @2018 Created By Jiaiyizhen
                     </Footer>
                 </Layout>
             </Layout>
