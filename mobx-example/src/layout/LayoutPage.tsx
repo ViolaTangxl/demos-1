@@ -25,6 +25,10 @@ export type LayoutPageState = {
 class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
     public constructor(props: LayoutPageProps) {
         super(props);
+        this.getCurrentPath = this.getCurrentPath.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.createMenuItem = this.createMenuItem.bind(this);
+        this.createRoutes = this.createRoutes.bind(this);
         this.state = {
             collapsed: false,
             naviItemList: [],
@@ -36,7 +40,11 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
             naviItemList: naviItemList,
         });
     }
-    private toggle = () => {
+
+    /**
+     * 左侧面板收起和展开
+     */
+    private toggle(): void {
         this.setState({
             collapsed: !this.state.collapsed,
         });
@@ -93,7 +101,7 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
     /**
      * 模拟生成菜单项
      */
-    private createMenuItem = () => {
+    private createMenuItem(): JSX.Element[] {
         return this.state.naviItemList.map((item: NaviItem) => (
             <Menu.Item key={"/" + item.key}>
                 <Link to={"/" + item.path}>
@@ -107,7 +115,7 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
     /**
      * 模拟生成路由
      */
-    private createRoutes = () => {
+    private createRoutes(): JSX.Element[] {
         return this.state.naviItemList.map((item: NaviItem) => (
             <Route
                 exact path={"/" + item.path}
@@ -118,7 +126,7 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
     /**
      * 获取当前路径地址
      */
-    private getCurrentPath = () => {
+    private getCurrentPath(): string[] {
         return [this.props.location.pathname];
     }
 }
