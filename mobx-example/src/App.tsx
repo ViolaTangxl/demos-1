@@ -1,9 +1,16 @@
 import * as React from "react";
+import { RouteComponentProps, Route, BrowserRouter } from "react-router-dom";
+
+import LayoutPage from "./layout/LayoutPage";
 
 class App extends React.Component {
     public render(): JSX.Element {
         return (
-            <div></div>
+            <BrowserRouter>
+                <Route path="/" component={(props: RouteComponentProps<any>) => {
+                    return <LayoutPage {...props} />;
+                }} />
+            </BrowserRouter>
         );
     }
 }
