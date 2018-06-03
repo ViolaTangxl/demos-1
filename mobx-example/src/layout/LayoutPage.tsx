@@ -3,6 +3,9 @@ import { RouteComponentProps, Switch, Route, Link } from "react-router-dom";
 
 import "./LayoutPage.css";
 
+import PageOne from "../page/PageOne";
+import PageTwo from "../page/PageTwo";
+
 import { Layout, Menu, Icon } from "antd";
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -14,7 +17,7 @@ export type NaviItem = {
     key: string,
     path: string,
     icon: string,
-    component: string,
+    component: any,
 };
 
 export type LayoutPageState = {
@@ -84,9 +87,9 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
      * 模拟生成导航项
      */
     private createNaviItemList(): NaviItem[] {
-        const componentList = ["1", "2"];
+        const componentList = [PageOne, PageTwo];
         const naviItemList: NaviItem[] = [];
-        componentList.map((item: string, index: number) => {
+        componentList.map((item: any, index: number) => {
             return naviItemList.push({
                 name: "导航" + (index + 1),
                 key: "nav" + (index + 1),
@@ -119,7 +122,8 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
         return this.state.naviItemList.map((item: NaviItem) => (
             <Route
                 exact path={"/" + item.path}
-                key={"/" + item.key} />
+                key={"/" + item.key}
+                component={item.component} />
         ));
     }
 
