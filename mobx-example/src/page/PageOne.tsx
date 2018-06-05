@@ -1,12 +1,17 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { observer, inject } from "mobx-react";
 
 import "./PageOne.css";
 
 import { Button, Spin } from "antd";
 
-export type PageOneProps = RouteComponentProps<any>;
+export type PageOneProps = RouteComponentProps<any> & {
+    store: any,
+};
 
+@inject("store")
+@observer
 class PageOne extends React.Component<PageOneProps> {
     public constructor(props: PageOneProps) {
         super(props);
@@ -17,10 +22,11 @@ class PageOne extends React.Component<PageOneProps> {
     }
 
     public render(): JSX.Element {
+        const { store: { storeOne } } = this.props;
         return (
             <div className="page-one animated zoomIn">
                 <Spin tip="载入中..." spinning={false}>
-                    <div className="num-container">总数: 0</div>
+                    <div className="num-container">总数: {storeOne.number}</div>
                     <div className="btn-container">
                         <Button type="primary" onClick={() => {
                             this.addOne();
@@ -35,11 +41,13 @@ class PageOne extends React.Component<PageOneProps> {
     }
 
     private addOne(): void {
-        console.log("add one.");
+        const { store: { storeOne } } = this.props;
+        storeOne.addOne();
     }
 
     private reduceOne(): void {
-        console.log("reduce one.");
+        const { store: { storeOne } } = this.props;
+        storeOne.reduceOne();
     }
 }
 export default PageOne;

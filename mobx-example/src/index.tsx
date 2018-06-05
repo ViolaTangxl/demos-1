@@ -6,6 +6,7 @@ import "./index.css";
 import "animate.css/animate.min.css";
 import registerServiceWorker from "./registerServiceWorker";
 
+
 ReactDOM.render(
     <App />,
     document.getElementById("root") as HTMLElement,

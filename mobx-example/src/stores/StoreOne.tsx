@@ -1,5 +1,26 @@
-import { observable } from "mobx";
+import { observable, computed, action } from "mobx";
 class StoreOne {
-    @observable test = 0;
+    @observable public number: number = 0;
+    /**
+     * 加一
+     */
+    @action public addOne(): void {
+        this.number++;
+    }
+
+    /**
+     * 减一
+     */
+    @action public reduceOne(): void {
+        this.number--;
+    }
+
+    /**
+     * 获取number
+     */
+    @computed public get getNumber(): number {
+        return this.number;
+    }
 }
-export default StoreOne;
+const storeOne = new StoreOne();
+export default storeOne;

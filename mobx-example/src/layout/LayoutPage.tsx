@@ -123,7 +123,8 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
             <Route
                 exact path={"/" + item.path}
                 key={"/" + item.key}
-                component={item.component} />
+                component={item.component}
+            />
         ));
     }
 

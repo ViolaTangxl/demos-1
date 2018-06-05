@@ -1,12 +1,17 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { observer, inject } from "mobx-react";
 
 import "./PageTwo.css";
 
 import { Button } from "antd";
 
-export type PageTwoProps = RouteComponentProps<any>;
+export type PageTwoProps = RouteComponentProps<any> & {
+    store: any,
+};
 
+@inject("store")
+@observer
 class PageTwo extends React.Component<PageTwoProps> {
     public constructor(props: PageTwoProps) {
         super(props);
@@ -17,9 +22,10 @@ class PageTwo extends React.Component<PageTwoProps> {
     }
 
     public render(): JSX.Element {
+        const { store: { storeTwo } } = this.props;
         return (
             <div className="page-two animated zoomIn">
-                <div className="num-container">总数: 0</div>
+                <div className="num-container">总数: {storeTwo.number}</div>
                 <div className="btn-container">
                     <Button type="primary" onClick={() => {
                         this.addOne();
@@ -33,11 +39,13 @@ class PageTwo extends React.Component<PageTwoProps> {
     }
 
     private addOne(): void {
-        console.log("add one.");
+        const { store: { storeTwo } } = this.props;
+        storeTwo.addOne();
     }
 
     private reduceOne(): void {
-        console.log("reduce one.");
+        const { store: { storeTwo } } = this.props;
+        storeTwo.reduceOne();
     }
 }
 export default PageTwo;
