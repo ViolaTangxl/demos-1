@@ -29,10 +29,10 @@ class PageTwo extends React.Component<PageTwoProps> {
                 <div className="btn-container">
                     <Button type="primary" onClick={() => {
                         this.addOne();
-                    }}>加一</Button>
+                    }}>加一（同步）</Button>
                     <Button type="danger" style={{ left: "10px" }} onClick={() => {
                         this.reduceOne();
-                    }}>减一</Button>
+                    }}>减一（同步）</Button>
                 </div>
             </div>
         );

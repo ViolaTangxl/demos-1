@@ -25,15 +25,15 @@ class PageOne extends React.Component<PageOneProps> {
         const { store: { storeOne } } = this.props;
         return (
             <div className="page-one animated zoomIn">
-                <Spin tip="载入中..." spinning={false}>
+                <Spin tip="载入中..." spinning={storeOne.isSpin}>
                     <div className="num-container">总数: {storeOne.number}</div>
                     <div className="btn-container">
                         <Button type="primary" onClick={() => {
                             this.addOne();
-                        }}>加一</Button>
+                        }}>加一（异步）</Button>
                         <Button type="danger" style={{ left: "10px" }} onClick={() => {
                             this.reduceOne();
-                        }}>减一</Button>
+                        }}>减一（同步）</Button>
                     </div>
                 </Spin>
             </div>

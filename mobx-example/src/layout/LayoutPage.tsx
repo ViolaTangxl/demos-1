@@ -5,6 +5,7 @@ import "./LayoutPage.css";
 
 import PageOne from "../page/PageOne";
 import PageTwo from "../page/PageTwo";
+import WaterPrint from "../page/WaterPrint";
 
 import { Layout, Menu, Icon } from "antd";
 
@@ -87,7 +88,7 @@ class LayoutPage extends React.Component<LayoutPageProps, LayoutPageState> {
      * 模拟生成导航项
      */
     private createNaviItemList(): NaviItem[] {
-        const componentList = [PageOne, PageTwo];
+        const componentList = [PageOne, PageTwo, WaterPrint];
         const naviItemList: NaviItem[] = [];
         componentList.map((item: any, index: number) => {
             return naviItemList.push({
