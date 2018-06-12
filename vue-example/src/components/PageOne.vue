@@ -4,8 +4,8 @@
 
 <script>
 export default {
-  name: 'PageOne'
-}
+  name: "PageOne"
+};
 </script>
 
 <style>

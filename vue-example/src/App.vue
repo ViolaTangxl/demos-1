@@ -22,83 +22,84 @@
 
 <script>
 // 引入Menu
-import Menu from './layout/Menu'
+import Menu from "./layout/Menu";
 
 export default {
-  name: 'App',
+  name: "App",
   data: function() {
-      return {
-          isCollapse: true
-      };
+    return {
+      isCollapse: true
+    };
   },
   methods: {
-      collapseMenu: function() {
-          this.isCollapse = !this.isCollapse;
-      }
+    collapseMenu: function() {
+      this.isCollapse = !this.isCollapse;
+    }
   },
   components: {
-      Menu
+    Menu
   }
-}
+};
 </script>
 
 <style>
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
 }
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 .layout {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .layout .left-part {
-    height: 100%;
+  height: 100%;
 }
 .layout .right-part {
-    width: auto;
-    height: 100%;
+  width: auto;
+  height: 100%;
 }
 .layout .right-part .right-header {
-    width: 100%;
-    border-left: 1px solid #fff;
-    background-color: #545c64;
+  width: 100%;
+  border-left: 1px solid #fff;
+  background-color: #545c64;
 }
 .layout .right-header .header-btn {
-    position: relative;
-    top: calc(50% - 10px);
-    left: 10px;
-    color: #fff;
-    font-size: 18px;
-    cursor: pointer;
-    display: inline-block;
+  position: relative;
+  top: calc(50% - 10px);
+  left: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-block;
 }
 .layout .right-header .header-btn:hover {
-    color: #ffd04b;
+  color: #ffd04b;
 }
 .layout .header-btn > i {
-    font-size: 18px;
+  font-size: 18px;
 }
 .layout .header-btn > span {
-    position: relative;
-    top: -1px;
+  position: relative;
+  top: -1px;
 }
 .layout .right-part .right-body {
-    width: 100%;
-    height: calc(100% - 106px) !important;
-    background-color: #fff;
+  width: 100%;
+  height: calc(100% - 106px) !important;
+  background-color: #fff;
 }
 .layout .right-part .right-footer {
-    width: 100%;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    border-left: 1px solid #fff;
-    background-color: #545c64;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  border-left: 1px solid #fff;
+  background-color: #545c64;
 }
 </style>

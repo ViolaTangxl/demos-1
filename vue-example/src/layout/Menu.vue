@@ -21,19 +21,19 @@
 
 <script>
 export default {
-  name: 'Menu',
-  props: ['isCollapse'],
+  name: "Menu",
+  props: ["isCollapse"],
   data: function() {
-      return {};
+    return {};
   }
-}
+};
 </script>
 
 <style>
 .layout-menu {
-    height: 100%;
+  height: 100%;
 }
 .layout-menu:not(.el-menu--collapse) {
-    width: 200px;
+  width: 200px;
 }
 </style>
