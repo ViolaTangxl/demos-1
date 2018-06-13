@@ -12,6 +12,6 @@ export default {
 .page-one {
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #ddd;
 }
 </style>

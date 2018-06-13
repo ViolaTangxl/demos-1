@@ -12,6 +12,6 @@ export default {
 .page-two {
   width: 100%;
   height: 100%;
-  background-color: green;
+  background-color: #ddd;
 }
 </style>
