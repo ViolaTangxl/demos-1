@@ -10,11 +10,11 @@ Vue.use(Router)
 Vue.use(ElementUI)
 
 export default new Router({
-    routes: [
-        {
-            path: '/page1',
-            name: 'PageOne',
-            component: PageOne
-        }
-    ]
+  routes: [
+    {
+      path: '/page1',
+      name: 'PageOne',
+      component: PageOne
+    }
+  ]
 })
