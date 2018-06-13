@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="page-one"></div>
 </template>
 
 <script>
@@ -9,4 +9,9 @@ export default {
 </script>
 
 <style>
+.page-one {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
 </style>

@@ -11,7 +11,9 @@
         </span>
       </el-header>
       <el-main class="right-body">
-        <router-view/>
+        <transition name="el-fade-in">
+          <router-view/>
+        </transition>
       </el-main>
       <el-footer class="right-footer" height="50px">
         Vue + Element UI Demo @2018 Created By Jiaiyizhen
@@ -92,6 +94,7 @@ body {
 .layout .right-part .right-body {
   width: 100%;
   height: calc(100% - 106px) !important;
+  padding: 10px;
   background-color: #fff;
 }
 .layout .right-part .right-footer {
