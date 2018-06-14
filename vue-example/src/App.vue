@@ -1,25 +1,25 @@
 <template>
-  <el-container class="layout">
-    <el-aside class="left-part" width="auto">
-      <Menu v-bind:isCollapse="isCollapse" />
-    </el-aside>
-    <el-container class="right-part">
-      <el-header class="right-header" height="56px">
-        <span class="header-btn" v-on:click="collapseMenu">
-          <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
-          <span>{{ isCollapse ? "展开" : "收起" }}</span>
-        </span>
-      </el-header>
-      <el-main class="right-body">
-        <transition name="el-fade-in">
-          <router-view/>
-        </transition>
-      </el-main>
-      <el-footer class="right-footer" height="50px">
-        Vue + Element UI Demo @2018 Created By Jiaiyizhen
-      </el-footer>
+    <el-container class="layout">
+        <el-aside class="left-part" width="auto">
+            <Menu v-bind:isCollapse="isCollapse" />
+        </el-aside>
+        <el-container class="right-part">
+            <el-header class="right-header" height="56px">
+                <span class="header-btn" v-on:click="collapseMenu">
+                    <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
+                    <span>{{ isCollapse ? "展开" : "收起" }}</span>
+                </span>
+            </el-header>
+            <el-main class="right-body">
+                <transition name="el-fade-in">
+                    <router-view/>
+                </transition>
+            </el-main>
+            <el-footer class="right-footer" height="50px">
+                Vue + Element UI Demo @2018 Created By Jiaiyizhen
+            </el-footer>
+        </el-container>
     </el-container>
-  </el-container>
 </template>
 
 <script>

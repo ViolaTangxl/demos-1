@@ -1,5 +1,5 @@
 <template>
-  <div class="page-two"></div>
+    <div class="page-two"></div>
 </template>
 
 <script>
