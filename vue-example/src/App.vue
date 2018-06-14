@@ -1,7 +1,7 @@
 <template>
     <el-container class="layout">
         <el-aside class="left-part" width="auto">
-            <Menu v-bind:isCollapse="isCollapse" />
+            <Menu v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" />
         </el-aside>
         <el-container class="right-part">
             <el-header class="right-header" height="56px">
@@ -28,6 +28,8 @@ import Menu from "./layout/Menu";
 
 export default {
   name: "App",
+  props: ["navConfig"],
+  created: function() {},
   data: function() {
     return {
       isCollapse: true

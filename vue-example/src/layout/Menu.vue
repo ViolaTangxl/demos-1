@@ -16,10 +16,11 @@
 <script>
 export default {
   name: "Menu",
-  props: ["isCollapse"],
+  props: ["isCollapse", "navConfig"],
   data: function() {
     return {};
   },
+  methods: {},
   computed: {
     matchActiveRouter: function() {
       return this.$route.path.replace("/", "");
