@@ -1,8 +1,10 @@
 <template>
     <el-container class="layout">
         <el-aside class="left-part" width="auto">
-            <Menu v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" />
-            <!-- <TestMenu /> -->
+            <!-- 使用vue写的menu -->
+            <!-- <MenuVue v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" /> -->
+            <!-- 使用jsx写的menu -->
+            <MenuJSX v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" />
         </el-aside>
         <el-container class="right-part">
             <el-header class="right-header" height="56px">
@@ -25,8 +27,8 @@
 
 <script>
 // 引入Menu
-import Menu from "./layout/Menu";
-import TestMenu from "./layout/TestMenu";
+import MenuVue from "./layout/MenuVue";
+import MenuJSX from "./layout/MenuJSX";
 
 export default {
   name: "App",
@@ -43,8 +45,8 @@ export default {
     }
   },
   components: {
-    Menu,
-    TestMenu
+    MenuVue,
+    MenuJSX
   }
 };
 </script>
