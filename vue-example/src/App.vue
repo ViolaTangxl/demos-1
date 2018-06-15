@@ -2,6 +2,7 @@
     <el-container class="layout">
         <el-aside class="left-part" width="auto">
             <Menu v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" />
+            <!-- <TestMenu /> -->
         </el-aside>
         <el-container class="right-part">
             <el-header class="right-header" height="56px">
@@ -25,6 +26,7 @@
 <script>
 // 引入Menu
 import Menu from "./layout/Menu";
+import TestMenu from "./layout/TestMenu";
 
 export default {
   name: "App",
@@ -41,7 +43,8 @@ export default {
     }
   },
   components: {
-    Menu
+    Menu,
+    TestMenu
   }
 };
 </script>
