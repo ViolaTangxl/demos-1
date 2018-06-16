@@ -3,7 +3,8 @@
     <el-aside class="left-part"
               width="auto">
       <!-- 使用vue写的menu -->
-      <!-- <MenuVue v-bind:isCollapse="isCollapse" v-bind:navConfig="navConfig" /> -->
+      <!-- <MenuVue v-bind:isCollapse="isCollapse"
+               v-bind:navConfig="navConfig" /> -->
       <!-- 使用jsx写的menu -->
       <MenuJSX v-bind:isCollapse="isCollapse"
                v-bind:navConfig="navConfig" />
@@ -60,6 +61,8 @@ export default {
 .layout {
   width: 100%;
   height: 100%;
+  min-width: 1024px;
+  min-height: 768px;
 }
 
 .layout .left-part {

@@ -1,14 +1,15 @@
 <template>
-  <div class="page-one">
+  <div class="page-one"
+       v-loading="loading">
     <div class="title-container">这是page1</div>
     <div class="count-container">总数: {{this.count}}</div>
     <div class="btn-container">
       <el-button type="success"
                  plain
-                 v-on:click="addOne">加一(同步)</el-button>
+                 v-on:click="addOne">加一(一秒后)</el-button>
       <el-button type="danger"
                  plain
-                 v-on:click="reduceOne">减一(同步)</el-button>
+                 v-on:click="reduceOne">减一(两秒后)</el-button>
     </div>
   </div>
 </template>
@@ -17,14 +18,28 @@
 export default {
   name: "PageOne",
   data: () => ({
-    count: 0
+    count: 0,
+    loading: false
   }),
   methods: {
     addOne: function() {
-      this.count++;
+      this.controlOverlayer(true);
+      const timeOut = setTimeout(() => {
+        this.count++;
+        this.controlOverlayer(false);
+        clearTimeout(timeOut);
+      }, 1000);
     },
     reduceOne: function() {
-      this.count--;
+      this.controlOverlayer(true);
+      const timeOut = setTimeout(() => {
+        this.count--;
+        this.controlOverlayer(false);
+        clearTimeout(timeOut);
+      }, 2000);
+    },
+    controlOverlayer: function(isShow) {
+      this.loading = isShow;
     }
   }
 };
