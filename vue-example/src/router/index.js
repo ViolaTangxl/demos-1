@@ -10,17 +10,16 @@ import PageTwo from '../components/PageTwo'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-    routes: [
-        {
-            path: '/group1/page1',
-            name: 'page1',
-            component: PageOne
-        },
-        {
-            path: '/group1/page2',
-            name: 'page2',
-            component: PageTwo
-        }
-    ]
+  mode: 'history',
+  routes: [{
+      path: '/group1/page1',
+      name: 'page1',
+      component: PageOne
+    },
+    {
+      path: '/group1/page2',
+      name: 'page2',
+      component: PageTwo
+    }
+  ]
 })

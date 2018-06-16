@@ -15,31 +15,29 @@ Vue.use(ElementUI)
 Vue.use(Router)
 Vue.config.productionTip = false
 
-const navConfig = [
-    {
-        path: "group1",
-        name: "group1",
-        alias: "目录组1",
-        content: [{
-            path: "page1",
-            name: "page1",
-            alias: "页面1",
-            content: PageOne
-        }, {
-            path: "page2",
-            name: "page2",
-            alias: "页面2",
-            content: PageTwo
-        }]
-    }
-]
+const navConfig = [{
+  path: "group1",
+  name: "group1",
+  alias: "目录组1",
+  content: [{
+    path: "page1",
+    name: "page1",
+    alias: "页面1",
+    content: PageOne
+  }, {
+    path: "page2",
+    name: "page2",
+    alias: "页面2",
+    content: PageTwo
+  }]
+}]
 
 const routerList = [];
 getRoutes(routerList, navConfig, "");
 
 const router = new Router({
-    mode: "history",
-    routes: routerList
+  mode: "history",
+  routes: routerList
 })
 
 /**
@@ -49,27 +47,29 @@ const router = new Router({
  * @param {*} previous
  */
 function getRoutes(routerList, navItems, previous) {
-    navItems.map((item) => {
-        const path = previous + "/" + item.path;
-        if (Array.isArray(item.content)) {
-            getRoutes(routerList, item.content, path);
-        } else {
-            routerList.push({
-                path: path,
-                name: item.name,
-                component: item.content
-            });
-        }
-    });
+  navItems.map((item) => {
+    const path = previous + "/" + item.path;
+    if (Array.isArray(item.content)) {
+      getRoutes(routerList, item.content, path);
+    } else {
+      routerList.push({
+        path: path,
+        name: item.name,
+        component: item.content
+      });
+    }
+  });
 }
 
 /* eslint-disable no-new */
 new Vue({
-    el: "#app",
-    router,
-    data: {
-        navConfig: navConfig
-    },
-    components: { App },
-    template: "<App v-bind:navConfig='navConfig' />"
+  el: "#app",
+  router,
+  data: {
+    navConfig: navConfig
+  },
+  components: {
+    App
+  },
+  template: "<App v-bind:navConfig='navConfig' />"
 })

@@ -1,12 +1,16 @@
 <template>
-    <div class="page-one">
-        <div class="title-container">这是page1</div>
-        <div class="count-container">总数: {{this.count}}</div>
-        <div class="btn-container">
-            <el-button type="success" plain v-on:click="addOne">加一(同步)</el-button>
-            <el-button type="danger" plain v-on:click="reduceOne">减一(同步)</el-button>
-        </div>
+  <div class="page-one">
+    <div class="title-container">这是page1</div>
+    <div class="count-container">总数: {{this.count}}</div>
+    <div class="btn-container">
+      <el-button type="success"
+                 plain
+                 v-on:click="addOne">加一(同步)</el-button>
+      <el-button type="danger"
+                 plain
+                 v-on:click="reduceOne">减一(同步)</el-button>
     </div>
+  </div>
 </template>
 
 <script>
