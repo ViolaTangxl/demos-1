@@ -1,5 +1,6 @@
 <template>
   <div class="page-two"
+       v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page2</div>
     <div class="count-container">总数: {{this.count}}</div>
@@ -15,11 +16,17 @@
 </template>
 
 <script>
+// 导入水印插件
+import { waterPrint } from "../plugins/waterprint";
+
 export default {
   name: "PageTwo",
   data: () => ({
     count: 0,
-    loading: false
+    loading: false,
+    wsStyle: waterPrint({
+      username: "jiayizhen page2"
+    })
   }),
   methods: {
     addOne: function() {
