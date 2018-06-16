@@ -1,11 +1,14 @@
 <script>
-export default {
+// 引入Vue
+import Vue from "vue";
+
+const MenuJSX = Vue.component("MenuJSX", {
   name: "MenuJSX",
   props: ["isCollapse", "navConfig"],
   data() {
     return {};
   },
-  render() {
+  render(h) {
     return (
       <el-menu
         class="el-menu-vertical-demo layout-menu"
@@ -16,22 +19,30 @@ export default {
         collapse={this.isCollapse}
         router
       >
-        <el-submenu index="/group1">
-          <template slot="title">
-            <i class="el-icon-location" />
-            <span>目录组1</span>
-          </template>
-          <el-menu-item-group>
-            <el-menu-item index="/group1/page1">页面1</el-menu-item>
-            <el-menu-item index="/group1/page2">页面2</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
+        {this.createMenu(h, this.navConfig, "")}
       </el-menu>
     );
   },
   methods: {
-    createMenu: function() {
-      console.log(this.navConfig);
+    createMenu: function(h, navItems, previous) {
+      return navItems.map(item => {
+        const path = previous + "/" + item.path;
+        if (Array.isArray(item.content)) {
+          return (
+            <el-submenu index={path}>
+              <template slot="title">
+                <i class="el-icon-location" />
+                <span>{item.alias}</span>
+              </template>
+              <el-menu-item-group>
+                {this.createMenu(h, item.content, path)}
+              </el-menu-item-group>
+            </el-submenu>
+          );
+        } else {
+          return <el-menu-item index={path}>{item.alias}</el-menu-item>;
+        }
+      });
     }
   },
   computed: {
@@ -39,7 +50,9 @@ export default {
       return this.$route.path;
     }
   }
-};
+});
+
+export default MenuJSX;
 </script>
 
 <style>
