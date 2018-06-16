@@ -1,8 +1,5 @@
 <script>
-// 引入Vue
-import Vue from "vue";
-
-const MenuJSX = Vue.component("MenuJSX", {
+export default {
   name: "MenuJSX",
   props: ["isCollapse", "navConfig"],
   data() {
@@ -50,9 +47,7 @@ const MenuJSX = Vue.component("MenuJSX", {
       return this.$route.path;
     }
   }
-});
-
-export default MenuJSX;
+};
 </script>
 
 <style>
