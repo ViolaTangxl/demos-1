@@ -24,11 +24,12 @@ export default {
     createMenu: function(h, navItems, previous) {
       return navItems.map(item => {
         const path = previous + "/" + item.path;
+        const icon = item.icon ? item.icon : "document";
         if (Array.isArray(item.content)) {
           return (
             <el-submenu index={path}>
               <template slot="title">
-                <i class="el-icon-location" />
+                <i class={"el-icon-" + icon} />
                 <span>{item.alias}</span>
               </template>
               <el-menu-item-group>
@@ -37,7 +38,12 @@ export default {
             </el-submenu>
           );
         } else {
-          return <el-menu-item index={path}>{item.alias}</el-menu-item>;
+          return (
+            <el-menu-item index={path}>
+              <i class={"el-icon-" + icon} />
+              <span>{item.alias}</span>
+            </el-menu-item>
+          );
         }
       });
     }

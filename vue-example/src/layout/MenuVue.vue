@@ -8,21 +8,30 @@
            router>
     <el-submenu index="/group1">
       <template slot="title">
-        <i class="el-icon-location"></i>
+        <i class="el-icon-menu"></i>
         <span>目录组1</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="/group1/page1">页面1</el-menu-item>
-        <el-menu-item index="/group1/page2">页面2</el-menu-item>
+        <el-menu-item index="/group1/page1">
+          <i class="el-icon-goods"></i>
+          <span>页面1</span>
+        </el-menu-item>
+        <el-menu-item index="/group1/page2">
+          <i class="el-icon-goods"></i>
+          <span>页面2</span>
+        </el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="/group2">
       <template slot="title">
-        <i class="el-icon-location"></i>
+        <i class="el-icon-menu"></i>
         <span>目录组2</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="/group1/page1">页面3</el-menu-item>
+        <el-menu-item index="/group1/page1">
+          <i class="el-icon-goods"></i>
+          <span>页面3</span>
+        </el-menu-item>
       </el-menu-item-group>
     </el-submenu>
   </el-menu>

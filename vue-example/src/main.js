@@ -20,25 +20,30 @@ const navConfig = [{
   path: "group1",
   name: "group1",
   alias: "目录组1",
+  icon: "menu",
   content: [{
     path: "page1",
     name: "page1",
     alias: "页面1",
+    icon: "goods",
     content: PageOne
   }, {
     path: "page2",
     name: "page2",
     alias: "页面2",
+    icon: "goods",
     content: PageTwo
   }]
 }, {
   path: "group2",
   name: "group2",
   alias: "目录组2",
+  icon: "menu",
   content: [{
     path: "page3",
     name: "page3",
     alias: "页面3",
+    icon: "goods",
     content: PageThree
   }]
 }];
