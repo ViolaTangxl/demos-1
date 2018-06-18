@@ -16,6 +16,15 @@
         <el-menu-item index="/group1/page2">页面2</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
+    <el-submenu index="/group2">
+      <template slot="title">
+        <i class="el-icon-location"></i>
+        <span>目录组2</span>
+      </template>
+      <el-menu-item-group>
+        <el-menu-item index="/group1/page1">页面3</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
   </el-menu>
 </template>
 

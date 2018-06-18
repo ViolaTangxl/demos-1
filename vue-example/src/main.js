@@ -10,6 +10,7 @@ import ElementUI from "element-ui"
 import "element-ui/lib/theme-chalk/index.css"
 import PageOne from "./components/PageOne"
 import PageTwo from "./components/PageTwo"
+import PageThree from "./components/PageThree"
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -30,7 +31,17 @@ const navConfig = [{
     alias: "页面2",
     content: PageTwo
   }]
-}]
+}, {
+  path: "group2",
+  name: "group2",
+  alias: "目录组2",
+  content: [{
+    path: "page3",
+    name: "page3",
+    alias: "页面3",
+    content: PageThree
+  }]
+}];
 
 const routerList = [];
 getRoutes(routerList, navConfig, "");
