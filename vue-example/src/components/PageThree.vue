@@ -3,7 +3,91 @@
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page3</div>
-    <div class="table-container"></div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-bottom">5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right border-bottom">1</td>
+            <td class="border-right border-bottom">2</td>
+            <td class="border-right border-bottom">3</td>
+            <td class="border-right border-bottom">4</td>
+            <td class="border-bottom">5</td>
+          </tr>
+          <tr>
+            <td class="border-right">1</td>
+            <td class="border-right">2</td>
+            <td class="border-right">3</td>
+            <td class="border-right">4</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -45,5 +129,49 @@ export default {
   width: calc(100% - 20px);
   height: calc(100% - 50px);
   padding: 10px;
+}
+.page-three .table-container table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #545c64;
+  border-spacing: 0;
+}
+
+.page-three .table-container .border-right {
+  border-right: 1px solid #545c64;
+}
+
+.page-three .table-container .border-bottom {
+  border-bottom: 1px solid #545c64;
+}
+
+.page-three .table-container thead {
+  width: 100%;
+  height: 50px;
+  table-layout: fixed;
+  display: table;
+}
+
+.page-three .table-container thead tr {
+  background-color: #ddd;
+}
+
+.page-three .table-container tbody {
+  width: 100%;
+  height: calc(100% - 50px);
+  position: relative;
+  overflow-y: auto;
+  display: block;
+}
+
+.page-three .table-container tbody tr {
+  width: 100%;
+  table-layout: fixed;
+  display: table;
+}
+
+.page-three .table-container tbody td {
+  padding: 25px;
+  text-align: center;
 }
 </style>
