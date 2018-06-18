@@ -4,6 +4,114 @@
        v-loading="loading">
     <div class="title-container">这是page4</div>
     <div class="table-container">
+      <div class="left-container">
+        <table>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">1</th>
+          </tr>
+          <tr>
+            <th class="border-right">1</th>
+          </tr>
+        </table>
+      </div>
+      <div class="right-container">
+        <table>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right border-bottom">2</th>
+            <th class="border-right border-bottom">3</th>
+            <th class="border-right border-bottom">4</th>
+            <th class="border-right border-bottom">5</th>
+            <th class="border-bottom">6</th>
+          </tr>
+          <tr>
+            <th class="border-right">2</th>
+            <th class="border-right">3</th>
+            <th class="border-right">4</th>
+            <th class="border-right">5</th>
+            <th>6</th>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -21,9 +129,9 @@ export default {
       username: "jiayizhen page4"
     })
   }),
-  methods: {
+  metdods: {
     controlOverlayer: function(isShow) {
-      this.loading = isShow;
+      tdis.loading = isShow;
     }
   }
 };
@@ -35,6 +143,7 @@ export default {
   height: 100%;
   overflow: hidden;
 }
+
 .page-four .title-container {
   width: 100%;
   height: 30px;
@@ -42,9 +151,61 @@ export default {
   font-size: 16px;
   text-align: center;
 }
+
 .page-four .table-container {
   width: calc(100% - 20px);
   height: calc(100% - 50px);
+  position: relative;
   padding: 10px;
+}
+
+.page-four .table-container .border-right {
+  border-right: 1px solid #545c64;
+}
+
+.page-four .table-container .border-bottom {
+  border-bottom: 1px solid #545c64;
+}
+
+.page-four .table-container .left-container {
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+
+.page-four .table-container .left-container table {
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #545c64;
+  border-bottom: 1px solid #545c64;
+  border-left: 1px solid #545c64;
+  border-spacing: 0;
+  background-color: #ddd;
+}
+
+.page-four .table-container .right-container {
+  width: calc(100% - 100px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  display: inline-block;
+  overflow: auto;
+}
+
+.page-four .table-container .right-container table {
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #545c64;
+  border-right: 1px solid #545c64;
+  border-bottom: 1px solid #545c64;
+  border-spacing: 0;
+}
+
+.page-four .table-container .right-container table th {
+  padding: 0 200px;
 }
 </style>
