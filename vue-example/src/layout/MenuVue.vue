@@ -28,9 +28,13 @@
         <span>目录组2</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="/group1/page1">
+        <el-menu-item index="/group2/page3">
           <i class="el-icon-goods"></i>
           <span>页面3</span>
+        </el-menu-item>
+        <el-menu-item index="/group2/page4">
+          <i class="el-icon-goods"></i>
+          <span>页面4</span>
         </el-menu-item>
       </el-menu-item-group>
     </el-submenu>

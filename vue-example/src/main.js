@@ -11,6 +11,7 @@ import "element-ui/lib/theme-chalk/index.css"
 import PageOne from "./components/PageOne"
 import PageTwo from "./components/PageTwo"
 import PageThree from "./components/PageThree"
+import PageFour from "./components/PageFour"
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -40,12 +41,20 @@ const navConfig = [{
   alias: "目录组2",
   icon: "menu",
   content: [{
-    path: "page3",
-    name: "page3",
-    alias: "页面3",
-    icon: "goods",
-    content: PageThree
-  }]
+      path: "page3",
+      name: "page3",
+      alias: "页面3",
+      icon: "goods",
+      content: PageThree
+    },
+    {
+      path: "page4",
+      name: "page4",
+      alias: "页面4",
+      icon: "goods",
+      content: PageFour
+    }
+  ]
 }];
 
 const routerList = [];
