@@ -32,9 +32,7 @@ export default {
                 <i class={"el-icon-" + icon} />
                 <span>{item.alias}</span>
               </template>
-              <el-menu-item-group>
-                {this.createMenu(h, item.content, path)}
-              </el-menu-item-group>
+              {this.createMenu(h, item.content, path)}
             </el-submenu>
           );
         } else {

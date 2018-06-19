@@ -12,44 +12,38 @@
         <i class="el-icon-menu"></i>
         <span>目录组1</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="/group1/page1">
-          <i class="el-icon-goods"></i>
-          <span>页面1</span>
-        </el-menu-item>
-        <el-menu-item index="/group1/page2">
-          <i class="el-icon-goods"></i>
-          <span>页面2</span>
-        </el-menu-item>
-      </el-menu-item-group>
+      <el-menu-item index="/group1/page1">
+        <i class="el-icon-goods"></i>
+        <span>页面1</span>
+      </el-menu-item>
+      <el-menu-item index="/group1/page2">
+        <i class="el-icon-goods"></i>
+        <span>页面2</span>
+      </el-menu-item>
     </el-submenu>
     <el-submenu index="/group2">
       <template slot="title">
         <i class="el-icon-date"></i>
         <span>目录组2</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="/group2/page3">
-          <i class="el-icon-goods"></i>
-          <span>页面3</span>
-        </el-menu-item>
-        <el-menu-item index="/group2/page4">
-          <i class="el-icon-goods"></i>
-          <span>页面4</span>
-        </el-menu-item>
-      </el-menu-item-group>
+      <el-menu-item index="/group2/page3">
+        <i class="el-icon-goods"></i>
+        <span>页面3</span>
+      </el-menu-item>
+      <el-menu-item index="/group2/page4">
+        <i class="el-icon-goods"></i>
+        <span>页面4</span>
+      </el-menu-item>
     </el-submenu>
     <el-submenu index="/group3">
       <template slot="title">
         <i class="el-icon-bell"></i>
         <span>目录组3</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="/group3/page5">
-          <i class="el-icon-goods"></i>
-          <span>页面5</span>
-        </el-menu-item>
-      </el-menu-item-group>
+      <el-menu-item index="/group3/page5">
+        <i class="el-icon-goods"></i>
+        <span>页面5</span>
+      </el-menu-item>
     </el-submenu>
   </el-menu>
 </template> -->
@@ -88,9 +82,7 @@ export default {
                 <i class={"el-icon-" + icon} />
                 <span>{item.alias}</span>
               </template>
-              <el-menu-item-group>
-                {this.createMenu(h, item.content, path)}
-              </el-menu-item-group>
+              {this.createMenu(h, item.content, path)}
             </el-submenu>
           );
         } else {
