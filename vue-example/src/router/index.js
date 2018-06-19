@@ -8,7 +8,7 @@ import AddReduceOne from "../components/AddReduceOne"
 import AddReduceTwo from "../components/AddReduceTwo"
 import TableOne from "../components/TableOne"
 import TableTwo from "../components/TableTwo"
-
+import Elements from "../components/Elements"
 
 Vue.use(Router)
 
@@ -33,6 +33,11 @@ export default new Router({
       path: "/group2/page4",
       name: "page4",
       component: AddReduceTwo
+    },
+    {
+      path: "/group3/page5",
+      name: "page5",
+      component: Elements
     }
   ]
 })

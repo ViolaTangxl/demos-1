@@ -38,6 +38,18 @@
         </el-menu-item>
       </el-menu-item-group>
     </el-submenu>
+    <el-submenu index="/group3">
+      <template slot="title">
+        <i class="el-icon-bell"></i>
+        <span>目录组3</span>
+      </template>
+      <el-menu-item-group>
+        <el-menu-item index="/group3/page5">
+          <i class="el-icon-goods"></i>
+          <span>页面5</span>
+        </el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
   </el-menu>
 </template>
 

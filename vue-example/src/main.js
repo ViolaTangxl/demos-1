@@ -12,6 +12,7 @@ import AddReduceOne from "./components/AddReduceOne"
 import AddReduceTwo from "./components/AddReduceTwo"
 import TableOne from "./components/TableOne"
 import TableTwo from "./components/TableTwo"
+import Elements from "./components/Elements"
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -55,6 +56,18 @@ const navConfig = [{
       content: TableTwo
     }
   ]
+}, {
+  path: "group3",
+  name: "group3",
+  alias: "目录组3",
+  icon: "bell",
+  content: [{
+    path: "page5",
+    name: "page5",
+    alias: "页面5",
+    icon: "goods",
+    content: Elements
+  }]
 }];
 
 const routerList = [];
