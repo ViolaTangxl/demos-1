@@ -3,11 +3,11 @@
     <el-aside class="left-part"
               width="auto">
       <!-- 使用vue写的menu -->
-      <!-- <MenuVue v-bind:isCollapse="isCollapse"
-               v-bind:navConfig="navConfig" /> -->
-      <!-- 使用jsx写的menu -->
-      <MenuJSX v-bind:isCollapse="isCollapse"
+      <MenuVue v-bind:isCollapse="isCollapse"
                v-bind:navConfig="navConfig" />
+      <!-- 使用jsx写的menu -->
+      <!-- <MenuJSX v-bind:isCollapse="isCollapse"
+               v-bind:navConfig="navConfig" /> -->
     </el-aside>
     <el-container class="right-part">
       <el-header class="right-header"
