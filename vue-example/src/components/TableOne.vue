@@ -1,5 +1,5 @@
 <template>
-  <div class="page-three"
+  <div class="table-one"
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page3</div>
@@ -96,7 +96,7 @@
 import { waterPrint } from "../plugins/waterprint";
 
 export default {
-  name: "PageThree",
+  name: "TableOne",
   data: () => ({
     count: 0,
     loading: false,
@@ -113,50 +113,50 @@ export default {
 </script>
 
 <style>
-.page-three {
+.table-one {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.page-three .title-container {
+.table-one .title-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
   font-size: 16px;
   text-align: center;
 }
-.page-three .table-container {
+.table-one .table-container {
   width: calc(100% - 20px);
   height: calc(100% - 50px);
   padding: 10px;
 }
-.page-three .table-container table {
+.table-one .table-container table {
   width: 100%;
   height: 100%;
   border: 1px solid #545c64;
   border-spacing: 0;
 }
 
-.page-three .table-container .border-right {
+.table-one .table-container .border-right {
   border-right: 1px solid #545c64;
 }
 
-.page-three .table-container .border-bottom {
+.table-one .table-container .border-bottom {
   border-bottom: 1px solid #545c64;
 }
 
-.page-three .table-container thead {
+.table-one .table-container thead {
   width: 100%;
   height: 50px;
   table-layout: fixed;
   display: table;
 }
 
-.page-three .table-container thead tr {
+.table-one .table-container thead tr {
   background-color: #ddd;
 }
 
-.page-three .table-container tbody {
+.table-one .table-container tbody {
   width: 100%;
   height: calc(100% - 50px);
   position: relative;
@@ -164,13 +164,13 @@ export default {
   display: block;
 }
 
-.page-three .table-container tbody tr {
+.table-one .table-container tbody tr {
   width: 100%;
   table-layout: fixed;
   display: table;
 }
 
-.page-three .table-container tbody td {
+.table-one .table-container tbody td {
   padding: 25px;
   text-align: center;
 }

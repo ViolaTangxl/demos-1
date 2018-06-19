@@ -24,7 +24,7 @@
     </el-submenu>
     <el-submenu index="/group2">
       <template slot="title">
-        <i class="el-icon-menu"></i>
+        <i class="el-icon-date"></i>
         <span>目录组2</span>
       </template>
       <el-menu-item-group>

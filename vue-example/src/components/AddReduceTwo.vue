@@ -1,5 +1,5 @@
 <template>
-  <div class="page-two"
+  <div class="add-reduce-two"
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page2</div>
@@ -20,7 +20,7 @@
 import { waterPrint } from "../plugins/waterprint";
 
 export default {
-  name: "PageTwo",
+  name: "AddReduceTwo",
   data: () => ({
     count: 0,
     loading: false,
@@ -53,19 +53,19 @@ export default {
 </script>
 
 <style>
-.page-two {
+.add-reduce-two {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.page-two .title-container {
+.add-reduce-two .title-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
   font-size: 16px;
   text-align: center;
 }
-.page-two .count-container {
+.add-reduce-two .count-container {
   width: 100%;
   height: 30px;
   position: relative;
@@ -74,7 +74,7 @@ export default {
   font-size: 16px;
   text-align: center;
 }
-.page-two .btn-container {
+.add-reduce-two .btn-container {
   width: 100%;
   position: relative;
   top: calc(50% - 20px);

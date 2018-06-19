@@ -1,5 +1,5 @@
 <template>
-  <div class="page-four"
+  <div class="table-two"
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page4</div>
@@ -121,7 +121,7 @@
 import { waterPrint } from "../plugins/waterprint";
 
 export default {
-  name: "PageFour",
+  name: "TableTwo",
   data: () => ({
     count: 0,
     loading: false,
@@ -138,13 +138,13 @@ export default {
 </script>
 
 <style>
-.page-four {
+.table-two {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.page-four .title-container {
+.table-two .title-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
@@ -152,22 +152,15 @@ export default {
   text-align: center;
 }
 
-.page-four .table-container {
+.table-two .table-container {
   width: calc(100% - 20px);
   height: calc(100% - 50px);
   position: relative;
   padding: 10px;
 }
 
-.page-four .table-container .border-right {
-  border-right: 1px solid #545c64;
-}
-
-.page-four .table-container .border-bottom {
-  border-bottom: 1px solid #545c64;
-}
-
-.page-four .table-container .left-container {
+.table-two .table-container .left-container,
+.table-two .table-container .right-container {
   width: 100px;
   height: 100%;
   position: absolute;
@@ -176,36 +169,40 @@ export default {
   display: inline-block;
 }
 
-.page-four .table-container .left-container table {
-  width: 100%;
-  height: 100%;
-  border-top: 1px solid #545c64;
-  border-bottom: 1px solid #545c64;
-  border-left: 1px solid #545c64;
-  border-spacing: 0;
-  background-color: #ddd;
-}
-
-.page-four .table-container .right-container {
+.table-two .table-container .right-container {
   width: calc(100% - 100px);
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50px;
-  display: inline-block;
+  left: 100px;
   overflow: auto;
 }
 
-.page-four .table-container .right-container table {
+.table-two .table-container .left-container table,
+.table-two .table-container .right-container table {
   width: 100%;
   height: 100%;
   border-top: 1px solid #545c64;
-  border-right: 1px solid #545c64;
   border-bottom: 1px solid #545c64;
+
   border-spacing: 0;
 }
 
-.page-four .table-container .right-container table th {
+.table-two .table-container .left-container table {
+  border-left: 1px solid #545c64;
+  background-color: #ddd;
+}
+
+.table-two .table-container .right-container table {
+  border-right: 1px solid #545c64;
+}
+
+.table-two .table-container .right-container table th {
   padding: 0 200px;
+}
+
+.table-two .table-container .border-right {
+  border-right: 1px solid #545c64;
+}
+
+.table-two .table-container .border-bottom {
+  border-bottom: 1px solid #545c64;
 }
 </style>

@@ -8,10 +8,10 @@ import Router from "vue-router"
 import ElementUI from "element-ui"
 // 单独引入ElementUI的css样式
 import "element-ui/lib/theme-chalk/index.css"
-import PageOne from "./components/PageOne"
-import PageTwo from "./components/PageTwo"
-import PageThree from "./components/PageThree"
-import PageFour from "./components/PageFour"
+import AddReduceOne from "./components/AddReduceOne"
+import AddReduceTwo from "./components/AddReduceTwo"
+import TableOne from "./components/TableOne"
+import TableTwo from "./components/TableTwo"
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -27,32 +27,32 @@ const navConfig = [{
     name: "page1",
     alias: "页面1",
     icon: "goods",
-    content: PageOne
+    content: AddReduceOne
   }, {
     path: "page2",
     name: "page2",
     alias: "页面2",
     icon: "goods",
-    content: PageTwo
+    content: AddReduceTwo
   }]
 }, {
   path: "group2",
   name: "group2",
   alias: "目录组2",
-  icon: "menu",
+  icon: "date",
   content: [{
       path: "page3",
       name: "page3",
       alias: "页面3",
       icon: "goods",
-      content: PageThree
+      content: TableOne
     },
     {
       path: "page4",
       name: "page4",
       alias: "页面4",
       icon: "goods",
-      content: PageFour
+      content: TableTwo
     }
   ]
 }];
