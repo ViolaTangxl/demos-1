@@ -29,8 +29,16 @@
               </el-button>
             </el-button-group>
             <el-button type="success"
+                       v-on:click="loadingBtnClick"
                        v-bind:loading="loadingBtn.isLoading">{{loadingBtn.text}}</el-button>
           </el-row>
+        </div>
+      </div>
+      <!-- 表格 -->
+      <div class="element-item">
+        <div class="item-title">表格:</div>
+        <div class="item-container">
+          <Table />
         </div>
       </div>
     </div>
@@ -40,25 +48,41 @@
 <script>
 // 导入水印插件
 import { waterPrint } from "../plugins/waterprint";
+// 导入表格
+import Table from "../tools/Table";
 
 export default {
   name: "Elements",
   data: () => ({
     count: 0,
     loading: false,
+    wsStyle: waterPrint({
+      username: "jiayizhen page5"
+    }),
     loadingBtn: {
       isLoading: false,
       text: "加载按钮"
-    },
-    wsStyle: waterPrint({
-      username: "jiayizhen page5"
-    })
+    }
   }),
   methods: {
+    loadingBtnClick: function() {
+      this.loadingBtn = {
+        isLoading: true,
+        text: "加载中..."
+      };
+      const timeOut = setTimeout(() => {
+        this.loadingBtn = {
+          isLoading: false,
+          text: "加载按钮"
+        };
+        clearTimeout(timeOut);
+      }, 1000);
+    },
     controlOverlayer: function(isShow) {
       this.loading = isShow;
     }
-  }
+  },
+  components: { Table }
 };
 </script>
 
@@ -98,5 +122,10 @@ export default {
 .elements-page .element-item .item-container {
   width: 100%;
   position: relative;
+  margin-top: 10px;
+}
+
+.elements-page .element-item .item-container .table {
+  width: 100%;
 }
 </style>
