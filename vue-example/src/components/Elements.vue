@@ -38,7 +38,7 @@
       <div class="element-item">
         <div class="item-title">表格:</div>
         <div class="item-container">
-          <Table />
+          <Table v-bind:tableConfig="tableConfig" />
         </div>
       </div>
     </div>
@@ -62,6 +62,60 @@ export default {
     loadingBtn: {
       isLoading: false,
       text: "加载按钮"
+    },
+    tableConfig: {
+      // 类名
+      className: "table",
+      // 是否显示斑马线
+      stripe: true,
+      // 是否显示边框
+      border: true,
+      // 列表头数据
+      columnData: [
+        {
+          prop: "date",
+          label: "日期",
+          align: "center"
+        },
+        {
+          prop: "name",
+          label: "姓名",
+          align: "center"
+        },
+        {
+          prop: "address",
+          label: "地址",
+          align: "center"
+        }
+      ],
+      // 表格体数据
+      bodyData: [
+        {
+          date: "2018-06-19",
+          name: "×××××",
+          address: "×××省×××市×××路1号"
+        },
+        {
+          date: "2018-06-19",
+          name: "×××××",
+          address: "×××省×××市×××路2号"
+        },
+        {
+          date: "2018-06-19",
+          name: "×××××",
+          address: "×××省×××市×××路3号"
+        },
+        {
+          date: "2018-06-19",
+          name: "×××××",
+          address: "×××省×××市×××路4号"
+        },
+        {
+          date: "2018-06-19",
+          name: "×××××",
+          address: "×××省×××市×××路5号"
+        }
+      ]
     }
   }),
   methods: {
