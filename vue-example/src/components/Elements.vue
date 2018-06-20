@@ -62,6 +62,20 @@
           <el-button v-on:click="showMessageBox">显示MessageBox弹窗</el-button>
         </div>
       </div>
+      <!-- Notification通知 -->
+      <div class="element-item">
+        <div class="item-title">Notification通知:</div>
+        <div class="item-container">
+          <el-button type="success"
+                     v-on:click="showNotification('success', '成功notification')">成功</el-button>
+          <el-button type="info"
+                     v-on:click="showNotification('info', '消息notification')">消息</el-button>
+          <el-button type="warning"
+                     v-on:click="showNotification('warning', '警告notification')">警告</el-button>
+          <el-button type="danger"
+                     v-on:click="showNotification('error', '错误notification')">错误</el-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -177,6 +191,14 @@ export default {
         .catch(() => {
           this.showMessage("info", "取消操作", true);
         });
+    },
+    showNotification: function(type, message) {
+      this.$notify({
+        title: "提示",
+        message: message,
+        type: type,
+        duration: 2000
+      });
     }
   },
   components: { Table }
@@ -186,7 +208,7 @@ export default {
 <style>
 .elements-page {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .elements-page .title-container {
