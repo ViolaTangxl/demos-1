@@ -41,7 +41,7 @@
           <Table v-bind:tableConfig="tableConfig" />
         </div>
       </div>
-      <!-- message -->
+      <!-- Message -->
       <div class="element-item">
         <div class="item-title">Message按钮:</div>
         <div class="item-container">
@@ -53,6 +53,13 @@
                      v-on:click="showMessage('warning', '警告message', true)">警告</el-button>
           <el-button type="danger"
                      v-on:click="showMessage('error', '错误message', true)">错误</el-button>
+        </div>
+      </div>
+      <!-- MessageBox弹窗 -->
+      <div class="element-item">
+        <div class="item-title">MessageBox弹窗:</div>
+        <div class="item-container">
+          <el-button v-on:click="showMessageBox">显示MessageBox弹窗</el-button>
         </div>
       </div>
     </div>
@@ -157,6 +164,19 @@ export default {
         showClose: showClose,
         duration: 2000
       });
+    },
+    showMessageBox: function() {
+      this.$confirm("是否确认该操作？", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      })
+        .then(() => {
+          this.showMessage("success", "操作成功", true);
+        })
+        .catch(() => {
+          this.showMessage("info", "取消操作", true);
+        });
     }
   },
   components: { Table }
