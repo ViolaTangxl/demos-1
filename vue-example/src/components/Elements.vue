@@ -76,6 +76,26 @@
                      v-on:click="showNotification('error', '错误notification')">错误</el-button>
         </div>
       </div>
+      <!-- 对话框 -->
+      <div class="element-item">
+        <div class="item-title">对话框:</div>
+        <div class="item-container">
+          <el-button type="info"
+                     v-on:click="showDialog">显示对话框</el-button>
+          <el-dialog title="对话框"
+                     v-bind:visible.sync="dialogVisible"
+                     width="30%"
+                     v-bind:before-close="handleDialogClose">
+            <span>这是一个对话框</span>
+            <span slot="footer"
+                  class="dialog-footer">
+              <el-button v-on:click="handleDialogClose">取消</el-button>
+              <el-button type="primary"
+                         v-on:click="handleDialogClose">确定</el-button>
+            </span>
+          </el-dialog>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -151,7 +171,8 @@ export default {
           address: "×××省×××市×××路5号"
         }
       ]
-    }
+    },
+    dialogVisible: false
   }),
   methods: {
     loadingBtnClick: function() {
@@ -199,6 +220,22 @@ export default {
         type: type,
         duration: 2000
       });
+    },
+    handleDialogClose: function(done) {
+      this.$confirm("确认关闭？")
+        .then(() => {
+          this.hideDialog();
+        })
+        .catch(() => {
+          this.hideDialog();
+        });
+    },
+    showDialog: function() {
+      this.dialogVisible = true;
+    },
+    hideDialog: function() {
+      this.dialogVisible = false;
+      this.showMessage("success", "对话框关闭", true);
     }
   },
   components: { Table }
