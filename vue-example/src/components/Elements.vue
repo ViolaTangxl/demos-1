@@ -41,6 +41,20 @@
           <Table v-bind:tableConfig="tableConfig" />
         </div>
       </div>
+      <!-- message -->
+      <div class="element-item">
+        <div class="item-title">Message按钮:</div>
+        <div class="item-container">
+          <el-button type="success"
+                     v-on:click="showMessage('success', '成功message', true)">成功</el-button>
+          <el-button type="info"
+                     v-on:click="showMessage('info', '消息message', true)">消息</el-button>
+          <el-button type="warning"
+                     v-on:click="showMessage('warning', '警告message', true)">警告</el-button>
+          <el-button type="danger"
+                     v-on:click="showMessage('error', '错误message', true)">错误</el-button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -134,6 +148,15 @@ export default {
     },
     controlOverlayer: function(isShow) {
       this.loading = isShow;
+    },
+    showMessage: function(type, message, showClose) {
+      this.$message({
+        message: message,
+        type: type,
+        center: true,
+        showClose: showClose,
+        duration: 2000
+      });
     }
   },
   components: { Table }
