@@ -4,6 +4,33 @@
        v-loading="loading">
     <div class="title-container">这是page6</div>
     <div class="elements-container">
+      <!-- 嵌套Dialog -->
+      <div class="element-item">
+        <div class="item-title">嵌套Dialog:</div>
+        <div class="item-container">
+          <el-button type="info"
+                     v-on:click="showOuterDialog">显示外层对话框</el-button>
+          <el-dialog width="30%"
+                     title="外层Dialog"
+                     v-bind:visible.sync="outerDialogVisible"
+                     v-bind:close-on-click-modal="false"
+                     v-bind:close-on-press-escape="false">
+            <el-dialog width="30%"
+                       title="内层Dialog"
+                       v-bind:visible.sync="innerDialogVisible"
+                       v-bind:close-on-click-modal="false"
+                       v-bind:close-on-press-escape="false"
+                       append-to-body>
+            </el-dialog>
+            <div slot="footer"
+                 class="dialog-footer">
+              <el-button v-on:click="outerDialogVisible = false">取消</el-button>
+              <el-button type="primary"
+                         v-on:click="innerDialogVisible = true">打开内层Dialog</el-button>
+            </div>
+          </el-dialog>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,11 +46,19 @@ export default {
     loading: false,
     wsStyle: waterPrint({
       username: "jiayizhen page6"
-    })
+    }),
+    outerDialogVisible: false,
+    innerDialogVisible: false
   }),
   methods: {
     controlOverlayer: function(isShow) {
       this.loading = isShow;
+    },
+    showOuterDialog: function() {
+      this.outerDialogVisible = true;
+    },
+    hideOuterDialog: function() {
+      this.outerDialogVisible = false;
     }
   },
   components: {}
