@@ -12,7 +12,7 @@ import AddReduceOne from "./components/AddReduceOne"
 import AddReduceTwo from "./components/AddReduceTwo"
 import TableOne from "./components/TableOne"
 import TableTwo from "./components/TableTwo"
-import Elements from "./components/Elements"
+import ElementsOne from "./components/ElementsOne"
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -66,7 +66,7 @@ const navConfig = [{
     name: "page5",
     alias: "页面5",
     icon: "goods",
-    content: Elements
+    content: ElementsOne
   }]
 }];
 

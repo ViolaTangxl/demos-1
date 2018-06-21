@@ -1,5 +1,5 @@
 <template>
-  <div class="elements-page"
+  <div class="elements-page-none"
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page5</div>
@@ -107,7 +107,7 @@ import { waterPrint } from "../plugins/waterprint";
 import Table from "../tools/Table";
 
 export default {
-  name: "Elements",
+  name: "ElementsOne",
   data: () => ({
     count: 0,
     loading: false,
@@ -243,12 +243,12 @@ export default {
 </script>
 
 <style>
-.elements-page {
+.elements-page-none {
   width: 100%;
   height: auto;
 }
 
-.elements-page .title-container {
+.elements-page-none .title-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
@@ -256,32 +256,32 @@ export default {
   text-align: center;
 }
 
-.elements-page .elements-container {
+.elements-page-none .elements-container {
   width: 100%;
   height: calc(100% - 30px);
 }
 
-.elements-page .elements-container .element-item {
+.elements-page-none .elements-container .element-item {
   width: 96%;
   position: relative;
   left: 2%;
   margin-top: 10px;
 }
 
-.elements-page .element-item .item-title {
+.elements-page-none .element-item .item-title {
   width: 100%;
   height: 30px;
   line-height: 30px;
   font-size: 16px;
 }
 
-.elements-page .element-item .item-container {
+.elements-page-none .element-item .item-container {
   width: 100%;
   position: relative;
   margin-top: 10px;
 }
 
-.elements-page .element-item .item-container .table {
+.elements-page-none .element-item .item-container .table {
   width: 100%;
 }
 </style>
