@@ -31,6 +31,26 @@
           </el-dialog>
         </div>
       </div>
+      <!-- Tooltip文字提示 -->
+      <div class="element-item">
+        <div class="item-title">Tooltip文字提示:</div>
+        <div class="item-container">
+          <el-tooltip content="顶部居中"
+                      placement="top">
+            <el-button>暗色</el-button>
+          </el-tooltip>
+          <el-tooltip content="底部居中"
+                      placement="bottom"
+                      effect="light">
+            <el-button>亮色</el-button>
+          </el-tooltip>
+          <el-tooltip content="底部居中"
+                      placement="bottom"
+                      v-bind:disabled="tooltipDisable">
+            <el-button v-on:click="changeTooltipDisabled">{{ tooltipDisable ? "单击启用" : "单击停用" }}</el-button>
+          </el-tooltip>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +68,8 @@ export default {
       username: "jiayizhen page6"
     }),
     outerDialogVisible: false,
-    innerDialogVisible: false
+    innerDialogVisible: false,
+    tooltipDisable: false
   }),
   methods: {
     controlOverlayer: function(isShow) {
@@ -59,6 +80,9 @@ export default {
     },
     hideOuterDialog: function() {
       this.outerDialogVisible = false;
+    },
+    changeTooltipDisabled: function() {
+      this.tooltipDisable = !this.tooltipDisable;
     }
   },
   components: {}
