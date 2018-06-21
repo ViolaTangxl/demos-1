@@ -102,7 +102,7 @@
 
 <script>
 // 导入水印插件
-import { waterPrint } from "../assistes/plugins/waterprint";
+import { waterPrint } from "../assets/plugins/waterprint";
 // 导入表格
 import Table from "../tools/Table";
 

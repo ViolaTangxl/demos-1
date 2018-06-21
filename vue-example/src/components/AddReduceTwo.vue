@@ -17,7 +17,7 @@
 
 <script>
 // 导入水印插件
-import { waterPrint } from "../assistes/plugins/waterprint";
+import { waterPrint } from "../assets/plugins/waterprint";
 
 export default {
   name: "AddReduceTwo",

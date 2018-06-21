@@ -51,13 +51,40 @@
           </el-tooltip>
         </div>
       </div>
+      <!-- 卡片 -->
+      <div class="element-item">
+        <div class="item-title">卡片:</div>
+        <div class="item-container">
+          <el-row>
+            <el-col v-bind:span="6"
+                    v-for="(item, index) in cardDataList"
+                    v-bind:key="index">
+              <el-card class="element-card"
+                       v-bind:body-style="{ padding: '0px' }">
+                <div class="image-container">
+                  <img v-bind:src="item.img"
+                       class="image">
+                </div>
+                <div class="info-container">
+                  <span>{{ item.name }}</span>
+                  <div class="bottom">
+                    <time class="time">{{ getCurrentTime }}</time>
+                    <el-button type="text"
+                               class="button">查看详情</el-button>
+                  </div>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // 导入水印插件
-import { waterPrint } from "../assistes/plugins/waterprint";
+import { waterPrint } from "../assets/plugins/waterprint";
 
 export default {
   name: "ElementsTwo",
@@ -69,7 +96,13 @@ export default {
     }),
     outerDialogVisible: false,
     innerDialogVisible: false,
-    tooltipDisable: false
+    tooltipDisable: false,
+    cardDataList: [
+      { name: "image1", img: "/static/img/image1.jpg" },
+      { name: "image2", img: "/static/img/image2.jpg" },
+      { name: "image3", img: "/static/img/image3.jpg" },
+      { name: "image4", img: "/static/img/image4.jpg" }
+    ]
   }),
   methods: {
     controlOverlayer: function(isShow) {
@@ -83,6 +116,25 @@ export default {
     },
     changeTooltipDisabled: function() {
       this.tooltipDisable = !this.tooltipDisable;
+    }
+  },
+  computed: {
+    getCurrentTime: function() {
+      let time = "",
+        date = new Date();
+      time =
+        date.getFullYear() +
+        "-" +
+        (date.getMonth() + 1) +
+        "-" +
+        date.getDate() +
+        " " +
+        date.getHours() +
+        ":" +
+        date.getMinutes() +
+        ":" +
+        date.getSeconds();
+      return time;
     }
   },
   components: {}
@@ -127,5 +179,38 @@ export default {
   width: 100%;
   position: relative;
   margin-top: 10px;
+}
+
+.elements-page-two .element-card {
+  width: 100%;
+  position: relative;
+}
+
+.elements-page-two .element-card .image-container {
+  width: 100%;
+  min-height: 5rem;
+}
+
+.elements-page-two .element-card .image-container .image {
+  width: 100%;
+}
+
+.elements-page-two .element-card .info-container {
+  padding: 10px;
+}
+
+.elements-page-two .element-card .info-container .time {
+  font-size: 13px;
+  color: #999;
+}
+
+.elements-page-two .element-card .info-container .bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.elements-page-two .element-card .info-container .button {
+  padding: 0;
+  float: right;
 }
 </style>
