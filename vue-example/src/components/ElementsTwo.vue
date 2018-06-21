@@ -57,7 +57,7 @@
         <div class="item-container">
           <el-row>
             <el-col v-bind:span="8"
-                    v-for="(item, index) in cardDataList"
+                    v-for="(item, index) in imgList"
                     v-bind:key="index"
                     v-bind:offset="2">
               <el-card class="element-card"
@@ -79,6 +79,23 @@
           </el-row>
         </div>
       </div>
+      <!-- 走马灯 -->
+      <div class="element-item">
+        <div class="item-title">走马灯:</div>
+        <div class="item-container">
+          <div class="element-carousel">
+            <el-carousel :interval="5000"
+                         type="card"
+                         height="calc(100% - 26px)">
+              <el-carousel-item v-for="(item, index) in imgList"
+                                :key="index">
+                <img class="image"
+                     v-bind:src="item.img">
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -98,7 +115,7 @@ export default {
     outerDialogVisible: false,
     innerDialogVisible: false,
     tooltipDisable: false,
-    cardDataList: [
+    imgList: [
       { name: "image1", img: require("../assets/img/image1.jpg") },
       { name: "image2", img: require("../assets/img/image2.jpg") },
       { name: "image3", img: require("../assets/img/image3.jpg") },
@@ -213,5 +230,19 @@ export default {
 .elements-page-two .element-card .info-container .button {
   padding: 0;
   float: right;
+}
+
+.elements-page-two .element-item .item-container .element-carousel {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.elements-page-two .element-carousel .el-carousel--card {
+  height: 100%;
+}
+
+.elements-page-two .element-carousel .image {
+  height: 100%;
 }
 </style>
