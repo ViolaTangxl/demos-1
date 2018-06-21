@@ -48,6 +48,17 @@ export default {
     controlOverlayer: function(isShow) {
       this.loading = isShow;
     }
+  },
+  watch: {
+    count: function() {
+      this.$message({
+        message: "count发生了变化",
+        type: "info",
+        center: true,
+        showClose: true,
+        duration: 2000
+      });
+    }
   }
 };
 </script>
