@@ -44,6 +44,10 @@
         <i class="el-icon-goods"></i>
         <span>页面5</span>
       </el-menu-item>
+      <el-menu-item index="/group3/page6">
+        <i class="el-icon-goods"></i>
+        <span>页面6</span>
+      </el-menu-item>
     </el-submenu>
   </el-menu>
 </template> -->

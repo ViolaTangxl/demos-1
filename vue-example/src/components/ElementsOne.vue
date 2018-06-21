@@ -1,5 +1,5 @@
 <template>
-  <div class="elements-page-none"
+  <div class="elements-page-one"
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是page5</div>
@@ -243,12 +243,13 @@ export default {
 </script>
 
 <style>
-.elements-page-none {
+.elements-page-one {
   width: 100%;
   height: auto;
+  min-height: 100%;
 }
 
-.elements-page-none .title-container {
+.elements-page-one .title-container {
   width: 100%;
   height: 30px;
   line-height: 30px;
@@ -256,32 +257,32 @@ export default {
   text-align: center;
 }
 
-.elements-page-none .elements-container {
+.elements-page-one .elements-container {
   width: 100%;
   height: calc(100% - 30px);
 }
 
-.elements-page-none .elements-container .element-item {
+.elements-page-one .elements-container .element-item {
   width: 96%;
   position: relative;
   left: 2%;
   margin-top: 10px;
 }
 
-.elements-page-none .element-item .item-title {
+.elements-page-one .element-item .item-title {
   width: 100%;
   height: 30px;
   line-height: 30px;
   font-size: 16px;
 }
 
-.elements-page-none .element-item .item-container {
+.elements-page-one .element-item .item-container {
   width: 100%;
   position: relative;
   margin-top: 10px;
 }
 
-.elements-page-none .element-item .item-container .table {
+.elements-page-one .element-item .item-container .table {
   width: 100%;
 }
 </style>
