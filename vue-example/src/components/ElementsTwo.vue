@@ -56,9 +56,10 @@
         <div class="item-title">卡片:</div>
         <div class="item-container">
           <el-row>
-            <el-col v-bind:span="6"
+            <el-col v-bind:span="8"
                     v-for="(item, index) in cardDataList"
-                    v-bind:key="index">
+                    v-bind:key="index"
+                    v-bind:offset="2">
               <el-card class="element-card"
                        v-bind:body-style="{ padding: '0px' }">
                 <div class="image-container">
@@ -98,10 +99,10 @@ export default {
     innerDialogVisible: false,
     tooltipDisable: false,
     cardDataList: [
-      { name: "image1", img: "/static/img/image1.jpg" },
-      { name: "image2", img: "/static/img/image2.jpg" },
-      { name: "image3", img: "/static/img/image3.jpg" },
-      { name: "image4", img: "/static/img/image4.jpg" }
+      { name: "image1", img: require("../assets/img/image1.jpg") },
+      { name: "image2", img: require("../assets/img/image2.jpg") },
+      { name: "image3", img: require("../assets/img/image3.jpg") },
+      { name: "image4", img: require("../assets/img/image4.jpg") }
     ]
   }),
   methods: {
