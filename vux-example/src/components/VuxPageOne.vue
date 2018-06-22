@@ -2,7 +2,7 @@
   <div class="vux-page-one"
        v-bind:style="wsStyle"
        v-loading="loading">
-    <div class="title-container">这是page1</div>
+    <div class="title-container">这是vux page1</div>
     <div class="count-container">总数: {{this.count}}</div>
     <div class="btn-container">
       <el-button type="success"
