@@ -1,10 +1,10 @@
 <template>
-  <div>HelloWorld</div>
+  <div>VuxPageOne</div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "VuxPageOne",
   data() {
     return {};
   }
