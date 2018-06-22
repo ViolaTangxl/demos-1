@@ -1,14 +1,19 @@
 import Vue from "vue"
-import App from "./App"
-import router from "./router"
+import Enter from "./Enter"
+// 引入生成的router
+import router from "./router/index"
+// 引入ElementUI
+import ElementUI from "element-ui"
+// 单独引入ElementUI的css样式
+import "element-ui/lib/theme-chalk/index.css"
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: "#app",
+  el: "#main",
   router,
   components: {
-    App
+    Enter
   },
-  template: "<App/>"
+  template: "<Enter/>"
 })
