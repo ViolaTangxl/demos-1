@@ -1,14 +1,18 @@
 <template>
-  <div class="enter">
-    <router-view/>
-  </div>
+  <Layout v-bind:navConfig="navConfig" />
 </template>
 
 <script>
+import Layout from "@/layout/Layout";
+
 export default {
   name: "Enter",
+  props: ["navConfig"],
   data() {
     return {};
+  },
+  components: {
+    Layout
   }
 };
 </script>
