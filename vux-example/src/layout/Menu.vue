@@ -3,9 +3,6 @@
 export default {
   name: "Menu",
   props: ["isCollapse", "navConfig"],
-  created() {
-    console.log(this.navConfig);
-  },
   data: function() {
     return {};
   },
