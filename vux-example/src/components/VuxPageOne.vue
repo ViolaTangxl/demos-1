@@ -3,7 +3,7 @@
        v-bind:style="wsStyle"
        v-loading="loading">
     <div class="title-container">这是vux page1</div>
-    <div class="count-container">总数: {{this.count}}</div>
+    <div class="count-container">总数: {{count}}</div>
     <div class="btn-container">
       <el-button type="success"
                  plain
@@ -32,7 +32,10 @@ export default {
   },
   methods: {
     addOne: function() {},
-    reduceOne: function() {}
+    reduceOne: function() {},
+    controlOverlayer: function(isShow) {
+      this.loading = isShow;
+    }
   }
 };
 </script>
