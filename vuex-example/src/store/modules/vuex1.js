@@ -5,14 +5,44 @@ const vuex1 = {
     count: 0
   },
   mutations: {
-    addOne(state) {
-      state.count++
-    },
-    reduceOne(state) {
-      state.count--
-    },
     controlOverlay(state, payload) {
       state.loading = payload.isShow;
+    }
+  },
+  actions: {
+    addOne({
+      state,
+      commit,
+      dispatch
+    }, payload) {
+      commit({
+        type: "controlOverlay",
+        isShow: true
+      });
+      const timeOut = setTimeout(() => {
+        state.count++;
+        commit({
+          type: "controlOverlay",
+          isShow: false
+        });
+      }, payload.time);
+    },
+    reduceOne({
+      state,
+      commit,
+      dispatch
+    }, payload) {
+      commit({
+        type: "controlOverlay",
+        isShow: true
+      });
+      const timeOut = setTimeout(() => {
+        state.count--;
+        commit({
+          type: "controlOverlay",
+          isShow: false
+        });
+      }, payload.time);
     }
   }
 }

@@ -7,10 +7,10 @@
     <div class="btn-container">
       <el-button type="success"
                  plain
-                 v-on:click="addOne">加一</el-button>
+                 v-on:click="addOne({time:1000})">加一</el-button>
       <el-button type="danger"
                  plain
-                 v-on:click="reduceOne">减一</el-button>
+                 v-on:click="reduceOne({time:500})">减一</el-button>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ import { waterPrint } from "../assets/plugins/waterprint.js";
 // 引入createNamespacedHelpers插件
 import { createNamespacedHelpers } from "vuex";
 // 定义mapState
-const { mapState, mapMutations } = createNamespacedHelpers("vuex1");
+const { mapState, mapMutations, mapActions } = createNamespacedHelpers("vuex1");
 
 export default {
   name: "VuexPageOne",
@@ -34,9 +34,11 @@ export default {
   },
   methods: {
     ...mapMutations({
-      addOne: "addOne",
-      reduceOne: "reduceOne",
       controlOverlay: "controlOverlay"
+    }),
+    ...mapActions({
+      addOne: "addOne",
+      reduceOne: "reduceOne"
     })
   },
   computed: {
