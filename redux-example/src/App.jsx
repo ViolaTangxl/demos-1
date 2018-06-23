@@ -8,19 +8,17 @@ import store from "./store/index";
 import LayoutPage from "./layout/LayoutPage";
 
 class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <BrowserRouter>
-                    <Route path="/" component={(props) => {
-                        return <LayoutPage {...props} />;
-                    }} />
-                </BrowserRouter>
-            </Provider>
-        );
-    }
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <Route path="/" component={(props) => {
+            return <LayoutPage {...props} />;
+          }} />
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
 
 export default App;
-
-
