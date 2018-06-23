@@ -18,8 +18,10 @@
 <script>
 // 引入水印插件
 import { waterPrint } from "../assets/plugins/waterprint.js";
-// 引入mapState
-import { mapState } from "vuex";
+// 引入createNamespacedHelpers插件
+import { createNamespacedHelpers } from "vuex";
+// 定义mapState
+const { mapState } = createNamespacedHelpers("vuex2");
 
 export default {
   name: "VuexPageTwo",
@@ -39,8 +41,8 @@ export default {
   },
   computed: {
     ...mapState({
-      count: store => store.vuex2.count,
-      loading: store => store.vuex2.loading
+      count: state => state.count,
+      loading: state => state.loading
     })
   }
 };
