@@ -18,13 +18,13 @@
 <script>
 // 引入水印插件
 import { waterPrint } from "../assets/plugins/waterprint.js";
+// 引入mapState
+import { mapState } from "vuex";
 
 export default {
   name: "VuexPageTwo",
   data() {
     return {
-      loading: false,
-      count: 0,
       wsStyle: waterPrint({
         username: "jiayizhen vuex2"
       })
@@ -36,6 +36,12 @@ export default {
     controlOverlayer: function(isShow) {
       this.loading = isShow;
     }
+  },
+  computed: {
+    ...mapState({
+      count: store => store.vuex2.count,
+      loading: store => store.vuex2.loading
+    })
   }
 };
 </script>
