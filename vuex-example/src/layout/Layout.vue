@@ -21,7 +21,7 @@
       </el-main>
       <el-footer class="right-footer"
                  height="50px">
-        Vue + Vux Demo @2018 Created By Jiaiyizhen
+        Vue + Vuex Demo @2018 Created By Jiaiyizhen
       </el-footer>
     </el-container>
   </el-container>

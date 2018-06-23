@@ -1,6 +1,6 @@
-# vux-example
+# vuex-example
 
-> a vue-vux example
+> a vue-vuex example
 
 ## Build Setup
 

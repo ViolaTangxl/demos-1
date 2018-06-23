@@ -1,7 +1,7 @@
 {
-  "name": "vux-example",
+  "name": "vuex-example",
   "version": "1.0.0",
-  "description": "a vue-vux example",
+  "description": "a vue-vuex example",
   "author": "war408705279 <408705279@qq.com>",
   "private": true,
   "scripts": {

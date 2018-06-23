@@ -1,6 +1,6 @@
 // 引入components
-import VuxPageOne from "@/components/VuxPageOne"
-import VuxPageTwo from "@/components/VuxPageTwo"
+import VuexPageOne from "@/components/VuexPageOne"
+import VuexPageTwo from "@/components/VuexPageTwo"
 
 const navConfig = [{
   path: "group1",
@@ -10,15 +10,15 @@ const navConfig = [{
   content: [{
     path: "page1",
     name: "page1",
-    alias: "Vux Page1",
+    alias: "Vuex Page1",
     icon: "goods",
-    content: VuxPageOne
+    content: VuexPageOne
   }, {
     path: "page2",
     name: "page2",
-    alias: "Vux Page2",
+    alias: "Vuex Page2",
     icon: "goods",
-    content: VuxPageTwo
+    content: VuexPageTwo
   }]
 }];
 
