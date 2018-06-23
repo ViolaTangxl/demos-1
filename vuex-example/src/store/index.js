@@ -3,7 +3,7 @@ import vuex from "vuex"
 // 引入vuex1
 import vuex1 from "./modules/vuex1"
 // 引入vuex2
-import vuex2 from "./modules/vuex1"
+import vuex2 from "./modules/vuex2"
 
 Vue.use(vuex);
 

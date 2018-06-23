@@ -21,7 +21,7 @@ import { waterPrint } from "../assets/plugins/waterprint.js";
 // 引入createNamespacedHelpers插件
 import { createNamespacedHelpers } from "vuex";
 // 定义mapState
-const { mapState } = createNamespacedHelpers("vuex1");
+const { mapState, mapMutations } = createNamespacedHelpers("vuex1");
 
 export default {
   name: "VuexPageOne",
@@ -33,11 +33,11 @@ export default {
     };
   },
   methods: {
-    addOne: function() {},
-    reduceOne: function() {},
-    controlOverlayer: function(isShow) {
-      this.loading = isShow;
-    }
+    ...mapMutations({
+      addOne: "addOne",
+      reduceOne: "reduceOne",
+      controlOverlay: "controlOverlay"
+    })
   },
   computed: {
     ...mapState({
