@@ -3,7 +3,8 @@ import Vue from "vue"
 import Router from "vue-router"
 // 引入动态生成的routers
 import {
-  navConfig
+  navConfig,
+  otherConfig
 } from "./navConfig"
 
 Vue.use(Router)
@@ -11,6 +12,13 @@ Vue.use(Router)
 // 生成路由
 const routes = [];
 getRoutes(routes, navConfig, "");
+// 生成其他配置项的路由
+getRoutes(routes, otherConfig, "");
+// 添加404重定向
+routes.push({
+  path: "*",
+  redirect: "/404"
+})
 
 /**
  * 递归获取router数组

@@ -1,6 +1,8 @@
 // 引入components
 import VuexPageOne from "@/components/VuexPageOne"
 import VuexPageTwo from "@/components/VuexPageTwo"
+// 引入HomePage
+import HomePage from "@/page/HomePage"
 // 引入404page
 import NotFound from "@/page/404"
 
@@ -25,6 +27,12 @@ export const navConfig = [{
 }];
 
 export const otherConfig = [{
+  path: "",
+  name: "homepage",
+  alias: "Home Page",
+  icon: "",
+  content: HomePage
+}, {
   path: "404",
   name: "404",
   alias: "404 Not Found Page",
