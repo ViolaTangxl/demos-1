@@ -7,7 +7,9 @@ import ElementUI from "element-ui"
 // 单独引入ElementUI的css样式
 import "element-ui/lib/theme-chalk/index.css"
 // 引入动态生成的routers
-import navConfig from "./router/navConfig"
+import {
+  navConfig
+} from "./router/navConfig"
 // 引入store
 import store from "./store/index"
 

@@ -2,7 +2,9 @@ import Vue from "vue"
 // 引入Router
 import Router from "vue-router"
 // 引入动态生成的routers
-import navConfig from "./navConfig"
+import {
+  navConfig
+} from "./navConfig"
 
 Vue.use(Router)
 
