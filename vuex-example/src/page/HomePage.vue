@@ -1,5 +1,11 @@
 <template>
-  <div>HomePage</div>
+  <div class="home-page">
+    <el-card class="home-card"
+             v-bind:body-style="{ padding: '0' }">
+      <img src="@/assets/images/avator.jpg"
+           class="image">
+    </el-card>
+  </div>
 </template>
 
 <script>
@@ -12,4 +18,22 @@ export default {
 </script>
 
 <style>
+.home-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-page .home-card {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: calc(50% - 150px);
+  margin: 0 auto;
+}
+
+.home-page .home-card .image {
+  width: 100%;
+  height: 100%;
+}
 </style>
