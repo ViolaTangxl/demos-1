@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .vuex-page-one {
   width: 100%;
   height: 100%;
