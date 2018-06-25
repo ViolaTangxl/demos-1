@@ -21,7 +21,7 @@ export default {
   created() {
     const user = getCookie("user");
     if (!user) {
-      // this.loginShow = true;
+      this.loginShow = true;
     }
   },
   data() {

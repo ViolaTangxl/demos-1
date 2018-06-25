@@ -1,3 +1,5 @@
+/* 下拉菜单选项文字居中 */
+
 .el-dropdown-menu .el-dropdown-menu__item {
   text-align: center;
 }
