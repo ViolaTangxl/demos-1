@@ -31,7 +31,7 @@
 
 .layout .right-header .collapse-btn:hover,
 .layout .right-header .home-btn:hover {
-  color: #E6A23C;
+  color: #CCFF00;
 }
 
 .layout .collapse-btn>i,
@@ -67,4 +67,12 @@
   color: #fff;
   border-left: 1px solid #fff;
   background-color: #409EFF;
+}
+
+.layout .right-part .right-footer button {
+  color: #fff;
+}
+
+.layout .right-part .right-footer button:hover {
+  color: #CCFF00;
 }

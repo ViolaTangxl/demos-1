@@ -26,7 +26,8 @@
       </el-main>
       <el-footer class="right-footer"
                  height="50px">
-        User Management System @2018 Created By Jiaiyizhen
+        <el-button type="text"
+                   v-on:click="goMyPage">User Management System @2018 Created By Jiaiyizhen</el-button>
       </el-footer>
     </el-container>
   </el-container>
@@ -51,6 +52,9 @@ export default {
     },
     goHomePage: function() {
       this.$router.push({ path: "/" });
+    },
+    goMyPage: function() {
+      window.open("https://github.com/war408705279", "_blank");
     }
   },
   components: {

@@ -13,7 +13,7 @@ export default {
         default-active={this.matchActiveRouter}
         background-color="#409EFF"
         text-color="#fff"
-        active-text-color="#E6A23C"
+        active-text-color="#CCFF00"
         collapse={this.isCollapse}
         router
       >
