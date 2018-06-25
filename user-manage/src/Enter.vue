@@ -2,7 +2,7 @@
   <div class="enter-page">
     <Layout v-bind:navConfig="navConfig" />
     <transition name="el-fade-in">
-      <LoginPage v-show="loginShow" />
+      <LoginPage v-show="!isLogin" />
     </transition>
   </div>
 </template>
@@ -14,20 +14,27 @@ import { setCookie, getCookie } from "@/assets/plugins/cookie";
 import Layout from "@/layout/Layout.vue";
 // 引入登录页面
 import LoginPage from "@/pages/LoginPage";
+// 引入vuex相关方法
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Enter",
   props: ["navConfig"],
   created() {
     const user = getCookie("user");
-    if (!user) {
-      this.loginShow = true;
+    if (user) {
+      this.login();
     }
   },
   data() {
-    return {
-      loginShow: false
-    };
+    return {};
+  },
+  actions: {
+    ...mapActions(["login", "logout"])
+  },
+  computed: {
+    ...mapState(["isLogin"]),
+    ...mapGetters(["getLoginState"])
   },
   components: {
     Layout,

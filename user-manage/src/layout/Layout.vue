@@ -45,6 +45,8 @@
 <script>
 // 引入Menu
 import MenuVue from "@/components/Menu.vue";
+// 引入vuex相关方法
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Layout",
@@ -66,13 +68,14 @@ export default {
           this.$router.push({ path: "/" });
           break;
         case "logout":
-          console.log("登出");
+          this.logout();
           break;
       }
     },
     goMyPage: function() {
       window.open("https://github.com/war408705279", "_blank");
-    }
+    },
+    ...mapActions(["login", "logout"])
   },
   components: {
     MenuVue
