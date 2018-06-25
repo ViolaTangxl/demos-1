@@ -59,7 +59,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* 引入Layout样式 */
 @import url("./Layout.css");
 </style>

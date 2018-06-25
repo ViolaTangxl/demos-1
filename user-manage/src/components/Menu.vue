@@ -13,7 +13,7 @@ export default {
         default-active={this.matchActiveRouter}
         background-color="#409EFF"
         text-color="#fff"
-        active-text-color="#C0C4CC"
+        active-text-color="#E6A23C"
         collapse={this.isCollapse}
         router
       >
@@ -58,6 +58,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 @import url("./Menu.css");
 </style>
