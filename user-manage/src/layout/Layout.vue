@@ -18,7 +18,7 @@
           <el-dropdown trigger="click"
                        v-on:command="dropDownClick">
             <span class="el-dropdown-link">
-              jiayizhe
+              {{username}}
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -52,7 +52,8 @@ export default {
   created: function() {},
   data: function() {
     return {
-      isCollapse: true
+      isCollapse: true,
+      username: "未登录"
     };
   },
   methods: {
