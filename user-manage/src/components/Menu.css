@@ -1,0 +1,7 @@
+.layout-menu {
+  height: 100%;
+}
+
+.layout-menu:not(.el-menu--collapse) {
+  width: 200px;
+}
