@@ -14,10 +14,10 @@ getRoutes(routes, navConfig, "");
 // 生成其他配置项的路由
 getRoutes(routes, otherConfig, "");
 // 添加404重定向
-// routes.push({
-//   path: "*",
-//   redirect: "/404"
-// })
+routes.push({
+  path: "*",
+  redirect: "/404"
+});
 
 /**
  * 递归获取router数组

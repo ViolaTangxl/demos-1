@@ -1,5 +1,7 @@
 // 引入UserPage页面
 import UserPage from "@/pages/UserPage";
+// 引入404页面
+import NotFound from "@/pages/NotFoundPage";
 
 export const navConfig = [{
   path: "user",
@@ -15,4 +17,16 @@ export const navConfig = [{
   }]
 }];
 
-export const otherConfig = [];
+export const otherConfig = [{
+  path: "",
+  name: "homepage",
+  alias: "主页",
+  icon: "",
+  content: null
+}, {
+  path: "404",
+  name: "404",
+  alias: "404页面",
+  icon: "",
+  content: NotFound
+}];
