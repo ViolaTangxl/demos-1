@@ -13,10 +13,19 @@
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
           <span>{{ isCollapse ? "展开" : "收起" }}</span>
         </span>
-        <span class="home-btn"
-              title="首页"
-              v-on:click="goHomePage">
-          <i class="el-icon-date"></i>
+        <!-- 用户下拉菜单 -->
+        <span class="user-drop-down">
+          <el-dropdown trigger="click"
+                       v-on:command="dropDownClick">
+            <span class="el-dropdown-link">
+              jiayizhe
+              <i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="homepage">首页</el-dropdown-item>
+              <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </span>
       </el-header>
       <el-main class="right-body">
@@ -50,8 +59,15 @@ export default {
     collapseMenu: function() {
       this.isCollapse = !this.isCollapse;
     },
-    goHomePage: function() {
-      this.$router.push({ path: "/" });
+    dropDownClick: function(command) {
+      switch (command) {
+        case "homepage":
+          this.$router.push({ path: "/" });
+          break;
+        case "logout":
+          console.log("登出");
+          break;
+      }
     },
     goMyPage: function() {
       window.open("https://github.com/war408705279", "_blank");

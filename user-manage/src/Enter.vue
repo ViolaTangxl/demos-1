@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style>
+@import url("./common.css");
+
 * {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   font-size: 14px;
