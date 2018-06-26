@@ -2,12 +2,15 @@
   <el-container class="layout">
     <el-aside class="left-part"
               width="auto">
+      <div class="logo-container">
+        <img src="@/assets/images/logo.gif" />
+      </div>
       <MenuVue v-bind:isCollapse="isCollapse"
                v-bind:navConfig="navConfig" />
     </el-aside>
     <el-container class="right-part">
       <el-header class="right-header"
-                 height="56px">
+                 height="60px">
         <span class="collapse-btn"
               v-on:click="collapseMenu">
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>

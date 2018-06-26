@@ -1,5 +1,5 @@
 .layout-menu {
-  height: 100%;
+  height: calc(100% - 60px);
 }
 
 .layout-menu:not(.el-menu--collapse) {
