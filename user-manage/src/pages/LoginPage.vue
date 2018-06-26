@@ -33,6 +33,8 @@
 <script>
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
+// 引入用户信息
+import { userList } from "@/config/userInfo";
 
 export default {
   name: "LoginPage",
@@ -55,19 +57,19 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           const { username, password } = this.loginForm;
-          if (username.trim() !== "jiayizhen") {
-            this.showMessage("error", "用户名错误", 1500);
+          const match = userList.find(
+            user => user.username === username.trim()
+          );
+          if (!match) {
+            this.showMessage("error", "用户不存在", 1500);
             return false;
           }
-          if (password.trim() !== "jiayizhen") {
+          if (match.password !== password.trim()) {
             this.showMessage("error", "密码错误", 1500);
             return false;
           }
           this.showMessage("success", "登录成功", 1500);
-          this.login({
-            username: username.trim(),
-            password: password.trim()
-          });
+          this.login(match);
         } else {
           return false;
         }

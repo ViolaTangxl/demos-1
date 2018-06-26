@@ -4,7 +4,7 @@ import Router from "vue-router";
 import {
   navConfig,
   otherConfig
-} from "./navConfig"
+} from "@/config/navConfig"
 
 Vue.use(Router);
 

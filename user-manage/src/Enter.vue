@@ -16,15 +16,19 @@ import Layout from "@/layout/Layout.vue";
 import LoginPage from "@/pages/LoginPage";
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
+// 引入用户信息
+import { userList } from "@/config/userInfo";
 
 export default {
   name: "Enter",
   props: ["navConfig"],
   mounted() {
     const username = getCookie("username");
-    const password = getCookie("password");
-    if (username && password) {
-      this.login({ username: username, password: password });
+    if (username) {
+      const match = userList.find(user => user.username === username);
+      if (match) {
+        this.login(match);
+      }
     }
   },
   data() {

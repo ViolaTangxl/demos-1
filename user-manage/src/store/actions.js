@@ -13,12 +13,14 @@ const actions = {
   }, payload) {
     const {
       username,
-      password
+      password,
+      isadmin
     } = payload;
     setCookie("username", username, 10);
     setCookie("password", password, 10);
     state.username = username;
     state.islogin = true;
+    state.isadmin = isadmin;
   },
   // 登出
   logout({
@@ -30,6 +32,7 @@ const actions = {
     setCookie("password", "");
     state.username = "未登录";
     state.islogin = false;
+    state.isadmin = false;
   }
 };
 

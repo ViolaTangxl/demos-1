@@ -6,7 +6,7 @@ import NotFoundPage from "@/pages/NotFoundPage";
 export const navConfig = [{
   path: "user",
   name: "user",
-  alias: "用户管理",
+  alias: "用户",
   icon: "menu",
   content: [{
     path: "info",
@@ -14,6 +14,12 @@ export const navConfig = [{
     alias: "用户信息表",
     icon: "info",
     content: UserPage
+  }, {
+    path: "manage",
+    name: "manage",
+    alias: "用户管理",
+    icon: "setting",
+    content: null
   }]
 }];
 

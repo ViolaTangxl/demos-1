@@ -10,7 +10,7 @@ import "element-ui/lib/theme-chalk/index.css";
 // 引入动态生成的routers
 import {
   navConfig
-} from "@/router/navConfig";
+} from "@/config/navConfig";
 // 引入store
 import store from "@/store/index"
 
