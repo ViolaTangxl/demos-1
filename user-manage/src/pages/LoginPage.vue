@@ -31,6 +31,9 @@
 </template>
 
 <script>
+// 引入vuex相关方法
+import { mapState, mapActions, mapGetters } from "vuex";
+
 export default {
   name: "LoginPage",
   data: function() {
@@ -61,6 +64,10 @@ export default {
             return false;
           }
           this.showMessage("success", "登录成功", 1500);
+          this.login({
+            username: username,
+            password: password
+          });
         } else {
           return false;
         }
@@ -77,7 +84,8 @@ export default {
         duration: duration,
         onClose: true
       });
-    }
+    },
+    ...mapActions(["login"])
   }
 };
 </script>

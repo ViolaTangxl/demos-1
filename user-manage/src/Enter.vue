@@ -20,16 +20,17 @@ import { mapState, mapActions, mapGetters } from "vuex";
 export default {
   name: "Enter",
   props: ["navConfig"],
-  created() {
-    const user = getCookie("user");
-    if (user) {
-      this.login();
+  mounted() {
+    const username = getCookie("username");
+    const password = getCookie("password");
+    if (username && password) {
+      this.login({ username: username, password: password });
     }
   },
   data() {
     return {};
   },
-  actions: {
+  methods: {
     ...mapActions(["login", "logout"])
   },
   computed: {

@@ -9,7 +9,7 @@ Vue.use(vuex);
 
 export default new vuex.Store({
   state: {
-    isLogin: true
+    isLogin: false
   },
   actions: actions,
   getters: getters
