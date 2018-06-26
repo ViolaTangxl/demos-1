@@ -1,5 +1,8 @@
 <!-- note: 在vue中使用render函数时，要把<template>标签里的东西全部注释掉，render函数才能生效 -->
 <script>
+// 引入vuex相关方法
+import { mapState, mapActions, mapGetters } from "vuex";
+
 export default {
   name: "Menu",
   props: ["isCollapse", "navConfig"],
@@ -40,8 +43,12 @@ export default {
             </el-submenu>
           );
         } else {
+          let disabled = false;
+          if (item.limit && !this.isadmin) {
+            disabled = true;
+          }
           return (
-            <el-menu-item index={path}>
+            <el-menu-item index={path} disabled={disabled}>
               <i class={"el-icon-" + icon} />
               <span>{item.alias}</span>
             </el-menu-item>
@@ -53,7 +60,8 @@ export default {
   computed: {
     matchActiveRouter: function() {
       return this.$route.path;
-    }
+    },
+    ...mapState(["isadmin"])
   }
 };
 </script>

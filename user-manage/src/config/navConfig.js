@@ -8,17 +8,20 @@ export const navConfig = [{
   name: "user",
   alias: "用户",
   icon: "menu",
+  limit: false,
   content: [{
     path: "info",
     name: "info",
     alias: "用户信息表",
     icon: "info",
+    limit: false,
     content: UserPage
   }, {
     path: "manage",
     name: "manage",
     alias: "用户管理",
     icon: "setting",
+    limit: true,
     content: null
   }]
 }];
@@ -28,11 +31,13 @@ export const otherConfig = [{
   name: "homepage",
   alias: "主页",
   icon: "",
+  limit: false,
   content: null
 }, {
   path: "404",
   name: "404",
   alias: "404页面",
   icon: "",
+  limit: false,
   content: NotFoundPage
 }];
