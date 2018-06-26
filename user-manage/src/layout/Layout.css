@@ -10,16 +10,16 @@
 }
 
 .layout .left-part .logo-container {
-  width: 100%;
+  width: calc(100% - 1px);
   height: 60px;
   text-align: center;
-  background-color: #409EFF;
+  background-color: #231f20;
 }
 
 .layout .left-part .logo-container img {
-  height: 90%;
+  height: 80%;
   position: relative;
-  top: 5%;
+  top: 10%;
 }
 
 .layout .right-part {
@@ -30,7 +30,7 @@
 .layout .right-part .right-header {
   width: 100%;
   border-left: 1px solid #fff;
-  background-color: #409EFF;
+  background-color: #231f20;
 }
 
 .layout .right-header .collapse-btn {
@@ -43,7 +43,7 @@
 }
 
 .layout .right-header .collapse-btn:hover {
-  color: #CCFF00;
+  color: #ffd04b;
 }
 
 .layout .collapse-btn>i {
@@ -68,7 +68,7 @@
 }
 
 .layout .user-drop-down .el-dropdown-link:hover {
-  color: #CCFF00;
+  color: #ffd04b;
 }
 
 .layout .right-part .right-body {
@@ -84,7 +84,7 @@
   text-align: center;
   color: #fff;
   border-left: 1px solid #fff;
-  background-color: #409EFF;
+  background-color: #231f20;
 }
 
 .layout .right-part .right-footer button {
@@ -92,5 +92,5 @@
 }
 
 .layout .right-part .right-footer button:hover {
-  color: #CCFF00;
+  color: #ffd04b;
 }

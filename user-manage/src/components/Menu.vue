@@ -14,9 +14,9 @@ export default {
       <el-menu
         class="el-menu-vertical-demo layout-menu"
         default-active={this.matchActiveRouter}
-        background-color="#409EFF"
+        background-color="#231f20"
         text-color="#fff"
-        active-text-color="#CCFF00"
+        active-text-color="#ffd04b"
         collapse={this.isCollapse}
         router
       >
