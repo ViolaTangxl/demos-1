@@ -22,8 +22,10 @@
         </el-form-item>
         <el-form-item class="form-btn">
           <el-button type="primary"
-                     v-on:click="confirm('loginForm')">确定</el-button>
-          <el-button v-on:click="reset('loginForm')">重置</el-button>
+                     v-bind:loading="confirmLoading"
+                     v-on:click="confirm('loginForm')">{{confirmText}}</el-button>
+          <el-button v-bind:disabled="resetDisabled"
+                     v-on:click="reset('loginForm')">重置</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -40,6 +42,9 @@ export default {
   name: "LoginPage",
   data: function() {
     return {
+      confirmLoading: false,
+      confirmText: "登录",
+      resetDisabled: false,
       loginForm: {
         username: "",
         password: ""
@@ -68,8 +73,17 @@ export default {
             this.showMessage("error", "密码错误", 1500);
             return false;
           }
-          this.showMessage("success", "登录成功", 1500);
-          this.login(match);
+          this.confirmLoading = true;
+          this.confirmText = "登录中...";
+          this.resetDisabled = true;
+          const timeOut = setTimeout(() => {
+            this.confirmLoading = false;
+            this.confirmText = "登录";
+            this.resetDisabled = false;
+            this.showMessage("success", "登录成功", 1500);
+            this.login(match);
+            clearTimeout(timeOut);
+          }, 2000);
         } else {
           return false;
         }
