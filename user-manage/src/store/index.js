@@ -9,7 +9,8 @@ Vue.use(vuex);
 
 export default new vuex.Store({
   state: {
-    isLogin: false
+    islogin: false,
+    username: "未登录"
   },
   actions: actions,
   getters: getters

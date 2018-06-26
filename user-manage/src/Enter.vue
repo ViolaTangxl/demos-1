@@ -2,7 +2,7 @@
   <div class="enter-page">
     <Layout v-bind:navConfig="navConfig" />
     <transition name="el-fade-in">
-      <LoginPage v-show="!isLogin" />
+      <LoginPage v-show="!islogin" />
     </transition>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
     ...mapActions(["login", "logout"])
   },
   computed: {
-    ...mapState(["isLogin"]),
+    ...mapState(["islogin"]),
     ...mapGetters(["getLoginState"])
   },
   components: {

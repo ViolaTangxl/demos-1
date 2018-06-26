@@ -11,9 +11,14 @@ const actions = {
     commit,
     dispatch
   }, payload) {
-    setCookie("username", payload.username.trim(), 10);
-    setCookie("password", payload.password.trim(), 10);
-    state.isLogin = true;
+    const {
+      username,
+      password
+    } = payload;
+    setCookie("username", username, 10);
+    setCookie("password", password, 10);
+    state.username = username;
+    state.islogin = true;
   },
   // 登出
   logout({
@@ -23,7 +28,8 @@ const actions = {
   }, payload) {
     setCookie("username", "");
     setCookie("password", "");
-    state.isLogin = false;
+    state.username = "未登录";
+    state.islogin = false;
   }
 };
 

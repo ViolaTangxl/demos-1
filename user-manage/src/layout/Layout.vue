@@ -54,8 +54,7 @@ export default {
   created: function() {},
   data: function() {
     return {
-      isCollapse: true,
-      username: "未登录"
+      isCollapse: true
     };
   },
   methods: {
@@ -76,6 +75,9 @@ export default {
       window.open("https://github.com/war408705279", "_blank");
     },
     ...mapActions(["login", "logout"])
+  },
+  computed: {
+    ...mapState(["username"])
   },
   components: {
     MenuVue

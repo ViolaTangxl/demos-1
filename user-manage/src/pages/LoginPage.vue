@@ -65,8 +65,8 @@ export default {
           }
           this.showMessage("success", "登录成功", 1500);
           this.login({
-            username: username,
-            password: password
+            username: username.trim(),
+            password: password.trim()
           });
         } else {
           return false;
