@@ -1,4 +1,29 @@
 {
+  "columnData": [{
+      "prop": "index",
+      "label": "序号"
+    },
+    {
+      "prop": "name",
+      "label": "名字"
+    },
+    {
+      "prop": "age",
+      "label": "年龄"
+    },
+    {
+      "prop": "address",
+      "label": "住址"
+    },
+    {
+      "prop": "job",
+      "label": "职位"
+    },
+    {
+      "prop": "state",
+      "label": "状态"
+    }
+  ],
   "userData": [{
       "index": 1,
       "name": "倪志航",
@@ -24,7 +49,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 4,
       "name": "晏子赢",
       "age": 24,
       "address": "上海市浦东新区××路××弄××号",
@@ -32,7 +57,7 @@
       "state": 0
     },
     {
-      "index": 1,
+      "index": 5,
       "name": "赵鑫",
       "age": 26,
       "address": "上海市浦东新区××路××弄××号",
@@ -40,7 +65,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 6,
       "name": "金阳",
       "age": 25,
       "address": "上海市浦东新区××路××弄××号",
@@ -48,7 +73,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 7,
       "name": "李未末",
       "age": 26,
       "address": "上海市浦东新区××路××弄××号",
@@ -56,7 +81,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 8,
       "name": "贾奕祯",
       "age": 26,
       "address": "上海市奉贤区××路××弄××号",
@@ -64,7 +89,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 9,
       "name": "王康彬",
       "age": 22,
       "address": "上海市浦东新区××路××弄××号",
@@ -72,7 +97,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 10,
       "name": "朱华婧",
       "age": 25,
       "address": "上海市浦东新区××路××弄××号",
@@ -80,7 +105,7 @@
       "state": 1
     },
     {
-      "index": 1,
+      "index": 11,
       "name": "杨敏",
       "age": 26,
       "address": "上海市浦东新区××路××弄××号",
@@ -88,7 +113,7 @@
       "state": 0
     },
     {
-      "index": 1,
+      "index": 12,
       "name": "韦富杰",
       "age": 30,
       "address": "上海市浦东新区××路××弄××号",
@@ -96,7 +121,7 @@
       "state": 0
     },
     {
-      "index": 1,
+      "index": 13,
       "name": "张宏伟",
       "age": 32,
       "address": "上海市浦东新区××路××弄××号",
@@ -104,7 +129,7 @@
       "state": 0
     },
     {
-      "index": 1,
+      "index": 14,
       "name": "高豪均",
       "age": 25,
       "address": "上海市浦东新区××路××弄××号",
@@ -112,7 +137,7 @@
       "state": 0
     },
     {
-      "index": 1,
+      "index": 15,
       "name": "凌宇翔",
       "age": 22,
       "address": "上海市浦东新区××路××弄××号",

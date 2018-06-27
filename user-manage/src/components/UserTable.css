@@ -2,3 +2,15 @@
   width: 100%;
   height: 100%;
 }
+
+.user-table table {
+  width: 100%;
+}
+
+.user-table table .el-table__row {
+  cursor: pointer;
+}
+
+.user-table table .row-success {
+  background-color: #ffd04b;
+}

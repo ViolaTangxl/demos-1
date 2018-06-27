@@ -5,7 +5,8 @@
       <div class="head-control"></div>
     </div>
     <div class="table-container">
-      <UserTable v-bind:userData="userData" />
+      <UserTable v-bind:userData="userData"
+                 v-bind:columnData="columnData" />
     </div>
   </div>
 </template>
@@ -19,7 +20,7 @@
  */
 
 // 导入模拟的用户数据
-import { userData } from "@/config/userInfo";
+import { columnData, userData } from "@/config/userInfo";
 // 导入UserTable组件
 import UserTable from "@/components/UserTable";
 
@@ -27,6 +28,7 @@ export default {
   name: "UserPage",
   data: function() {
     return {
+      columnData: columnData,
       userData: userData
     };
   },
