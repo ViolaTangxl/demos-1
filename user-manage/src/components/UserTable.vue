@@ -8,15 +8,20 @@
 
 export default {
   name: "UserTable",
-  props: ["userData", "columnData"],
+  props: ["userData", "columnData", "selectedUser"],
   data: function() {
-    return {};
+    return {
+      filterData: []
+    };
+  },
+  mounted: function() {
+    this.filterData = this.userData;
   },
   render: function(h) {
     return (
       <div class="user-table">
         <el-table
-          data={this.userData}
+          data={this.filterData}
           height="100%"
           border
           row-class-name={this.getRowClass}
@@ -25,6 +30,17 @@ export default {
         </el-table>
       </div>
     );
+  },
+  watch: {
+    selectedUser: function() {
+      if (!this.selectedUser) {
+        this.filterData = this.userData;
+        return;
+      }
+      this.filterData = this.userData.filter(
+        item => item.name === this.selectedUser
+      );
+    }
   },
   methods: {
     getRowClass({ rowIndex }) {
