@@ -43,7 +43,7 @@
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
 // 引入用户信息
-import { userList } from "@/config/userInfo";
+import { loginUsers } from "@/config/loginUser";
 
 export default {
   name: "LoginPage",
@@ -58,9 +58,9 @@ export default {
       },
       rules: {
         username: [
-          { required: true, message: "请输入用户名", trigger: "blur" }
+          { required: true, message: "请输入用户名", trigger: "change" }
         ],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }]
+        password: [{ required: true, message: "请输入密码", trigger: "change" }]
       }
     };
   },
@@ -69,7 +69,7 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           const { username, password } = this.loginForm;
-          const match = userList.find(
+          const match = loginUsers.find(
             user => user.username === username.trim()
           );
           if (!match) {

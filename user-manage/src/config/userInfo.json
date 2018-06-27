@@ -1,13 +1,3 @@
 {
-  "userList": [{
-      "username": "jiayizhen",
-      "password": "jiayizhen",
-      "isadmin": true
-    },
-    {
-      "username": "qiniu",
-      "password": "qiniu",
-      "isadmin": false
-    }
-  ]
+
 }

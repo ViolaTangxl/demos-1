@@ -24,7 +24,7 @@ import LoginPage from "@/pages/LoginPage";
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
 // 引入用户信息
-import { userList } from "@/config/userInfo";
+import { loginUsers } from "@/config/loginUser";
 
 export default {
   name: "Enter",
@@ -32,7 +32,7 @@ export default {
   mounted() {
     const username = getCookie("username");
     if (username) {
-      const match = userList.find(user => user.username === username);
+      const match = loginUsers.find(user => user.username === username);
       if (match) {
         this.login(match);
       }
