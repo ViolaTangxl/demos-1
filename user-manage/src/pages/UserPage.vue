@@ -4,7 +4,9 @@
       <span class="head-title">用户信息表</span>
       <div class="head-control"></div>
     </div>
-    <div class="table-container"></div>
+    <div class="table-container">
+      <UserTable v-bind:userData="userData" />
+    </div>
   </div>
 </template>
 
@@ -16,10 +18,20 @@
  * Create Date: 2018-06-25
  */
 
+// 导入模拟的用户数据
+import { userData } from "@/config/userInfo";
+// 导入UserTable组件
+import UserTable from "@/components/UserTable";
+
 export default {
   name: "UserPage",
   data: function() {
-    return {};
+    return {
+      userData: userData
+    };
+  },
+  components: {
+    UserTable
   }
 };
 </script>

@@ -1,10 +1,11 @@
 <template>
-  <div></div>
+  <div class="user-table"></div>
 </template>
 
 <script>
 export default {
   name: "UserTable",
+  props: ["userData"],
   data: function() {
     return {};
   }
