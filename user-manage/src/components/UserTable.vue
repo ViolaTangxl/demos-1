@@ -43,11 +43,32 @@ export default {
           <el-table-column
             prop={item.prop}
             label={item.label}
+            width={item.width}
             align="center"
             header-align="center"
+            formatter={
+              item.prop === "state"
+                ? this.getState
+                : (row, column, cellValue, index) => cellValue
+            }
           />
         );
       });
+    },
+    getState(row, column, cellValue, index) {
+      let state = "";
+      switch (cellValue) {
+        case 0:
+          state = "在职";
+          break;
+        case 1:
+          state = "离职";
+          break;
+        default:
+          state = "在职";
+          break;
+      }
+      return state;
     }
   }
 };

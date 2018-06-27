@@ -1,27 +1,33 @@
 {
   "columnData": [{
       "prop": "index",
-      "label": "序号"
+      "label": "序号",
+      "width": "50px"
     },
     {
       "prop": "name",
-      "label": "名字"
+      "label": "名字",
+      "width": "100px"
     },
     {
       "prop": "age",
-      "label": "年龄"
+      "label": "年龄",
+      "width": "50px"
     },
     {
       "prop": "address",
-      "label": "住址"
+      "label": "住址",
+      "width": ""
     },
     {
       "prop": "job",
-      "label": "职位"
+      "label": "职位",
+      "width": "100px"
     },
     {
       "prop": "state",
-      "label": "状态"
+      "label": "状态",
+      "width": "100px"
     }
   ],
   "userData": [{
