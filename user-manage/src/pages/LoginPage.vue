@@ -33,6 +33,13 @@
 </template>
 
 <script>
+/**
+ * File name: LoginPage.vue
+ * Description: System login page
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
 // 引入用户信息

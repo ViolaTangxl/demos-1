@@ -1,5 +1,12 @@
 <!-- note: 在vue中使用render函数时，要把<template>标签里的东西全部注释掉，render函数才能生效 -->
 <script>
+/**
+ * File name: Menu.vue
+ * Description: Left nav menu component
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
 

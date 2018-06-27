@@ -8,6 +8,13 @@
 </template>
 
 <script>
+/**
+ * File name: Enter.vue
+ * Description: System main entrance file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入cookie
 import { setCookie, getCookie } from "@/assets/plugins/cookie";
 // 引入Layout

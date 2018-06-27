@@ -1,3 +1,10 @@
+/**
+ * File name: actions.js
+ * Description: Vuex store common actions file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入cookie
 import {
   setCookie,

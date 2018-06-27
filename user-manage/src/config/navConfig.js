@@ -1,3 +1,10 @@
+/**
+ * File name: navConfig.js
+ * Description: Nav content config file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入UserPage页面
 import UserPage from "@/pages/UserPage";
 // 引入404页面

@@ -46,6 +46,13 @@
 </template>
 
 <script>
+/**
+ * File name: Layout.vue
+ * Description: System layout file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 // 引入Menu
 import MenuVue from "@/components/Menu.vue";
 // 引入vuex相关方法

@@ -1,3 +1,10 @@
+/**
+ * File name: store/index.js
+ * Description: Vuex store index file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 import Vue from "vue";
 import vuex from "vuex";
 // 导入公共actions

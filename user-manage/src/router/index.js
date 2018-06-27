@@ -1,3 +1,10 @@
+/**
+ * File name: router/index.js
+ * Description: Vue-router index file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 import Vue from "vue";
 import Router from "vue-router";
 // 引入routers配置

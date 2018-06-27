@@ -9,6 +9,13 @@
 </template>
 
 <script>
+/**
+ * File name: UserPage.vue
+ * Description: User info page
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 export default {
   name: "UserPage",
   data: function() {

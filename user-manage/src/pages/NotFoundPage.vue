@@ -10,6 +10,13 @@
 </template>
 
 <script>
+/**
+ * File name: NotFoundPage.vue
+ * Description: System 404 not found page
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
 export default {
   name: "NotFoundPage",
   data: function() {
