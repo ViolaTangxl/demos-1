@@ -33,6 +33,9 @@ export default {
     );
   },
   watch: {
+    /**
+     * 监听selectedUser
+     */
     selectedUser: function() {
       if (!this.selectedUser) {
         this.filterData = this.userData;
@@ -46,6 +49,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * 获取表格行的class
+     */
     getRowClass({ rowIndex }) {
       let rowClass = "";
       if (rowIndex % 2 === 1) {
@@ -53,6 +59,9 @@ export default {
       }
       return rowClass;
     },
+    /**
+     * 动态创建表格的列
+     */
     createTableColumn(h) {
       if (this.columnData.length === 0) {
         return null;
@@ -68,10 +77,16 @@ export default {
             formatter={(row, column, cellValue, index) => {
               return this.formatColumnContent(item, cellValue);
             }}
+            filter-placement="bottom"
+            filters={this.getFilters(item)}
+            filter-method={this.getFilterMethod(item)}
           />
         );
       });
     },
+    /**
+     * 格式化表格列的内容
+     */
     formatColumnContent(item, cellValue) {
       let formatContent = "";
       switch (item.prop) {
@@ -87,9 +102,15 @@ export default {
       }
       return formatContent;
     },
+    /**
+     * 格式化性别信息
+     */
     getSex(cellValue) {
       return cellValue === "m" ? "男" : "女";
     },
+    /**
+     * 格式化状态信息
+     */
     getState(cellValue) {
       let state = "";
       switch (cellValue) {
@@ -104,6 +125,40 @@ export default {
           break;
       }
       return state;
+    },
+    /**
+     * 获取过滤的数组
+     */
+    getFilters(item) {
+      let filters = null;
+      switch (item.prop) {
+        case "sex":
+          filters = [{ value: "m", text: "男" }, { value: "f", text: "女" }];
+          break;
+      }
+      return filters;
+    },
+    /**
+     * 获取过滤的方法
+     */
+    getFilterMethod(item) {
+      let filterMethod = null;
+      switch (item.prop) {
+        case "sex":
+          filterMethod = this.filterSex;
+          break;
+      }
+      return filterMethod;
+    },
+    /**
+     * 执行过滤性别操作
+     */
+    filterSex(value, row) {
+      let isShow = false;
+      if (row.sex === value) {
+        isShow = true;
+      }
+      return isShow;
     }
   }
 };

@@ -2,7 +2,7 @@
   "columnData": [{
       "prop": "index",
       "label": "序号",
-      "width": "50px"
+      "width": "100px"
     },
     {
       "prop": "name",
@@ -12,7 +12,7 @@
     {
       "prop": "age",
       "label": "年龄",
-      "width": "50px"
+      "width": "100px"
     },
     {
       "prop": "address",
