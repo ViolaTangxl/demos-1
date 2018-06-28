@@ -65,16 +65,32 @@ export default {
             width={item.width}
             align="center"
             header-align="center"
-            formatter={
-              item.prop === "state"
-                ? this.getState
-                : (row, column, cellValue, index) => cellValue
-            }
+            formatter={(row, column, cellValue, index) => {
+              return this.formatColumnContent(item, cellValue);
+            }}
           />
         );
       });
     },
-    getState(row, column, cellValue, index) {
+    formatColumnContent(item, cellValue) {
+      let formatContent = "";
+      switch (item.prop) {
+        case "sex":
+          formatContent = this.getSex(cellValue);
+          break;
+        case "state":
+          formatContent = this.getState(cellValue);
+          break;
+        default:
+          formatContent = cellValue;
+          break;
+      }
+      return formatContent;
+    },
+    getSex(cellValue) {
+      return cellValue === "m" ? "男" : "女";
+    },
+    getState(cellValue) {
       let state = "";
       switch (cellValue) {
         case 0:
