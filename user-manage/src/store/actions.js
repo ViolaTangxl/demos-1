@@ -23,8 +23,8 @@ const actions = {
       password,
       isadmin
     } = payload;
-    setCookie("username", username, 10);
-    setCookie("password", password, 10);
+    setCookie("username", username, 30);
+    setCookie("password", password, 30);
     state.username = username;
     state.islogin = true;
     state.isadmin = isadmin;

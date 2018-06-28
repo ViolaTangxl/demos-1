@@ -3,8 +3,21 @@
   height: 100%;
 }
 
+.user-table .el-table {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.user-table .el-table .el-table__body-wrapper {
+  height: auto !important;
+  max-height: calc(100% - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .user-table table {
   width: 100%;
+  height: auto;
 }
 
 .user-table table .el-table__row {

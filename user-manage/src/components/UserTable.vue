@@ -11,7 +11,8 @@ export default {
   props: ["userData", "columnData", "selectedUser"],
   data: function() {
     return {
-      filterData: []
+      filterData: [],
+      tableHeight: "100%"
     };
   },
   mounted: function() {
@@ -22,8 +23,8 @@ export default {
       <div class="user-table">
         <el-table
           data={this.filterData}
-          height="100%"
           border
+          style={"height: " + this.tableHeight}
           row-class-name={this.getRowClass}
         >
           {this.createTableColumn(h)}
@@ -35,11 +36,13 @@ export default {
     selectedUser: function() {
       if (!this.selectedUser) {
         this.filterData = this.userData;
+        this.tableHeight = "100%";
         return;
       }
       this.filterData = this.userData.filter(
         item => item.name === this.selectedUser
       );
+      this.tableHeight = "auto";
     }
   },
   methods: {
