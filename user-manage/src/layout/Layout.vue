@@ -2,7 +2,8 @@
   <el-container class="layout">
     <el-aside class="left-part"
               width="auto">
-      <div class="logo-container">
+      <div class="logo-container"
+           v-on:click="goHome">
         <img src="@/assets/images/logo.gif" />
       </div>
       <MenuVue v-bind:isCollapse="isCollapse"
@@ -83,6 +84,9 @@ export default {
     },
     goMyPage: function() {
       window.open("https://github.com/war408705279", "_blank");
+    },
+    goHome: function() {
+      this.$router.push({ path: "/" });
     },
     ...mapActions(["login", "logout"])
   },
