@@ -5,6 +5,8 @@
  * Create Date: 2018-06-25
  */
 
+// 引入HomePage页面
+import HomePage from "@/pages/HomePage";
 // 引入UserPage页面
 import UserPage from "@/pages/UserPage";
 // 引入404页面
@@ -34,12 +36,12 @@ export const navConfig = [{
 }];
 
 export const otherConfig = [{
-  path: "",
+  path: "/",
   name: "homepage",
   alias: "主页",
   icon: "",
   limit: false,
-  content: null
+  content: HomePage
 }, {
   path: "404",
   name: "404",
