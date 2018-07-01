@@ -24,12 +24,14 @@ export default {
   },
   render: function(h) {
     return (
-      <div class="user-table">
+      <div
+        class="user-table"
+        v-loading={this.loading}
+        element-loading-text="玩儿命加载中"
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0.6)"
+      >
         <el-table
-          v-loading={this.loading}
-          element-loading-text="玩儿命加载中"
-          element-loading-spinner="el-icon-loading"
-          element-loading-background="rgba(0, 0, 0, 0.6)"
           data={this.filterData}
           border
           style={"height: " + this.tableHeight}
@@ -44,7 +46,8 @@ export default {
     /**
      * 监听selectedUser
      */
-    selectedUser: function() {
+    selectedUser: async function() {
+      await this.simulateShowOverlay();
       if (!this.selectedUser) {
         this.filterData = this.userData;
         this.tableHeight = "100%";
