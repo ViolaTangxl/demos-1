@@ -1,3 +1,7 @@
+import {
+  resolve
+} from "path";
+
 const UserTable = {
   namespaced: true,
   state: {
@@ -17,17 +21,22 @@ const UserTable = {
       commit,
       dispatch
     }, payload) {
-      commit({
-        type: "controlOverlay",
-        isShow: true
-      });
-      const timeOut = setTimeout(() => {
+      return new Promise((resolve, reject) => {
+        // 显示遮罩层
         commit({
           type: "controlOverlay",
-          isShow: false
+          isShow: true
         });
-        clearTimeout(timeOut);
-      }, 1000);
+        const timeOut = setTimeout(() => {
+          // 隐藏遮罩层
+          commit({
+            type: "controlOverlay",
+            isShow: false
+          });
+          clearTimeout(timeOut);
+          resolve();
+        }, 1000);
+      });
     }
   }
 };

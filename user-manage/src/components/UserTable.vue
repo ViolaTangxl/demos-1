@@ -6,23 +6,21 @@
  * Create Date: 2018-06-25
  */
 
+// 引入mapState，mapMutations和mapActions
+import { mapState, mapMutations, mapActions } from "vuex";
+
 export default {
   name: "UserTable",
   props: ["userData", "columnData", "selectedUser"],
   data: function() {
     return {
-      loading: false,
       filterData: [],
       tableHeight: "100%"
     };
   },
-  mounted: function() {
-    this.loading = true;
-    const timeOut = setTimeout(() => {
-      this.loading = false;
-      this.filterData = this.userData;
-      clearTimeout(timeOut);
-    }, 1000);
+  mounted: async function() {
+    await this.simulateShowOverlay();
+    this.filterData = this.userData;
   },
   render: function(h) {
     return (
@@ -169,7 +167,12 @@ export default {
         isShow = true;
       }
       return isShow;
-    }
+    },
+    ...mapMutations("UserTable", ["controlOverlay"]),
+    ...mapActions("UserTable", ["simulateShowOverlay"])
+  },
+  computed: {
+    ...mapState("UserTable", ["loading"])
   }
 };
 </script>
