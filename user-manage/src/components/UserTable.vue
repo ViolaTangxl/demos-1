@@ -11,17 +11,27 @@ export default {
   props: ["userData", "columnData", "selectedUser"],
   data: function() {
     return {
+      loading: false,
       filterData: [],
       tableHeight: "100%"
     };
   },
   mounted: function() {
-    this.filterData = this.userData;
+    this.loading = true;
+    const timeOut = setTimeout(() => {
+      this.loading = false;
+      this.filterData = this.userData;
+      clearTimeout(timeOut);
+    }, 1000);
   },
   render: function(h) {
     return (
       <div class="user-table">
         <el-table
+          v-loading={this.loading}
+          element-loading-text="玩儿命加载中"
+          element-loading-spinner="el-icon-loading"
+          element-loading-background="rgba(0, 0, 0, 0.6)"
           data={this.filterData}
           border
           style={"height: " + this.tableHeight}

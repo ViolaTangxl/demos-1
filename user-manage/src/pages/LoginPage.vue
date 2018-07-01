@@ -92,7 +92,7 @@ export default {
             this.showMessage("success", "登录成功", 1500);
             this.login(match);
             clearTimeout(timeOut);
-          }, 2000);
+          }, 1000);
         } else {
           return false;
         }
