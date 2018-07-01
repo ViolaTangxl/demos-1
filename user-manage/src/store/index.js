@@ -11,6 +11,8 @@ import vuex from "vuex";
 import actions from "./actions";
 // 导入公共getters
 import getters from "./getters";
+// 导入UserTable
+import UserTable from "./modules/UserTable";
 
 Vue.use(vuex);
 
@@ -21,5 +23,8 @@ export default new vuex.Store({
     isadmin: false
   },
   actions: actions,
-  getters: getters
+  getters: getters,
+  modules: {
+    UserTable: UserTable
+  }
 });
