@@ -9,6 +9,8 @@
 import HomePage from "@/pages/HomePage";
 // 引入UserPage页面
 import UserPage from "@/pages/UserPage";
+// 引入ManagePage页面
+import ManagePage from "@/pages/ManagePage";
 // 引入404页面
 import NotFoundPage from "@/pages/NotFoundPage";
 
@@ -31,7 +33,7 @@ export const navConfig = [{
     alias: "用户管理",
     icon: "setting",
     limit: true,
-    content: null
+    content: ManagePage
   }]
 }];
 

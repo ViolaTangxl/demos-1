@@ -19,9 +19,9 @@
       </div>
     </div>
     <div class="table-container">
-      <UserTable v-bind:userData="userData"
-                 v-bind:columnData="columnData"
-                 v-bind:selectedUser="selectedUser" />
+      <UserInfo v-bind:userData="userData"
+                v-bind:columnData="columnData"
+                v-bind:selectedUser="selectedUser" />
     </div>
   </div>
 </template>
@@ -36,8 +36,8 @@
 
 // 导入模拟的用户数据
 import { columnData, userData } from "@/config/userInfo";
-// 导入UserTable组件
-import UserTable from "@/components/UserTable";
+// 导入UserInfo组件
+import UserInfo from "@/components/UserInfo";
 
 export default {
   name: "UserPage",
@@ -76,7 +76,7 @@ export default {
     }
   },
   components: {
-    UserTable
+    UserInfo
   }
 };
 </script>

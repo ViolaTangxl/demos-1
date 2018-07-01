@@ -2,7 +2,7 @@ import {
   resolve
 } from "path";
 
-const UserTable = {
+const UserInfo = {
   namespaced: true,
   state: {
     loading: false
@@ -41,4 +41,4 @@ const UserTable = {
   }
 };
 
-export default UserTable;
+export default UserInfo;

@@ -182,5 +182,5 @@ export default {
 
 <style>
 /* 引入UserTable样式 */
-@import url("./UserTable.css");
+@import url("./UserInfo.css");
 </style>
