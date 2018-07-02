@@ -21,14 +21,15 @@
                          type="success">编辑</el-button>
               <el-popover placement="top"
                           width="150"
+                          title="提示"
                           v-model="scope.row.deletePopShow">
                 <p class="pop-info">确认删除？</p>
                 <div class="pop-control">
                   <el-button size="mini"
-                             @click="scope.row.deletePopShow = false">取消</el-button>
+                             v-on:click="scope.row.deletePopShow = false">取消</el-button>
                   <el-button type="primary"
                              size="mini"
-                             @click="scope.row.deletePopShow = false">确定</el-button>
+                             v-on:click="confirmDelete(scope.row)">确定</el-button>
                 </div>
                 <el-button size="mini"
                            type="danger"
@@ -172,6 +173,22 @@ export default {
         isShow = true;
       }
       return isShow;
+    },
+    /**
+     * 确认删除用户
+     */
+    confirmDelete(row) {
+      row.deletePopShow = false;
+      this.userData.forEach((item, index) => {
+        if (item.index === row.index) {
+          this.userData.splice(index, 1);
+        }
+      });
+      // 重新编号
+      this.userData.forEach((item, index) => {
+        item.index = index + 1;
+      });
+      this.filterData = this.userData;
     }
   }
 };
