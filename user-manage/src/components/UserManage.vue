@@ -30,7 +30,9 @@ export default {
           style={"height: " + this.tableHeight}
           row-class-name={this.getRowClass}
         >
-          {this.createTableColumn(h)}
+          {() => {
+            return this.createTableColumn(h);
+          }}
         </el-table>
       </div>
     );
@@ -78,7 +80,7 @@ export default {
             align="center"
             header-align="center"
             formatter={(row, column, cellValue, index) => {
-              return this.formatColumnContent(item, cellValue);
+              return this.formatColumnContent(item, row, cellValue);
             }}
             filter-placement="bottom"
             filters={this.getFilters(item)}
@@ -90,7 +92,7 @@ export default {
     /**
      * 格式化表格列的内容
      */
-    formatColumnContent(item, cellValue) {
+    formatColumnContent(item, row, cellValue) {
       let formatContent = "";
       switch (item.prop) {
         case "sex":
@@ -99,11 +101,30 @@ export default {
         case "state":
           formatContent = this.getState(cellValue);
           break;
+        case "operate":
+          formatContent = this.renderOperBtns(row);
+          break;
         default:
           formatContent = cellValue;
           break;
       }
       return formatContent;
+    },
+    /**
+     * 创建操作按钮
+     */
+    renderOperBtns(row) {
+      return (
+        <el-button-group>
+          <el-button size="mini">查看</el-button>
+          <el-button size="mini" type="success">
+            编辑
+          </el-button>
+          <el-button size="mini" type="danger">
+            删除
+          </el-button>
+        </el-button-group>
+      );
     },
     /**
      * 格式化性别信息
