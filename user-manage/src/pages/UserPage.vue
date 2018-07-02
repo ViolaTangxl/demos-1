@@ -34,7 +34,9 @@
  */
 
 // 导入模拟的用户数据
-import { columnData, userData } from "@/config/userInfo";
+import { userData } from "@/config/userInfo";
+// 导入表格头数据
+import { columnData } from "@/config/userInfoColumn";
 // 导入UserInfo组件
 import UserInfo from "@/components/UserInfo";
 

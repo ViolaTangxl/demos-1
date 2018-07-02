@@ -1,6 +1,6 @@
 <script>
 /**
- * File name: UserTable.vue
+ * File name: UserInfo.vue
  * Description: User info table component
  * Auther: Zhazha jiayizhen
  * Create Date: 2018-06-25
@@ -10,7 +10,7 @@
 import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
-  name: "UserTable",
+  name: "UserInfo",
   props: ["userData", "columnData", "selectedUser"],
   data: function() {
     return {
@@ -171,11 +171,11 @@ export default {
       }
       return isShow;
     },
-    ...mapMutations("UserTable", ["controlOverlay"]),
-    ...mapActions("UserTable", ["simulateShowOverlay"])
+    ...mapMutations("UserInfo", ["controlOverlay"]),
+    ...mapActions("UserInfo", ["simulateShowOverlay"])
   },
   computed: {
-    ...mapState("UserTable", ["loading"])
+    ...mapState("UserInfo", ["loading"])
   }
 };
 </script>
