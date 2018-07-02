@@ -23,3 +23,12 @@
 .user-manage table .row-success {
   background-color: #ddd;
 }
+
+.pop-info {
+  text-align: center;
+}
+
+.pop-control {
+  margin: 0;
+  text-align: center;
+}

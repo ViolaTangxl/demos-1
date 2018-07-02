@@ -19,8 +19,22 @@
               <el-button size="mini">查看</el-button>
               <el-button size="mini"
                          type="success">编辑</el-button>
-              <el-button size="mini"
-                         type="danger">删除</el-button>
+              <el-popover placement="top"
+                          width="150"
+                          v-model="scope.row.deletePopShow">
+                <p class="pop-info">确认删除？</p>
+                <div class="pop-control">
+                  <el-button size="mini"
+                             @click="scope.row.deletePopShow = false">取消</el-button>
+                  <el-button type="primary"
+                             size="mini"
+                             @click="scope.row.deletePopShow = false">确定</el-button>
+                </div>
+                <el-button size="mini"
+                           type="danger"
+                           slot="reference"
+                           v-on:click="scope.row.deletePopShow = true">删除</el-button>
+              </el-popover>
             </span>
             <span v-else>
               {{formatColumnContent(item, scope.row[item.prop])}}
@@ -50,8 +64,7 @@ export default {
   data: function() {
     return {
       filterData: [],
-      tableHeight: "100%",
-      deletePopShow: false
+      tableHeight: "100%"
     };
   },
   mounted: function() {
@@ -159,9 +172,6 @@ export default {
         isShow = true;
       }
       return isShow;
-    },
-    showDeletePop() {
-      this.deletePopShow = true;
     }
   }
 };
