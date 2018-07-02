@@ -16,9 +16,11 @@
                          v-bind:filter-method="getFilterMethod(item)">
           <template slot-scope="scope">
             <span v-if="item.prop==='operate'">
-              <el-button size="mini">查看</el-button>
               <el-button size="mini"
-                         type="success">编辑</el-button>
+                         v-on:click="viewUserInfo(scope.row)">查看</el-button>
+              <el-button size="mini"
+                         type="success"
+                         v-on:click="modifyUserInfo(scope.row)">编辑</el-button>
               <el-popover placement="top"
                           width="150"
                           title="提示"
@@ -44,6 +46,20 @@
         </el-table-column>
       </template>
     </el-table>
+    <el-dialog v-bind:title="dialogType === 'view' ? '查看用户' : '编辑用户'"
+               width="400px"
+               v-bind:visible="dialogVisible"
+               v-bind:close-on-click-modal="false"
+               v-bind:close-on-press-escape="false"
+               v-bind:show-close="false">
+      <span slot="footer">
+        <el-button size="mini"
+                   v-on:click="dialogVisible = false">取消</el-button>
+        <el-button size="mini"
+                   type="primary"
+                   v-on:click="dialogVisible = false">确定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -65,7 +81,9 @@ export default {
   data: function() {
     return {
       filterData: [],
-      tableHeight: "100%"
+      tableHeight: "100%",
+      dialogType: "view",
+      dialogVisible: false
     };
   },
   mounted: function() {
@@ -173,6 +191,20 @@ export default {
         isShow = true;
       }
       return isShow;
+    },
+    /**
+     * 查看用户信息
+     */
+    viewUserInfo(row) {
+      this.dialogType = "view";
+      this.dialogVisible = true;
+    },
+    /**
+     * 修改用户信息
+     */
+    modifyUserInfo(row) {
+      this.dialogType = "edit";
+      this.dialogVisible = true;
     },
     /**
      * 确认删除用户
