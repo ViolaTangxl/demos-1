@@ -40,6 +40,15 @@ import UserInfo from "@/components/UserInfo";
 
 export default {
   name: "UserPage",
+  mounted: function() {
+    // 模拟产生autocomplete的数据
+    this.userData.map(item => {
+      this.autoCompleteData.push({
+        value: item.name + " - " + item.job,
+        name: item.name
+      });
+    });
+  },
   data: function() {
     return {
       userSearchInput: "",
@@ -48,14 +57,6 @@ export default {
       autoCompleteData: [],
       selectedUser: ""
     };
-  },
-  mounted: function() {
-    this.userData.map(item => {
-      this.autoCompleteData.push({
-        value: item.name + " - " + item.job,
-        name: item.name
-      });
-    });
   },
   methods: {
     queryUser(queryString, callback) {

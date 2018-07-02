@@ -11,7 +11,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "UserManage",
-  props: ["userData", "columnData"],
+  props: ["userData", "columnData", "selectedUser"],
   data: function() {
     return {
       filterData: [],
@@ -34,6 +34,22 @@ export default {
         </el-table>
       </div>
     );
+  },
+  watch: {
+    /**
+     * 监听selectedUser
+     */
+    selectedUser: async function() {
+      if (!this.selectedUser) {
+        this.filterData = this.userData;
+        this.tableHeight = "100%";
+        return;
+      }
+      this.filterData = this.userData.filter(
+        item => item.name === this.selectedUser
+      );
+      this.tableHeight = "auto";
+    }
   },
   methods: {
     /**
