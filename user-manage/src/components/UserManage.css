@@ -2,3 +2,28 @@
   width: 100%;
   height: 100%;
 }
+
+.user-manage .el-table {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.user-manage .el-table .el-table__body-wrapper {
+  height: auto !important;
+  max-height: calc(100% - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.user-manage table {
+  width: 100%;
+  height: auto;
+}
+
+.user-manage table .el-table__row {
+  cursor: pointer;
+}
+
+.user-manage table .row-success {
+  background-color: #ddd;
+}

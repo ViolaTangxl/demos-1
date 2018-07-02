@@ -18,6 +18,10 @@
   line-height: 50px;
 }
 
+.manage-page .head-control .user-search-input {
+  width: 100%;
+}
+
 .manage-page .table-container {
   width: 100%;
   height: calc(100% - 70px);

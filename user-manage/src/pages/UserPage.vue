@@ -10,7 +10,6 @@
             <!-- 搜索 -->
             <el-autocomplete class="user-search-input"
                              placeholder="搜索用户"
-                             clearable
                              v-model="userSearchInput"
                              v-bind:fetch-suggestions="queryUser"
                              v-on:select="selectUser"></el-autocomplete>
