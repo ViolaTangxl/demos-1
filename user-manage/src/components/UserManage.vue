@@ -1,3 +1,38 @@
+<template>
+  <div class="user-manage">
+    <el-table v-bind:data="filterData"
+              border
+              v-bind:style="{height: tableHeight}"
+              v-bind:row-class-name="getRowClass">
+      <template v-for="item in columnData">
+        <el-table-column align="center"
+                         header-align="center"
+                         v-bind:key="item.prop"
+                         v-bind:prop="item.prop"
+                         v-bind:label="item.label"
+                         v-bind:width="item.width"
+                         filter-placement="bottom"
+                         v-bind:filters="getFilters(item)"
+                         v-bind:filter-method="getFilterMethod(item)">
+          <template slot-scope="scope">
+            <span v-if="item.prop==='operate'">
+              <el-button size="mini">查看</el-button>
+              <el-button size="mini"
+                         type="success">编辑</el-button>
+              <el-button size="mini"
+                         type="danger">删除</el-button>
+            </span>
+            <span v-else>
+              {{formatColumnContent(item, scope.row[item.prop])}}
+            </span>
+          </template>
+        </el-table-column>
+      </template>
+    </el-table>
+  </div>
+</template>
+
+
 <script>
 /**
  * File name: UserManage.vue
@@ -15,27 +50,12 @@ export default {
   data: function() {
     return {
       filterData: [],
-      tableHeight: "100%"
+      tableHeight: "100%",
+      deletePopShow: false
     };
   },
   mounted: function() {
     this.filterData = this.userData;
-  },
-  render: function(h) {
-    return (
-      <div class="user-manage">
-        <el-table
-          data={this.filterData}
-          border
-          style={"height: " + this.tableHeight}
-          row-class-name={this.getRowClass}
-        >
-          {() => {
-            return this.createTableColumn(h);
-          }}
-        </el-table>
-      </div>
-    );
   },
   watch: {
     /**
@@ -65,34 +85,9 @@ export default {
       return rowClass;
     },
     /**
-     * 动态创建表格的列
-     */
-    createTableColumn(h) {
-      if (this.columnData.length === 0) {
-        return null;
-      }
-      return this.columnData.map(item => {
-        return (
-          <el-table-column
-            prop={item.prop}
-            label={item.label}
-            width={item.width}
-            align="center"
-            header-align="center"
-            formatter={(row, column, cellValue, index) => {
-              return this.formatColumnContent(item, row, cellValue);
-            }}
-            filter-placement="bottom"
-            filters={this.getFilters(item)}
-            filter-method={this.getFilterMethod(item)}
-          />
-        );
-      });
-    },
-    /**
      * 格式化表格列的内容
      */
-    formatColumnContent(item, row, cellValue) {
+    formatColumnContent(item, cellValue) {
       let formatContent = "";
       switch (item.prop) {
         case "sex":
@@ -101,30 +96,11 @@ export default {
         case "state":
           formatContent = this.getState(cellValue);
           break;
-        case "operate":
-          formatContent = this.renderOperBtns(row);
-          break;
         default:
           formatContent = cellValue;
           break;
       }
       return formatContent;
-    },
-    /**
-     * 创建操作按钮
-     */
-    renderOperBtns(row) {
-      return (
-        <el-button-group>
-          <el-button size="mini">查看</el-button>
-          <el-button size="mini" type="success">
-            编辑
-          </el-button>
-          <el-button size="mini" type="danger">
-            删除
-          </el-button>
-        </el-button-group>
-      );
     },
     /**
      * 格式化性别信息
@@ -183,6 +159,9 @@ export default {
         isShow = true;
       }
       return isShow;
+    },
+    showDeletePop() {
+      this.deletePopShow = true;
     }
   }
 };

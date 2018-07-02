@@ -20,10 +20,6 @@
   height: auto;
 }
 
-.user-manage table .el-table__row {
-  cursor: pointer;
-}
-
 .user-manage table .row-success {
   background-color: #ddd;
 }
