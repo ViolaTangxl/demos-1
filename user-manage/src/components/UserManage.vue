@@ -52,10 +52,13 @@
                v-bind:close-on-click-modal="false"
                v-bind:close-on-press-escape="false"
                v-bind:show-close="false">
-      <el-form v-bind:model="dialogForm">
+      <el-form ref="dialogForm"
+               v-bind:model="dialogForm"
+               v-bind:rules="formRules">
         <!-- 姓名 -->
         <el-form-item class="dialog-form-item"
                       label="姓名"
+                      prop="name"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.name"
                     v-bind:disabled="formItemDisable"
@@ -64,14 +67,16 @@
         <!-- 年龄 -->
         <el-form-item class="dialog-form-item"
                       label="年龄"
+                      prop="age"
                       v-bind:label-width="formLabelWidth">
-          <el-input v-model="dialogForm.age"
+          <el-input v-model.number="dialogForm.age"
                     v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
         </el-form-item>
         <!-- 住址 -->
         <el-form-item class="dialog-form-item"
                       label="住址"
+                      prop="address"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.address"
                     v-bind:disabled="formItemDisable"
@@ -80,6 +85,7 @@
         <!-- 职位 -->
         <el-form-item class="dialog-form-item"
                       label="职位"
+                      prop="job"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.job"
                     v-bind:disabled="formItemDisable"
@@ -88,6 +94,7 @@
         <!-- 性别 -->
         <el-form-item class="dialog-form-item"
                       label="性别"
+                      prop="sex"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
                      v-bind:disabled="formItemDisable"
@@ -102,6 +109,7 @@
         <!-- 状态 -->
         <el-form-item class="dialog-form-item"
                       label="状态"
+                      prop="state"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
                      v-bind:disabled="formItemDisable"
@@ -154,7 +162,22 @@ export default {
         sex: "",
         state: ""
       },
-      formLabelWidth: "50px",
+      formRules: {
+        name: [{ required: true, message: "名字不能为空", trigger: "change" }],
+        age: [
+          { required: true, message: "年龄不能为空", trigger: "change" },
+          { type: "number", message: "年龄必须为数字", trigger: "change" }
+        ],
+        address: [
+          { required: true, message: "住址不能为空", trigger: "change" }
+        ],
+        job: [{ required: true, message: "职位不能为空", trigger: "change" }],
+        sex: [{ required: true, message: "请选择性别", trigger: "change" }],
+        state: [
+          { required: true, message: "请选择就职状态", trigger: "change" }
+        ]
+      },
+      formLabelWidth: "60px",
       formItemDisable: false
     };
   },
