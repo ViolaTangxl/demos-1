@@ -127,7 +127,7 @@
                    v-on:click="dialogVisible = false">取消</el-button>
         <el-button size="mini"
                    type="primary"
-                   v-on:click="confirmViewEdit">确定</el-button>
+                   v-on:click="confirmViewEdit('dialogForm')">确定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -308,8 +308,29 @@ export default {
     /**
      * 确认关闭查看/编辑用户对话框
      */
-    confirmViewEdit() {
-      this.dialogVisible = false;
+    confirmViewEdit(formName) {
+      // 查看
+      if (this.dialogType === "view") {
+        this.dialogVisible = false;
+        return;
+      }
+      // 编辑
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          const model = this.$refs[formName].model;
+          this.userData.forEach((item, index) => {
+            if (model.index === item.index) {
+              this.userData.splice(index, 1, { ...item, ...model });
+            }
+          });
+          this.filterData = this.userData;
+          this.dialogVisible = false;
+          this.showMessage("success", "修改成功", 1500);
+        } else {
+          this.showMessage("error", "无法进行修改", 1500);
+          return;
+        }
+      });
     },
     /**
      * 确认删除用户
@@ -326,6 +347,18 @@ export default {
         item.index = index + 1;
       });
       this.filterData = this.userData;
+    },
+    /**
+     * 显示消息
+     */
+    showMessage: function(type, message, duration) {
+      this.$message({
+        type: type,
+        message: message,
+        center: true,
+        duration: duration,
+        onClose: true
+      });
     }
   }
 };
