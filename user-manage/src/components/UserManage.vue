@@ -53,12 +53,14 @@
                v-bind:close-on-press-escape="false"
                v-bind:show-close="false">
       <el-form v-bind:model="dialogForm">
-        <el-form-item label="活动名称"
+        <el-form-item class="dialog-form-item"
+                      label="活动名称"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.name"
                     auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="活动区域"
+        <el-form-item class="dialog-form-item"
+                      label="活动区域"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
                      v-model="dialogForm.region"

@@ -28,6 +28,10 @@
   margin: 0;
 }
 
+.user-manage .dialog-form-item {
+  margin-bottom: 10px;
+}
+
 .user-manage .dialog-select {
   width: 100%;
 }
