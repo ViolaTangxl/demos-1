@@ -28,6 +28,10 @@
   margin: 0;
 }
 
+.user-manage .el-dialog__body {
+  padding: 10px 20px;
+}
+
 .user-manage .dialog-form-item {
   margin-bottom: 10px;
 }

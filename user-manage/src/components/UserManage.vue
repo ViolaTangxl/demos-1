@@ -53,22 +53,58 @@
                v-bind:close-on-press-escape="false"
                v-bind:show-close="false">
       <el-form v-bind:model="dialogForm">
+        <!-- 姓名 -->
         <el-form-item class="dialog-form-item"
-                      label="活动名称"
+                      label="姓名"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.name"
-                    auto-complete="off"></el-input>
+                    v-bind:clearable="true"></el-input>
         </el-form-item>
+        <!-- 年龄 -->
         <el-form-item class="dialog-form-item"
-                      label="活动区域"
+                      label="年龄"
+                      v-bind:label-width="formLabelWidth">
+          <el-input v-model="dialogForm.age"
+                    v-bind:clearable="true"></el-input>
+        </el-form-item>
+        <!-- 住址 -->
+        <el-form-item class="dialog-form-item"
+                      label="住址"
+                      v-bind:label-width="formLabelWidth">
+          <el-input v-model="dialogForm.address"
+                    v-bind:clearable="true"></el-input>
+        </el-form-item>
+        <!-- 职位 -->
+        <el-form-item class="dialog-form-item"
+                      label="职位"
+                      v-bind:label-width="formLabelWidth">
+          <el-input v-model="dialogForm.job"
+                    v-bind:clearable="true"></el-input>
+        </el-form-item>
+        <!-- 性别 -->
+        <el-form-item class="dialog-form-item"
+                      label="性别"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
-                     v-model="dialogForm.region"
-                     placeholder="请选择活动区域">
-            <el-option label="区域一"
-                       value="shanghai"></el-option>
-            <el-option label="区域二"
-                       value="beijing"></el-option>
+                     v-model="dialogForm.sex"
+                     placeholder="请选择性别">
+            <el-option label="男"
+                       value="m"></el-option>
+            <el-option label="女"
+                       value="f"></el-option>
+          </el-select>
+        </el-form-item>
+        <!-- 状态 -->
+        <el-form-item class="dialog-form-item"
+                      label="状态"
+                      v-bind:label-width="formLabelWidth">
+          <el-select class="dialog-select"
+                     v-model="dialogForm.state"
+                     placeholder="请选择就职状态">
+            <el-option label="在职"
+                       v-bind:value="0"></el-option>
+            <el-option label="离职"
+                       v-bind:value="1"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
@@ -105,10 +141,14 @@ export default {
       dialogType: "view",
       dialogVisible: false,
       dialogForm: {
-        name: "测试",
-        region: "shanghai"
+        name: "",
+        age: 0,
+        address: "",
+        job: "",
+        sex: "",
+        state: ""
       },
-      formLabelWidth: "100px"
+      formLabelWidth: "50px"
     };
   },
   mounted: function() {
@@ -223,6 +263,7 @@ export default {
     viewUserInfo(row) {
       this.dialogType = "view";
       this.dialogVisible = true;
+      this.dialogForm = { ...this.dialogForm, ...row };
     },
     /**
      * 修改用户信息
