@@ -28,6 +28,10 @@
   margin: 0;
 }
 
+.user-manage .dialog-select {
+  width: 100%;
+}
+
 .user-manage .el-dialog__footer {
   height: 50px;
   padding: 0;

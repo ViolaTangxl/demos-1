@@ -52,6 +52,24 @@
                v-bind:close-on-click-modal="false"
                v-bind:close-on-press-escape="false"
                v-bind:show-close="false">
+      <el-form v-bind:model="dialogForm">
+        <el-form-item label="活动名称"
+                      v-bind:label-width="formLabelWidth">
+          <el-input v-model="dialogForm.name"
+                    auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动区域"
+                      v-bind:label-width="formLabelWidth">
+          <el-select class="dialog-select"
+                     v-model="dialogForm.region"
+                     placeholder="请选择活动区域">
+            <el-option label="区域一"
+                       value="shanghai"></el-option>
+            <el-option label="区域二"
+                       value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
       <span slot="footer">
         <el-button size="mini"
                    v-on:click="dialogVisible = false">取消</el-button>
@@ -83,7 +101,12 @@ export default {
       filterData: [],
       tableHeight: "100%",
       dialogType: "view",
-      dialogVisible: false
+      dialogVisible: false,
+      dialogForm: {
+        name: "测试",
+        region: "shanghai"
+      },
+      formLabelWidth: "100px"
     };
   },
   mounted: function() {
