@@ -58,6 +58,7 @@
                       label="姓名"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.name"
+                    v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
         </el-form-item>
         <!-- 年龄 -->
@@ -65,6 +66,7 @@
                       label="年龄"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.age"
+                    v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
         </el-form-item>
         <!-- 住址 -->
@@ -72,6 +74,7 @@
                       label="住址"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.address"
+                    v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
         </el-form-item>
         <!-- 职位 -->
@@ -79,6 +82,7 @@
                       label="职位"
                       v-bind:label-width="formLabelWidth">
           <el-input v-model="dialogForm.job"
+                    v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
         </el-form-item>
         <!-- 性别 -->
@@ -86,6 +90,7 @@
                       label="性别"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
+                     v-bind:disabled="formItemDisable"
                      v-model="dialogForm.sex"
                      placeholder="请选择性别">
             <el-option label="男"
@@ -99,6 +104,7 @@
                       label="状态"
                       v-bind:label-width="formLabelWidth">
           <el-select class="dialog-select"
+                     v-bind:disabled="formItemDisable"
                      v-model="dialogForm.state"
                      placeholder="请选择就职状态">
             <el-option label="在职"
@@ -113,7 +119,7 @@
                    v-on:click="dialogVisible = false">取消</el-button>
         <el-button size="mini"
                    type="primary"
-                   v-on:click="dialogVisible = false">确定</el-button>
+                   v-on:click="confirmViewEdit">确定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -148,7 +154,8 @@ export default {
         sex: "",
         state: ""
       },
-      formLabelWidth: "50px"
+      formLabelWidth: "50px",
+      formItemDisable: false
     };
   },
   mounted: function() {
@@ -264,6 +271,7 @@ export default {
       this.dialogType = "view";
       this.dialogVisible = true;
       this.dialogForm = { ...this.dialogForm, ...row };
+      this.formItemDisable = true;
     },
     /**
      * 修改用户信息
@@ -271,6 +279,14 @@ export default {
     modifyUserInfo(row) {
       this.dialogType = "edit";
       this.dialogVisible = true;
+      this.dialogForm = { ...this.dialogForm, ...row };
+      this.formItemDisable = false;
+    },
+    /**
+     * 确认关闭查看/编辑用户对话框
+     */
+    confirmViewEdit() {
+      this.dialogVisible = false;
     },
     /**
      * 确认删除用户
