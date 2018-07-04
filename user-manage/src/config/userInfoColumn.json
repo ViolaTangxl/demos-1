@@ -30,6 +30,11 @@
       "width": "100px"
     },
     {
+      "prop": "time",
+      "label": "入职时间",
+      "width": "150px"
+    },
+    {
       "prop": "state",
       "label": "状态",
       "width": "100px"

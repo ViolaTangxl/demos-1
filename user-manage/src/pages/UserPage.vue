@@ -20,8 +20,7 @@
                             type="daterange"
                             range-separator="至"
                             start-placeholder="开始日期"
-                            end-placeholder="结束日期"
-                            v-on:change="changeDate">
+                            end-placeholder="结束日期">
             </el-date-picker>
           </el-col>
         </el-row>
@@ -30,7 +29,8 @@
     <div class="table-container">
       <UserInfo v-bind:userData="userData"
                 v-bind:columnData="columnData"
-                v-bind:selectedUser="selectedUser" />
+                v-bind:selectedUser="selectedUser"
+                v-bind:dateRange="dateRange" />
     </div>
   </div>
 </template>
@@ -68,7 +68,7 @@ export default {
       userData: userData,
       autoCompleteData: [],
       selectedUser: "",
-      dateRange: ""
+      dateRange: null
     };
   },
   methods: {
@@ -92,12 +92,6 @@ export default {
      */
     selectUser(item) {
       this.selectedUser = item.name;
-    },
-    /**
-     * 选择时间区间
-     */
-    changeDate() {
-      console.log(this.dateRange);
     }
   },
   components: {

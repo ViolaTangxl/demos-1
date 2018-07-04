@@ -11,7 +11,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "UserInfo",
-  props: ["userData", "columnData", "selectedUser"],
+  props: ["userData", "columnData", "selectedUser", "dateRange"],
   data: function() {
     return {
       filterData: [],
@@ -56,6 +56,30 @@ export default {
       this.filterData = this.userData.filter(
         item => item.name === this.selectedUser
       );
+      this.tableHeight = "auto";
+    },
+    /**
+     * 监听dateRange
+     */
+    dateRange: function() {
+      if (!this.dateRange || this.dateRange.length !== 2) {
+        this.filterData = this.userData;
+        this.tableHeight = "100%";
+        return;
+      }
+      const startTm = this.dateRange[0].getTime();
+      const endTm = this.dateRange[1].getTime();
+      this.filterData = this.userData.filter(item => {
+        const dateMark = item.time.split("-");
+        const date = new Date(
+          parseInt(dateMark[0]),
+          parseInt(dateMark[1]) - 1,
+          parseInt(dateMark[2])
+        );
+        if (date.getTime() >= startTm && date.getTime() <= endTm) {
+          return item;
+        }
+      });
       this.tableHeight = "auto";
     }
   },
