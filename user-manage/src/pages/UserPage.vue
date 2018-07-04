@@ -14,6 +14,16 @@
                              v-bind:fetch-suggestions="queryUser"
                              v-on:select="selectUser"></el-autocomplete>
           </el-col>
+          <el-col :span="6">
+            <!-- 时间选择器 -->
+            <el-date-picker v-model="dateRange"
+                            type="daterange"
+                            range-separator="至"
+                            start-placeholder="开始日期"
+                            end-placeholder="结束日期"
+                            v-on:change="changeDate">
+            </el-date-picker>
+          </el-col>
         </el-row>
       </div>
     </div>
@@ -57,10 +67,14 @@ export default {
       columnData: columnData,
       userData: userData,
       autoCompleteData: [],
-      selectedUser: ""
+      selectedUser: "",
+      dateRange: ""
     };
   },
   methods: {
+    /**
+     * 查询用户
+     */
     queryUser(queryString, callback) {
       queryString = queryString.trim();
       if (!queryString) {
@@ -73,8 +87,17 @@ export default {
       );
       callback(result);
     },
+    /**
+     * 选择用户
+     */
     selectUser(item) {
       this.selectedUser = item.name;
+    },
+    /**
+     * 选择时间区间
+     */
+    changeDate() {
+      console.log(this.dateRange);
     }
   },
   components: {
