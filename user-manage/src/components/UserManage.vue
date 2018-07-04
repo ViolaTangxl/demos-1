@@ -152,6 +152,9 @@ import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   name: "UserManage",
   props: ["columnData", "selectedUser"],
+  mounted: function() {
+    this.simulateShowOverlay();
+  },
   data: function() {
     return {
       tableHeight: "100%",
@@ -359,7 +362,8 @@ export default {
         duration: duration,
         onClose: true
       });
-    }
+    },
+    ...mapActions("UserManage", ["simulateShowOverlay"])
   },
   computed: {
     ...mapState("UserManage", ["loading", "filterData", "userData"])
