@@ -13,6 +13,8 @@ import actions from "./actions";
 import getters from "./getters";
 // 导入UserInfo
 import UserInfo from "./modules/UserInfo";
+// 导入UserManage
+import UserManage from "./modules/UserManage";
 
 Vue.use(vuex);
 
@@ -25,6 +27,7 @@ export default new vuex.Store({
   actions: actions,
   getters: getters,
   modules: {
-    UserInfo: UserInfo
+    UserInfo: UserInfo,
+    UserManage: UserManage
   }
 });

@@ -18,8 +18,7 @@
       </div>
     </div>
     <div class="table-container">
-      <UserManage v-bind:userData="userData"
-                  v-bind:columnData="columnData"
+      <UserManage v-bind:columnData="columnData"
                   v-bind:selectedUser="selectedUser" />
     </div>
   </div>

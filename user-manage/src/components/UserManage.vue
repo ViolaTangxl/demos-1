@@ -1,5 +1,9 @@
 <template>
-  <div class="user-manage">
+  <div class="user-manage"
+       v-loading="loading"
+       element-loading-text="玩儿命加载中"
+       element-loading-spinner="el-icon-loading"
+       element-loading-background="rgba(0, 0, 0, 0.6)">
     <el-table v-bind:data="filterData"
               border
               v-bind:style="{height: tableHeight}"
@@ -147,10 +151,9 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "UserManage",
-  props: ["userData", "columnData", "selectedUser"],
+  props: ["columnData", "selectedUser"],
   data: function() {
     return {
-      filterData: [],
       tableHeight: "100%",
       dialogType: "view",
       dialogVisible: false,
@@ -180,9 +183,6 @@ export default {
       formLabelWidth: "60px",
       formItemDisable: false
     };
-  },
-  mounted: function() {
-    this.filterData = this.userData;
   },
   watch: {
     /**
@@ -360,6 +360,9 @@ export default {
         onClose: true
       });
     }
+  },
+  computed: {
+    ...mapState("UserManage", ["loading", "filterData", "userData"])
   }
 };
 </script>
