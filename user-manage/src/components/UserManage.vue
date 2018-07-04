@@ -194,13 +194,13 @@ export default {
      */
     selectedUser: async function() {
       if (!this.selectedUser) {
-        this.filterData = this.userData;
+        this.setFilterData({ userData: this.userData });
         this.tableHeight = "100%";
         return;
       }
-      this.filterData = this.userData.filter(
-        item => item.name === this.selectedUser
-      );
+      this.setFilterData({
+        userData: this.userData.filter(item => item.name === this.selectedUser)
+      });
       this.tableHeight = "auto";
     }
   },
@@ -327,7 +327,7 @@ export default {
               this.userData.splice(index, 1, { ...item, ...model });
             }
           });
-          this.filterData = this.userData;
+          this.setFilterData({ userData: this.userData });
           this.dialogVisible = false;
           this.showMessage("success", "修改成功", 1500);
         } else {
@@ -347,10 +347,11 @@ export default {
         }
       });
       // 重新编号
-      this.userData.forEach((item, index) => {
-        item.index = index + 1;
+      this.setFilterData({
+        userData: this.userData.forEach((item, index) => {
+          item.index = index + 1;
+        })
       });
-      this.filterData = this.userData;
     },
     /**
      * 显示消息
