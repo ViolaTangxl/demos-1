@@ -1,19 +1,24 @@
-// 导入模拟的用户数据
-import {
-  userData
-} from "@/config/userMana";
-
 const UserManage = {
   namespaced: true,
   state: {
     loading: false,
-    filterData: userData,
-    userData: userData,
+    filterData: []
   },
-  // 控制遮罩层
   mutations: {
+    /**
+     * 控制遮罩层
+     */
     controlOverlay(state, payload) {
       state.loading = payload.isShow;
+    },
+    /**
+     * 设置filterData的值
+     */
+    setFilterData(state, payload) {
+      if (!payload.userData) {
+        return;
+      }
+      state.filterData = payload.userData;
     }
   },
   actions: {

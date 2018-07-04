@@ -151,9 +151,10 @@ import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "UserManage",
-  props: ["columnData", "selectedUser"],
-  mounted: function() {
-    this.simulateShowOverlay();
+  props: ["userData", "columnData", "selectedUser"],
+  mounted: async function() {
+    await this.simulateShowOverlay();
+    this.setFilterData({ userData: this.userData });
   },
   data: function() {
     return {
@@ -363,10 +364,11 @@ export default {
         onClose: true
       });
     },
+    ...mapMutations("UserManage", ["controlOverlay", "setFilterData"]),
     ...mapActions("UserManage", ["simulateShowOverlay"])
   },
   computed: {
-    ...mapState("UserManage", ["loading", "filterData", "userData"])
+    ...mapState("UserManage", ["loading", "filterData"])
   }
 };
 </script>
