@@ -146,6 +146,9 @@ export default {
         case "sex":
           filters = [{ value: "m", text: "男" }, { value: "f", text: "女" }];
           break;
+        case "state":
+          filters = [{ value: 0, text: "在职" }, { value: 1, text: "离职" }];
+          break;
       }
       return filters;
     },
@@ -158,6 +161,9 @@ export default {
         case "sex":
           filterMethod = this.filterSex;
           break;
+        case "state":
+          filterMethod = this.filterState;
+          break;
       }
       return filterMethod;
     },
@@ -167,6 +173,16 @@ export default {
     filterSex(value, row) {
       let isShow = false;
       if (row.sex === value) {
+        isShow = true;
+      }
+      return isShow;
+    },
+    /**
+     * 执行过滤状态操作
+     */
+    filterState(value, row) {
+      let isShow = false;
+      if (row.state === value) {
         isShow = true;
       }
       return isShow;
