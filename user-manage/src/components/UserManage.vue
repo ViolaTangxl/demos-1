@@ -158,7 +158,8 @@ export default {
   props: ["userData", "columnData", "selectedUser"],
   mounted: async function() {
     await this.simulateShowPageOverlay();
-    this.setFilterData({ userData: this.userData });
+    this.setUserData({ userData: this.userData });
+    this.setFilterData({ filterData: this.userData });
   },
   data: function() {
     return {
@@ -198,12 +199,14 @@ export default {
      */
     selectedUser: async function() {
       if (!this.selectedUser) {
-        this.setFilterData({ userData: this.userData });
+        this.setFilterData({ filterData: this.userData });
         this.tableHeight = "100%";
         return;
       }
       this.setFilterData({
-        userData: this.userData.filter(item => item.name === this.selectedUser)
+        filterData: this.userData.filter(
+          item => item.name === this.selectedUser
+        )
       });
       this.tableHeight = "auto";
     }
@@ -316,8 +319,7 @@ export default {
     /**
      * 确认关闭查看/编辑用户对话框
      */
-    async confirmViewEdit(formName) {
-      await this.simulateShowDialogOverlay();
+    confirmViewEdit(formName) {
       // 查看
       if (this.dialogType === "view") {
         this.dialogVisible = false;
@@ -327,14 +329,10 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           const model = this.$refs[formName].model;
-          this.userData.forEach((item, index) => {
-            if (model.index === item.index) {
-              this.userData.splice(index, 1, { ...item, ...model });
-            }
+          this.editUser({ model: model }).then(() => {
+            this.dialogVisible = false;
+            this.showMessage("success", "修改成功", 1500);
           });
-          this.setFilterData({ userData: this.userData });
-          this.dialogVisible = false;
-          this.showMessage("success", "修改成功", 1500);
         } else {
           this.showMessage("error", "无法进行修改", 1500);
           return;
@@ -346,16 +344,8 @@ export default {
      */
     confirmDelete(row) {
       row.deletePopShow = false;
-      this.userData.forEach((item, index) => {
-        if (item.index === row.index) {
-          this.userData.splice(index, 1);
-        }
-      });
-      // 重新编号
-      this.setFilterData({
-        userData: this.userData.forEach((item, index) => {
-          item.index = index + 1;
-        })
+      this.deleteUser({ row: row }).then(() => {
+        this.showMessage("success", "删除成功", 1500);
       });
     },
     /**
@@ -370,10 +360,12 @@ export default {
         onClose: true
       });
     },
-    ...mapMutations("UserManage", ["setFilterData"]),
+    ...mapMutations("UserManage", ["setUserData", "setFilterData"]),
     ...mapActions("UserManage", [
       "simulateShowPageOverlay",
-      "simulateShowDialogOverlay"
+      "simulateShowDialogOverlay",
+      "editUser",
+      "deleteUser"
     ])
   },
   computed: {
