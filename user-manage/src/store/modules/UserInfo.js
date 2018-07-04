@@ -1,7 +1,3 @@
-import {
-  resolve
-} from "path";
-
 const UserInfo = {
   namespaced: true,
   state: {

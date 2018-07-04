@@ -1,6 +1,6 @@
 <template>
   <div class="user-manage"
-       v-loading="loading"
+       v-loading="pageLoad"
        element-loading-text="玩儿命加载中"
        element-loading-spinner="el-icon-loading"
        element-loading-background="rgba(0, 0, 0, 0.6)">
@@ -50,7 +50,11 @@
         </el-table-column>
       </template>
     </el-table>
-    <el-dialog v-bind:title="dialogType === 'view' ? '查看用户' : '编辑用户'"
+    <el-dialog v-loading="dialogLoad"
+               element-loading-text="请稍后..."
+               element-loading-spinner="el-icon-loading"
+               element-loading-background="rgba(0, 0, 0, 0.6)"
+               v-bind:title="dialogType === 'view' ? '查看用户' : '编辑用户'"
                width="400px"
                v-bind:visible="dialogVisible"
                v-bind:close-on-click-modal="false"
@@ -153,7 +157,7 @@ export default {
   name: "UserManage",
   props: ["userData", "columnData", "selectedUser"],
   mounted: async function() {
-    await this.simulateShowOverlay();
+    await this.simulateShowPageOverlay();
     this.setFilterData({ userData: this.userData });
   },
   data: function() {
@@ -312,7 +316,8 @@ export default {
     /**
      * 确认关闭查看/编辑用户对话框
      */
-    confirmViewEdit(formName) {
+    async confirmViewEdit(formName) {
+      await this.simulateShowDialogOverlay();
       // 查看
       if (this.dialogType === "view") {
         this.dialogVisible = false;
@@ -365,11 +370,14 @@ export default {
         onClose: true
       });
     },
-    ...mapMutations("UserManage", ["controlOverlay", "setFilterData"]),
-    ...mapActions("UserManage", ["simulateShowOverlay"])
+    ...mapMutations("UserManage", ["setFilterData"]),
+    ...mapActions("UserManage", [
+      "simulateShowPageOverlay",
+      "simulateShowDialogOverlay"
+    ])
   },
   computed: {
-    ...mapState("UserManage", ["loading", "filterData"])
+    ...mapState("UserManage", ["pageLoad", "dialogLoad", "filterData"])
   }
 };
 </script>
