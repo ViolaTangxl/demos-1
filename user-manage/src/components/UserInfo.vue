@@ -59,28 +59,15 @@ export default {
     /**
      * 监听dateRange
      */
-    dateRange: function() {
-      if (!this.dateRange || this.dateRange.length !== 2) {
-        this.setFilterData({ filterData: this.userData });
-        this.tableHeight = "100%";
-        return;
-      }
-      const startTm = this.dateRange[0].getTime();
-      const endTm = this.dateRange[1].getTime();
-      this.setFilterData({
-        filterData: this.userData.filter(item => {
-          const dateMark = item.time.split("-");
-          const date = new Date(
-            parseInt(dateMark[0]),
-            parseInt(dateMark[1]) - 1,
-            parseInt(dateMark[2])
-          );
-          if (date.getTime() >= startTm && date.getTime() <= endTm) {
-            return item;
-          }
-        })
+    dateRange: async function() {
+      const result = await this.filtUserByDateRange({
+        dateRange: this.dateRange
       });
-      this.tableHeight = "auto";
+      if (result) {
+        this.tableHeight = "auto";
+      } else {
+        this.tableHeight = "100%";
+      }
     }
   },
   methods: {
@@ -212,7 +199,11 @@ export default {
       return isShow;
     },
     ...mapMutations("UserInfo", ["setUserData", "setFilterData"]),
-    ...mapActions("UserInfo", ["simulateShowOverlay", "filtUserBySelect"])
+    ...mapActions("UserInfo", [
+      "simulateShowOverlay",
+      "filtUserBySelect",
+      "filtUserByDateRange"
+    ])
   },
   computed: {
     ...mapState("UserInfo", ["loading", "filterData"])

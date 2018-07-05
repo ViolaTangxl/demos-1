@@ -88,12 +88,40 @@ const UserInfo = {
     /**
      * 根据时间范围过滤用户
      */
-    filtUserByDateRange({
+    async filtUserByDateRange({
       state,
       commit,
       dispatch
     }, payload) {
-
+      const dateRange = payload.dateRange;
+      await dispatch("simulateShowOverlay");
+      return new Promise((resolve, reject) => {
+        if (!dateRange || dateRange.length !== 2) {
+          commit({
+            type: "setFilterData",
+            filterData: state.userData
+          });
+          resolve(false);
+          return;
+        }
+        const startTm = dateRange[0].getTime();
+        const endTm = dateRange[1].getTime();
+        commit({
+          type: "setFilterData",
+          filterData: state.userData.filter(item => {
+            const dateMark = item.time.split("-");
+            const date = new Date(
+              parseInt(dateMark[0]),
+              parseInt(dateMark[1]) - 1,
+              parseInt(dateMark[2])
+            );
+            if (date.getTime() >= startTm && date.getTime() <= endTm) {
+              return item;
+            }
+          })
+        });
+        resolve(true);
+      });
     }
   }
 };
