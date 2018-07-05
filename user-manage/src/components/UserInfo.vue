@@ -14,13 +14,13 @@ export default {
   props: ["userData", "columnData", "selectedUser", "dateRange"],
   data: function() {
     return {
-      filterData: [],
       tableHeight: "100%"
     };
   },
   mounted: async function() {
     await this.simulateShowOverlay();
-    this.filterData = this.userData;
+    this.setUserData({ userData: this.userData });
+    this.setFilterData({ filterData: this.userData });
   },
   render: function(h) {
     return (
@@ -49,13 +49,15 @@ export default {
     selectedUser: async function() {
       await this.simulateShowOverlay();
       if (!this.selectedUser) {
-        this.filterData = this.userData;
+        this.setFilterData({ filterData: this.userData });
         this.tableHeight = "100%";
         return;
       }
-      this.filterData = this.userData.filter(
-        item => item.name === this.selectedUser
-      );
+      this.setFilterData({
+        filterData: this.userData.filter(
+          item => item.name === this.selectedUser
+        )
+      });
       this.tableHeight = "auto";
     },
     /**
@@ -63,22 +65,24 @@ export default {
      */
     dateRange: function() {
       if (!this.dateRange || this.dateRange.length !== 2) {
-        this.filterData = this.userData;
+        this.setFilterData({ filterData: this.userData });
         this.tableHeight = "100%";
         return;
       }
       const startTm = this.dateRange[0].getTime();
       const endTm = this.dateRange[1].getTime();
-      this.filterData = this.userData.filter(item => {
-        const dateMark = item.time.split("-");
-        const date = new Date(
-          parseInt(dateMark[0]),
-          parseInt(dateMark[1]) - 1,
-          parseInt(dateMark[2])
-        );
-        if (date.getTime() >= startTm && date.getTime() <= endTm) {
-          return item;
-        }
+      this.setFilterData({
+        filterData: this.userData.filter(item => {
+          const dateMark = item.time.split("-");
+          const date = new Date(
+            parseInt(dateMark[0]),
+            parseInt(dateMark[1]) - 1,
+            parseInt(dateMark[2])
+          );
+          if (date.getTime() >= startTm && date.getTime() <= endTm) {
+            return item;
+          }
+        })
       });
       this.tableHeight = "auto";
     }
@@ -211,11 +215,11 @@ export default {
       }
       return isShow;
     },
-    ...mapMutations("UserInfo", ["controlOverlay"]),
+    ...mapMutations("UserInfo", ["setUserData", "setFilterData"]),
     ...mapActions("UserInfo", ["simulateShowOverlay"])
   },
   computed: {
-    ...mapState("UserInfo", ["loading"])
+    ...mapState("UserInfo", ["loading", "filterData"])
   }
 };
 </script>
