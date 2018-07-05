@@ -47,18 +47,14 @@ export default {
      * 监听selectedUser
      */
     selectedUser: async function() {
-      await this.simulateShowOverlay();
-      if (!this.selectedUser) {
-        this.setFilterData({ filterData: this.userData });
-        this.tableHeight = "100%";
-        return;
-      }
-      this.setFilterData({
-        filterData: this.userData.filter(
-          item => item.name === this.selectedUser
-        )
+      const result = await this.filtUserBySelect({
+        selectedUser: this.selectedUser
       });
-      this.tableHeight = "auto";
+      if (result) {
+        this.tableHeight = "auto";
+      } else {
+        this.tableHeight = "100%";
+      }
     },
     /**
      * 监听dateRange
@@ -216,7 +212,7 @@ export default {
       return isShow;
     },
     ...mapMutations("UserInfo", ["setUserData", "setFilterData"]),
-    ...mapActions("UserInfo", ["simulateShowOverlay"])
+    ...mapActions("UserInfo", ["simulateShowOverlay", "filtUserBySelect"])
   },
   computed: {
     ...mapState("UserInfo", ["loading", "filterData"])
