@@ -198,17 +198,14 @@ export default {
      * 监听selectedUser
      */
     selectedUser: async function() {
-      if (!this.selectedUser) {
-        this.setFilterData({ filterData: this.userData });
-        this.tableHeight = "100%";
-        return;
-      }
-      this.setFilterData({
-        filterData: this.userData.filter(
-          item => item.name === this.selectedUser
-        )
+      const result = await this.filtUserBySelect({
+        selectedUser: this.selectedUser
       });
-      this.tableHeight = "auto";
+      if (result) {
+        this.tableHeight = "auto";
+      } else {
+        this.tableHeight = "100%";
+      }
     }
   },
   methods: {
@@ -364,6 +361,7 @@ export default {
     ...mapActions("UserManage", [
       "simulateShowPageOverlay",
       "simulateShowDialogOverlay",
+      "filtUserBySelect",
       "editUser",
       "deleteUser"
     ])

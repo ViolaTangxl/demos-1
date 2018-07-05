@@ -89,6 +89,34 @@ const UserManage = {
       });
     },
     /**
+     * 根据选择过滤用户
+     */
+    async filtUserBySelect({
+      state,
+      commit,
+      dispatch
+    }, payload) {
+      const selectedUser = payload.selectedUser;
+      await dispatch("simulateShowPageOverlay");
+      return new Promise((resolve, reject) => {
+        if (!selectedUser) {
+          commit({
+            type: "setFilterData",
+            filterData: state.userData
+          });
+          resolve(false);
+          return;
+        }
+        commit({
+          type: "setFilterData",
+          filterData: state.userData.filter(
+            item => item.name === selectedUser
+          )
+        });
+        resolve(true);
+      });
+    },
+    /**
      * 编辑用户
      */
     async editUser({
