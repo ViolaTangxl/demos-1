@@ -38,6 +38,9 @@
  * Create Date: 2018-07-01
  */
 
+// 引入mapState，mapMutations和mapActions
+import { mapState, mapMutations, mapActions } from "vuex";
+
 // 导入模拟的用户数据
 import { userData } from "@/config/userMana";
 // 导入表格头数据
@@ -82,8 +85,9 @@ export default {
       this.selectedUser = item.name;
     },
     createUser: function() {
-      console.log("新建用户");
-    }
+      this.showDialog({ type: "create" });
+    },
+    ...mapMutations("UserManage", ["showDialog"])
   },
   components: {
     UserManage

@@ -54,7 +54,7 @@
                element-loading-text="请稍后..."
                element-loading-spinner="el-icon-loading"
                element-loading-background="rgba(0, 0, 0, 0.6)"
-               v-bind:title="dialogType === 'view' ? '查看用户' : '编辑用户'"
+               v-bind:title="getDialogTitle"
                width="400px"
                v-bind:visible="dialogVisible"
                v-bind:close-on-click-modal="false"
@@ -132,7 +132,7 @@
       </el-form>
       <span slot="footer">
         <el-button size="mini"
-                   v-on:click="hideDialog">取消</el-button>
+                   v-on:click="dialogCancel('dialogForm')">取消</el-button>
         <el-button size="mini"
                    type="primary"
                    v-on:click="dialogConfirm('dialogForm')">确定</el-button>
@@ -151,7 +151,7 @@
  */
 
 // 引入mapState，mapMutations和mapActions
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "UserManage",
@@ -173,19 +173,15 @@ export default {
         state: ""
       },
       formRules: {
-        name: [{ required: true, message: "名字不能为空", trigger: "change" }],
+        name: [{ required: true, message: "名字不能为空", trigger: "blur" }],
         age: [
-          { required: true, message: "年龄不能为空", trigger: "change" },
-          { type: "number", message: "年龄必须为数字", trigger: "change" }
+          { required: true, message: "年龄不能为空", trigger: "blur" },
+          { type: "number", message: "年龄必须为数字", trigger: "blur" }
         ],
-        address: [
-          { required: true, message: "住址不能为空", trigger: "change" }
-        ],
-        job: [{ required: true, message: "职位不能为空", trigger: "change" }],
-        sex: [{ required: true, message: "请选择性别", trigger: "change" }],
-        state: [
-          { required: true, message: "请选择就职状态", trigger: "change" }
-        ]
+        address: [{ required: true, message: "住址不能为空", trigger: "blur" }],
+        job: [{ required: true, message: "职位不能为空", trigger: "blur" }],
+        sex: [{ required: true, message: "请选择性别", trigger: "blur" }],
+        state: [{ required: true, message: "请选择就职状态", trigger: "blur" }]
       }
     };
   },
@@ -311,7 +307,7 @@ export default {
     dialogConfirm(formName) {
       switch (this.dialogType) {
         case "view":
-          this.hideDialog();
+          this.dialogCancel(formName);
           break;
         case "edit":
           this.dialogEditUser(formName);
@@ -329,13 +325,33 @@ export default {
         if (valid) {
           const model = this.$refs[formName].model;
           this.editUser({ model: model }).then(() => {
-            this.hideDialog();
+            this.dialogCancel(formName);
             this.showMessage("success", "修改成功", 1500);
           });
         } else {
           this.showMessage("error", "无法进行修改", 1500);
         }
       });
+    },
+    /**
+     * 取消对话框
+     */
+    dialogCancel(formName) {
+      // 清除表单的校验结果
+      this.$refs[formName].clearValidate();
+      // 重置对话框输入框
+      this.dialogForm = {
+        ...this.dialogForm,
+        ...{
+          name: "",
+          age: 0,
+          address: "",
+          job: "",
+          sex: "",
+          state: ""
+        }
+      };
+      this.hideDialog();
     },
     /**
      * 确认删除用户
@@ -379,7 +395,8 @@ export default {
       "dialogType",
       "dialogVisible",
       "formItemDisable"
-    ])
+    ]),
+    ...mapGetters("UserManage", ["getDialogTitle"])
   }
 };
 </script>

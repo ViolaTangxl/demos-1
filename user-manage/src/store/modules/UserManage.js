@@ -9,6 +9,26 @@ const UserManage = {
     dialogVisible: false,
     formItemDisable: false
   },
+  getters: {
+    /**
+     * 获取对话框标题
+     */
+    getDialogTitle(state) {
+      let dialogTitle = "";
+      switch (state.dialogType) {
+        case "view":
+          dialogTitle = "查看用户";
+          break;
+        case "edit":
+          dialogTitle = "编辑用户";
+          break;
+        case "create":
+          dialogTitle = "新建用户";
+          break;
+      }
+      return dialogTitle;
+    }
+  },
   mutations: {
     /**
      * 控制页面遮罩层
