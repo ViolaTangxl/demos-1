@@ -4,7 +4,10 @@ const UserManage = {
     pageLoad: false,
     dialogLoad: false,
     userData: [],
-    filterData: []
+    filterData: [],
+    dialogType: "view",
+    dialogVisible: false,
+    formItemDisable: false
   },
   mutations: {
     /**
@@ -36,6 +39,33 @@ const UserManage = {
         return;
       }
       state.filterData = payload.filterData;
+    },
+    /**
+     * 显示对话框
+     */
+    showDialog(state, payload) {
+      const type = payload.type;
+      switch (type) {
+        case "view":
+          state.formItemDisable = true;
+          break;
+        case "edit":
+          state.formItemDisable = false;
+          break;
+        case "create":
+          state.formItemDisable = false;
+          break;
+      }
+      state.dialogType = type;
+      state.dialogVisible = true;
+    },
+    /**
+     * 隐藏对话框
+     */
+    hideDialog(state, payload) {
+      state.formItemDisable = false;
+      state.dialogType = "view";
+      state.dialogVisible = false;
     }
   },
   actions: {

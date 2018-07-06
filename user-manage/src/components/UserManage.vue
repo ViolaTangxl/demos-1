@@ -67,7 +67,7 @@
         <el-form-item class="dialog-form-item"
                       label="姓名"
                       prop="name"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-input v-model="dialogForm.name"
                     v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
@@ -76,7 +76,7 @@
         <el-form-item class="dialog-form-item"
                       label="年龄"
                       prop="age"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-input v-model.number="dialogForm.age"
                     v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
@@ -85,7 +85,7 @@
         <el-form-item class="dialog-form-item"
                       label="住址"
                       prop="address"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-input v-model="dialogForm.address"
                     v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
@@ -94,7 +94,7 @@
         <el-form-item class="dialog-form-item"
                       label="职位"
                       prop="job"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-input v-model="dialogForm.job"
                     v-bind:disabled="formItemDisable"
                     v-bind:clearable="true"></el-input>
@@ -103,7 +103,7 @@
         <el-form-item class="dialog-form-item"
                       label="性别"
                       prop="sex"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-select class="dialog-select"
                      v-bind:disabled="formItemDisable"
                      v-model="dialogForm.sex"
@@ -118,7 +118,7 @@
         <el-form-item class="dialog-form-item"
                       label="状态"
                       prop="state"
-                      v-bind:label-width="formLabelWidth">
+                      label-width="60px">
           <el-select class="dialog-select"
                      v-bind:disabled="formItemDisable"
                      v-model="dialogForm.state"
@@ -132,10 +132,10 @@
       </el-form>
       <span slot="footer">
         <el-button size="mini"
-                   v-on:click="dialogVisible = false">取消</el-button>
+                   v-on:click="hideDialog">取消</el-button>
         <el-button size="mini"
                    type="primary"
-                   v-on:click="confirmViewEdit('dialogForm')">确定</el-button>
+                   v-on:click="dialogConfirm('dialogForm')">确定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -164,8 +164,6 @@ export default {
   data: function() {
     return {
       tableHeight: "100%",
-      dialogType: "view",
-      dialogVisible: false,
       dialogForm: {
         name: "",
         age: 0,
@@ -188,9 +186,7 @@ export default {
         state: [
           { required: true, message: "请选择就职状态", trigger: "change" }
         ]
-      },
-      formLabelWidth: "60px",
-      formItemDisable: false
+      }
     };
   },
   watch: {
@@ -299,40 +295,45 @@ export default {
      * 查看用户信息
      */
     viewUserInfo(row) {
-      this.dialogType = "view";
-      this.dialogVisible = true;
       this.dialogForm = { ...this.dialogForm, ...row };
-      this.formItemDisable = true;
+      this.showDialog({ type: "view" });
     },
     /**
      * 修改用户信息
      */
     modifyUserInfo(row) {
-      this.dialogType = "edit";
-      this.dialogVisible = true;
       this.dialogForm = { ...this.dialogForm, ...row };
-      this.formItemDisable = false;
+      this.showDialog({ type: "edit" });
     },
     /**
-     * 确认关闭查看/编辑用户对话框
+     * 确认关闭对话框
      */
-    confirmViewEdit(formName) {
-      // 查看
-      if (this.dialogType === "view") {
-        this.dialogVisible = false;
-        return;
+    dialogConfirm(formName) {
+      switch (this.dialogType) {
+        case "view":
+          this.hideDialog();
+          break;
+        case "edit":
+          this.dialogEditUser(formName);
+          break;
+        case "create":
+          console.log("新建用户");
+          break;
       }
-      // 编辑
+    },
+    /**
+     * 编辑用户
+     */
+    dialogEditUser(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
           const model = this.$refs[formName].model;
           this.editUser({ model: model }).then(() => {
-            this.dialogVisible = false;
+            this.hideDialog();
             this.showMessage("success", "修改成功", 1500);
           });
         } else {
           this.showMessage("error", "无法进行修改", 1500);
-          return;
         }
       });
     },
@@ -357,17 +358,28 @@ export default {
         onClose: true
       });
     },
-    ...mapMutations("UserManage", ["setUserData", "setFilterData"]),
+    ...mapMutations("UserManage", [
+      "setUserData",
+      "setFilterData",
+      "showDialog",
+      "hideDialog"
+    ]),
     ...mapActions("UserManage", [
       "simulateShowPageOverlay",
-      "simulateShowDialogOverlay",
       "filtUserBySelect",
       "editUser",
       "deleteUser"
     ])
   },
   computed: {
-    ...mapState("UserManage", ["pageLoad", "dialogLoad", "filterData"])
+    ...mapState("UserManage", [
+      "pageLoad",
+      "dialogLoad",
+      "filterData",
+      "dialogType",
+      "dialogVisible",
+      "formItemDisable"
+    ])
   }
 };
 </script>
