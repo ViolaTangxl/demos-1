@@ -29,6 +29,42 @@ const UserInfo = {
         return;
       }
       state.filterData = payload.filterData;
+    },
+    /**
+     * 根据选择过滤用户
+     */
+    filtUserBySelect(state, payload) {
+      const selectedUser = payload.selectedUser;
+      // if (!selectedUser) {
+      //   state.filterData = state.userData;
+      //   return;
+      // }
+      state.filterData = state.filterData.filter(
+        item => item.name === selectedUser
+      );
+    },
+    /**
+     * 根据时间范围过滤用户
+     */
+    filtUserByDateRange(state, payload) {
+      const dateRange = payload.dateRange;
+      // if (!dateRange || dateRange.length !== 2) {
+      //   state.filterData = state.userData;
+      //   return;
+      // }
+      const startTm = dateRange[0].getTime();
+      const endTm = dateRange[1].getTime();
+      state.filterData = state.filterData.filter(item => {
+        const dateMark = item.time.split("-");
+        const date = new Date(
+          parseInt(dateMark[0]),
+          parseInt(dateMark[1]) - 1,
+          parseInt(dateMark[2])
+        );
+        if (date.getTime() >= startTm && date.getTime() <= endTm) {
+          return item;
+        }
+      });
     }
   },
   actions: {
@@ -58,69 +94,39 @@ const UserInfo = {
       });
     },
     /**
-     * 根据选择过滤用户
+     * 根据条件过滤用户
      */
-    async filtUserBySelect({
+    async filterUser({
       state,
       commit,
       dispatch
     }, payload) {
       const selectedUser = payload.selectedUser;
-      await dispatch("simulateShowOverlay");
-      return new Promise((resolve, reject) => {
-        if (!selectedUser) {
-          commit({
-            type: "setFilterData",
-            filterData: state.userData
-          });
-          resolve(false);
-          return;
-        }
-        commit({
-          type: "setFilterData",
-          filterData: state.userData.filter(
-            item => item.name === selectedUser
-          )
-        });
-        resolve(true);
-      });
-    },
-    /**
-     * 根据时间范围过滤用户
-     */
-    async filtUserByDateRange({
-      state,
-      commit,
-      dispatch
-    }, payload) {
       const dateRange = payload.dateRange;
       await dispatch("simulateShowOverlay");
       return new Promise((resolve, reject) => {
-        if (!dateRange || dateRange.length !== 2) {
-          commit({
-            type: "setFilterData",
-            filterData: state.userData
-          });
-          resolve(false);
-          return;
-        }
-        const startTm = dateRange[0].getTime();
-        const endTm = dateRange[1].getTime();
+        // 重置过滤数据
         commit({
           type: "setFilterData",
-          filterData: state.userData.filter(item => {
-            const dateMark = item.time.split("-");
-            const date = new Date(
-              parseInt(dateMark[0]),
-              parseInt(dateMark[1]) - 1,
-              parseInt(dateMark[2])
-            );
-            if (date.getTime() >= startTm && date.getTime() <= endTm) {
-              return item;
-            }
-          })
+          filterData: state.userData
         });
-        resolve(true);
+        if (selectedUser) {
+          commit({
+            type: "filtUserBySelect",
+            selectedUser: selectedUser
+          });
+        }
+        if (dateRange && dateRange.length === 2) {
+          commit({
+            type: "filtUserByDateRange",
+            dateRange: dateRange
+          });
+        }
+        if (state.filterData.length === state.userData.length) {
+          resolve(false);
+        } else {
+          resolve(true);
+        }
       });
     }
   }

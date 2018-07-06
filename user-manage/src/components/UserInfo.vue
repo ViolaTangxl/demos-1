@@ -47,8 +47,9 @@ export default {
      * 监听selectedUser
      */
     selectedUser: async function() {
-      const result = await this.filtUserBySelect({
-        selectedUser: this.selectedUser
+      const result = await this.filterUser({
+        selectedUser: this.selectedUser,
+        dateRange: this.dateRange
       });
       if (result) {
         this.tableHeight = "auto";
@@ -60,7 +61,8 @@ export default {
      * 监听dateRange
      */
     dateRange: async function() {
-      const result = await this.filtUserByDateRange({
+      const result = await this.filterUser({
+        selectedUser: this.selectedUser,
         dateRange: this.dateRange
       });
       if (result) {
@@ -199,11 +201,7 @@ export default {
       return isShow;
     },
     ...mapMutations("UserInfo", ["setUserData", "setFilterData"]),
-    ...mapActions("UserInfo", [
-      "simulateShowOverlay",
-      "filtUserBySelect",
-      "filtUserByDateRange"
-    ])
+    ...mapActions("UserInfo", ["simulateShowOverlay", "filterUser"])
   },
   computed: {
     ...mapState("UserInfo", ["loading", "filterData"])

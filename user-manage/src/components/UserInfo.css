@@ -10,7 +10,7 @@
 
 .user-table .el-table .el-table__body-wrapper {
   height: auto !important;
-  max-height: calc(100% - 48px);
+  max-height: calc(100% - 60px);
   overflow-x: hidden;
   overflow-y: auto;
 }
