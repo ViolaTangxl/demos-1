@@ -14,6 +14,11 @@
                              v-bind:fetch-suggestions="queryUser"
                              v-on:select="selectUser"></el-autocomplete>
           </el-col>
+          <el-col :span="18"
+                  class="create-btn-container">
+            <!-- 新建用户 -->
+            <el-button v-on:click="createUser">新建用户</el-button>
+          </el-col>
         </el-row>
       </div>
     </div>
@@ -75,6 +80,9 @@ export default {
     },
     selectUser(item) {
       this.selectedUser = item.name;
+    },
+    createUser: function() {
+      console.log("新建用户");
     }
   },
   components: {

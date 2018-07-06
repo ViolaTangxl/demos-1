@@ -22,6 +22,10 @@
   width: 100%;
 }
 
+.manage-page .head-control .create-btn-container {
+  text-align: right;
+}
+
 .manage-page .table-container {
   width: 100%;
   height: calc(100% - 70px);
