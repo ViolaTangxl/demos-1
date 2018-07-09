@@ -177,7 +177,20 @@ const UserManage = {
       await dispatch("simulateShowDialogOverlay");
       return new Promise((resolve, reject) => {
         const model = payload.model;
-        console.log(model);
+        if (!model) {
+          reject();
+        }
+        const newUser = {
+          index: state.userData.length + 1,
+          deletePopShow: false,
+          ...model
+        };
+        state.userData.push(newUser);
+        commit({
+          type: "setFilterData",
+          filterData: state.userData
+        });
+        resolve();
       });
     },
     /**
