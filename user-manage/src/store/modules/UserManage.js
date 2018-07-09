@@ -167,6 +167,20 @@ const UserManage = {
       });
     },
     /**
+     * 新建用户
+     */
+    async createUser({
+      state,
+      commit,
+      dispatch
+    }, payload) {
+      await dispatch("simulateShowDialogOverlay");
+      return new Promise((resolve, reject) => {
+        const model = payload.model;
+        console.log(model);
+      });
+    },
+    /**
      * 编辑用户
      */
     async editUser({

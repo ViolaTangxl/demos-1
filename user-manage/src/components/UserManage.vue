@@ -180,8 +180,10 @@ export default {
         ],
         address: [{ required: true, message: "住址不能为空", trigger: "blur" }],
         job: [{ required: true, message: "职位不能为空", trigger: "blur" }],
-        sex: [{ required: true, message: "请选择性别", trigger: "blur" }],
-        state: [{ required: true, message: "请选择就职状态", trigger: "blur" }]
+        sex: [{ required: true, message: "请选择性别", trigger: "change" }],
+        state: [
+          { required: true, message: "请选择就职状态", trigger: "change" }
+        ]
       }
     };
   },
@@ -313,7 +315,7 @@ export default {
           this.dialogEditUser(formName);
           break;
         case "create":
-          console.log("新建用户");
+          this.dialogCreateUser(formName);
           break;
       }
     },
@@ -330,6 +332,22 @@ export default {
           });
         } else {
           this.showMessage("error", "无法进行修改", 1500);
+        }
+      });
+    },
+    /**
+     * 新建用户
+     */
+    dialogCreateUser(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          const model = this.$refs[formName].model;
+          this.createUser({ model: model }).then(() => {
+            this.dialogCancel(formName);
+            this.showMessage("success", "创建用户成功", 1500);
+          });
+        } else {
+          this.showMessage("error", "无法创建用户", 1500);
         }
       });
     },
@@ -383,6 +401,7 @@ export default {
     ...mapActions("UserManage", [
       "simulateShowPageOverlay",
       "filtUserBySelect",
+      "createUser",
       "editUser",
       "deleteUser"
     ])
