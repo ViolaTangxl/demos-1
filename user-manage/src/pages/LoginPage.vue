@@ -91,6 +91,7 @@ export default {
             this.resetDisabled = false;
             this.showMessage("success", "登录成功", 1500);
             this.login(match);
+            this.$router.push({ path: "/" });
             clearTimeout(timeOut);
           }, 1000);
         } else {
