@@ -18,9 +18,29 @@
       </div>
     </div>
     <div class="theme-container">
-      <div class="theme-row"></div>
+      <div class="theme-row">
+        <!-- 栅格布局 -->
+        <el-row :gutter="10">
+          <!-- 背景色选择器 -->
+          <el-col :span="8"
+                  class="theme-item">
+            <div class="container">
+              <h3>背景颜色选择器</h3>
+              <el-color-picker v-model="backgroundColor"></el-color-picker>
+            </div>
+          </el-col>
+          <!-- 字体颜色色选择器 -->
+          <el-col :span="8"
+                  class="theme-item">
+            <div class="container">
+              <h3>字体颜色选择器</h3>
+              <el-color-picker v-model="frontColor"></el-color-picker>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
       <div class="theme-row"
-           style="top: 15%;"></div>
+           style="top: 10%;"></div>
     </div>
   </div>
 </template>
@@ -36,7 +56,10 @@
 export default {
   name: "CustomPage",
   data: function() {
-    return {};
+    return {
+      backgroundColor: "",
+      frontColor: ""
+    };
   },
   methods: {
     reset: function() {
