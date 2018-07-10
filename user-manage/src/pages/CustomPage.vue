@@ -9,14 +9,18 @@
           <el-col :span="24"
                   class="control-btns">
             <!-- 重置按钮 -->
-            <el-button>重置</el-button>
+            <el-button v-on:click="reset">重置</el-button>
             <!-- 确定按钮 -->
-            <el-button type="primary">确定</el-button>
+            <el-button type="primary"
+                       v-on:click="confirm">确定</el-button>
           </el-col>
         </el-row>
       </div>
     </div>
     <div class="theme-container">
+      <div class="theme-row"></div>
+      <div class="theme-row"
+           style="top: 15%;"></div>
     </div>
   </div>
 </template>
@@ -33,6 +37,14 @@ export default {
   name: "CustomPage",
   data: function() {
     return {};
+  },
+  methods: {
+    reset: function() {
+      console.log("重置");
+    },
+    confirm: function() {
+      console.log("确定");
+    }
   }
 };
 </script>
