@@ -11,31 +11,50 @@ import HomePage from "@/pages/HomePage";
 import UserPage from "@/pages/UserPage";
 // 引入ManagePage页面
 import ManagePage from "@/pages/ManagePage";
+// 引入CustomPage页面
+import CustomPage from "@/pages/CustomPage";
+
 // 引入404页面
 import NotFoundPage from "@/pages/NotFoundPage";
 
 export const navConfig = [{
-  path: "user",
-  name: "user",
-  alias: "用户",
-  icon: "menu",
-  limit: false,
-  content: [{
-    path: "info",
-    name: "info",
-    alias: "用户信息表",
-    icon: "info",
+    path: "user",
+    name: "user",
+    alias: "用户",
+    icon: "menu",
     limit: false,
-    content: UserPage
-  }, {
-    path: "manage",
-    name: "manage",
-    alias: "用户管理",
+    content: [{
+      path: "info",
+      name: "info",
+      alias: "用户信息表",
+      icon: "info",
+      limit: false,
+      content: UserPage
+    }, {
+      path: "manage",
+      name: "manage",
+      alias: "用户管理",
+      icon: "setting",
+      limit: true,
+      content: ManagePage
+    }]
+  },
+  {
+    path: "setting",
+    name: "setting",
+    alias: "设置",
     icon: "setting",
-    limit: true,
-    content: ManagePage
-  }]
-}];
+    limit: false,
+    content: [{
+      path: "theme",
+      name: "theme",
+      alias: "自定义主题",
+      icon: "edit",
+      limit: true,
+      content: CustomPage
+    }]
+  }
+];
 
 export const otherConfig = [{
   path: "/",
