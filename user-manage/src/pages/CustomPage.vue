@@ -22,18 +22,18 @@
         <!-- 栅格布局 -->
         <el-row :gutter="10">
           <!-- 背景色选择器 -->
-          <el-col :span="8"
+          <el-col :span="12"
                   class="theme-item">
             <div class="container">
-              <h3>背景颜色选择器</h3>
+              <h3>背景颜色</h3>
               <el-color-picker v-model="backgroundColor"></el-color-picker>
             </div>
           </el-col>
           <!-- 字体颜色色选择器 -->
-          <el-col :span="8"
+          <el-col :span="12"
                   class="theme-item">
             <div class="container">
-              <h3>字体颜色选择器</h3>
+              <h3>字体颜色</h3>
               <el-color-picker v-model="frontColor"></el-color-picker>
             </div>
           </el-col>
@@ -57,13 +57,14 @@ export default {
   name: "CustomPage",
   data: function() {
     return {
-      backgroundColor: "",
-      frontColor: ""
+      backgroundColor: "#231f20",
+      frontColor: "#ffd04b"
     };
   },
   methods: {
     reset: function() {
-      console.log("重置");
+      this.backgroundColor = "#231f20";
+      this.frontColor = "#ffd04b";
     },
     confirm: function() {
       console.log("确定");
