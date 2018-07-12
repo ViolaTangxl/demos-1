@@ -43,10 +43,6 @@
   cursor: pointer;
 }
 
-.layout .right-header .collapse-btn:hover {
-  color: #ffd04b;
-}
-
 .layout .collapse-btn>i {
   font-size: 18px;
 }

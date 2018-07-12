@@ -23,7 +23,3 @@
 .user-table table .el-table__row {
   cursor: pointer;
 }
-
-.user-table table .row-success {
-  background-color: #ffd04b;
-}

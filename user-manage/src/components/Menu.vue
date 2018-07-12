@@ -21,9 +21,9 @@ export default {
       <el-menu
         class="el-menu-vertical-demo layout-menu"
         default-active={this.matchActiveRouter}
-        background-color="#231f20"
+        background-color={this.newState.backgroundColor}
         text-color="#fff"
-        active-text-color="#ffd04b"
+        active-text-color={this.newState.frontColor}
         collapse={this.isCollapse}
         router
       >
@@ -43,7 +43,10 @@ export default {
           return (
             <el-submenu index={path}>
               <template slot="title">
-                <i class={"el-icon-" + icon} />
+                <i
+                  class={"el-icon-" + icon}
+                  style={{ color: this.newState.frontColor }}
+                />
                 <span>{item.alias}</span>
               </template>
               {this.createMenu(h, item.content, path)}
@@ -56,7 +59,10 @@ export default {
           }
           return (
             <el-menu-item index={path} disabled={disabled}>
-              <i class={"el-icon-" + icon} />
+              <i
+                class={"el-icon-" + icon}
+                style={{ color: this.newState.frontColor }}
+              />
               <span>{item.alias}</span>
             </el-menu-item>
           );
@@ -68,7 +74,8 @@ export default {
     matchActiveRouter: function() {
       return this.$route.path;
     },
-    ...mapState(["isadmin"])
+    ...mapState(["isadmin"]),
+    ...mapState("Custom", ["newState"])
   }
 };
 </script>

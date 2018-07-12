@@ -1,5 +1,9 @@
 <template>
-  <div class="custom-page">
+  <div class="custom-page"
+       v-loading="pageLoad"
+       element-loading-text="玩儿命加载中"
+       element-loading-spinner="el-icon-loading"
+       element-loading-background="rgba(0, 0, 0, 0.6)">
     <div class="head-container">
       <span class="head-title">自定义主题</span>
       <div class="head-control">
@@ -26,15 +30,15 @@
                   class="theme-item">
             <div class="container">
               <h3>背景颜色</h3>
-              <el-color-picker v-model="newState.backgroundColor"></el-color-picker>
+              <el-color-picker v-model="backgroundColor"></el-color-picker>
             </div>
           </el-col>
-          <!-- 字体颜色色选择器 -->
+          <!-- 字体选中颜色色选择器 -->
           <el-col :span="12"
                   class="theme-item">
             <div class="container">
-              <h3>字体颜色</h3>
-              <el-color-picker v-model="newState.frontColor"></el-color-picker>
+              <h3>字体选中颜色</h3>
+              <el-color-picker v-model="frontColor"></el-color-picker>
             </div>
           </el-col>
         </el-row>
@@ -59,19 +63,28 @@ import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 export default {
   name: "CustomPage",
   data: function() {
-    return {};
+    return {
+      backgroundColor: "#231f20",
+      frontColor: "#ffd04b"
+    };
   },
   methods: {
     reset: function() {
+      this.backgroundColor = "#231f20";
+      this.frontColor = "#ffd04b";
       this.resetState();
     },
     confirm: function() {
-      console.log("确定");
+      this.confirmState({
+        backgroundColor: this.backgroundColor,
+        frontColor: this.frontColor
+      });
     },
-    ...mapMutations("Custom", ["resetState"])
+    ...mapMutations("Custom", ["resetState"]),
+    ...mapActions("Custom", ["confirmState"])
   },
   computed: {
-    ...mapState("Custom", ["newState"])
+    ...mapState("Custom", ["pageLoad"])
   }
 };
 </script>

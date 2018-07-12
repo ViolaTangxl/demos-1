@@ -35,7 +35,7 @@ export default {
           data={this.filterData}
           border
           style={"height: " + this.tableHeight}
-          row-class-name={this.getRowClass}
+          row-style={this.getRowStyle}
         >
           {this.createTableColumn(h)}
         </el-table>
@@ -76,12 +76,14 @@ export default {
     /**
      * 获取表格行的class
      */
-    getRowClass({ rowIndex }) {
-      let rowClass = "";
+    getRowStyle({ rowIndex }) {
+      let rowStyle = {
+        backgroundColor: "#fff"
+      };
       if (rowIndex % 2 === 1) {
-        rowClass = "row-success";
+        rowStyle.backgroundColor = this.newState.frontColor;
       }
-      return rowClass;
+      return rowStyle;
     },
     /**
      * 动态创建表格的列
@@ -204,7 +206,8 @@ export default {
     ...mapActions("UserInfo", ["simulateShowOverlay", "filterUser"])
   },
   computed: {
-    ...mapState("UserInfo", ["loading", "filterData"])
+    ...mapState("UserInfo", ["loading", "filterData"]),
+    ...mapState("Custom", ["newState"])
   }
 };
 </script>

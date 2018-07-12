@@ -20,10 +20,6 @@
   top: -2px;
 }
 
-.layout-menu .el-submenu .el-menu .el-menu-item.is-active i {
-  color: #ffd04b;
-}
-
 .layout-menu .el-submenu .el-submenu__title i,
 .layout-menu .el-submenu .el-menu .el-menu-item i {
   color: #fff;

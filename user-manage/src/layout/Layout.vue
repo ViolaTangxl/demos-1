@@ -13,7 +13,10 @@
       <el-header class="right-header"
                  height="60px">
         <span class="collapse-btn"
-              v-on:click="collapseMenu">
+              v-bind:style="{color: collapseBtnColor}"
+              v-on:click="collapseMenu"
+              v-on:mouseover="collapseBtnColor = newState.frontColor"
+              v-on:mouseleave="collapseBtnColor = '#fff'">
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
           <span>{{ isCollapse ? "展开" : "收起" }}</span>
         </span>
@@ -65,7 +68,8 @@ export default {
   created: function() {},
   data: function() {
     return {
-      isCollapse: true
+      isCollapse: true,
+      collapseBtnColor: "#fff"
     };
   },
   methods: {
@@ -91,7 +95,8 @@ export default {
     ...mapActions(["login", "logout"])
   },
   computed: {
-    ...mapState(["username"])
+    ...mapState(["username"]),
+    ...mapState("Custom", ["newState"])
   },
   components: {
     MenuVue
