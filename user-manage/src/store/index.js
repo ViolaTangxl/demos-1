@@ -15,6 +15,8 @@ import getters from "./getters";
 import UserInfo from "./modules/UserInfo";
 // 导入UserManage
 import UserManage from "./modules/UserManage";
+// 引入Custom
+import Custom from "./modules/Custom";
 
 Vue.use(vuex);
 
@@ -28,6 +30,7 @@ export default new vuex.Store({
   getters: getters,
   modules: {
     UserInfo: UserInfo,
-    UserManage: UserManage
+    UserManage: UserManage,
+    Custom: Custom
   }
 });

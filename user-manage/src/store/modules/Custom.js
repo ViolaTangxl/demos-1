@@ -1,8 +1,8 @@
 const Custom = {
   namespaced: true,
   state: {
-    backgroundColor: "",
-    frontColor: ""
+    backgroundColor: "#231f20",
+    frontColor: "#ffd04b"
   },
   mutations: {},
   actions: {}

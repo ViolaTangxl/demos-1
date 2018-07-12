@@ -53,13 +53,13 @@
  * Create Date: 2018-07-10
  */
 
+// 引入mapState，mapMutations和mapActions
+import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
+
 export default {
   name: "CustomPage",
   data: function() {
-    return {
-      backgroundColor: "#231f20",
-      frontColor: "#ffd04b"
-    };
+    return {};
   },
   methods: {
     reset: function() {
@@ -69,6 +69,9 @@ export default {
     confirm: function() {
       console.log("确定");
     }
+  },
+  computed: {
+    ...mapState("Custom", ["backgroundColor", "frontColor"])
   }
 };
 </script>
