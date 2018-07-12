@@ -26,7 +26,7 @@
                   class="theme-item">
             <div class="container">
               <h3>背景颜色</h3>
-              <el-color-picker v-model="backgroundColor"></el-color-picker>
+              <el-color-picker v-model="newState.backgroundColor"></el-color-picker>
             </div>
           </el-col>
           <!-- 字体颜色色选择器 -->
@@ -34,7 +34,7 @@
                   class="theme-item">
             <div class="container">
               <h3>字体颜色</h3>
-              <el-color-picker v-model="frontColor"></el-color-picker>
+              <el-color-picker v-model="newState.frontColor"></el-color-picker>
             </div>
           </el-col>
         </el-row>
@@ -71,7 +71,7 @@ export default {
     ...mapMutations("Custom", ["resetState"])
   },
   computed: {
-    ...mapState("Custom", ["backgroundColor", "frontColor"])
+    ...mapState("Custom", ["newState"])
   }
 };
 </script>
