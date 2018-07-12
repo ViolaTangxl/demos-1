@@ -63,12 +63,12 @@ export default {
   },
   methods: {
     reset: function() {
-      this.backgroundColor = "#231f20";
-      this.frontColor = "#ffd04b";
+      this.resetState();
     },
     confirm: function() {
       console.log("确定");
-    }
+    },
+    ...mapMutations("Custom", ["resetState"])
   },
   computed: {
     ...mapState("Custom", ["backgroundColor", "frontColor"])
