@@ -3,6 +3,7 @@
     <el-aside class="left-part"
               width="auto">
       <div class="logo-container"
+           v-bind:style="{backgroundColor: newState.backgroundColor}"
            v-on:click="goHome">
         <img src="@/assets/images/logo.gif" />
       </div>
@@ -11,7 +12,8 @@
     </el-aside>
     <el-container class="right-part">
       <el-header class="right-header"
-                 height="60px">
+                 height="60px"
+                 v-bind:style="{backgroundColor: newState.backgroundColor}">
         <span class="collapse-btn"
               v-bind:style="{color: collapseTextColor}"
               v-on:click="collapseMenu"
@@ -44,7 +46,8 @@
         </transition>
       </el-main>
       <el-footer class="right-footer"
-                 height="50px">
+                 height="50px"
+                 v-bind:style="{backgroundColor: newState.backgroundColor}">
         <el-button type="text"
                    v-on:click="goMyPage">
           <span v-bind:style="{color: footerTextColor}"
