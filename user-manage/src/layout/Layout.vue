@@ -13,10 +13,10 @@
       <el-header class="right-header"
                  height="60px">
         <span class="collapse-btn"
-              v-bind:style="{color: collapseBtnColor}"
+              v-bind:style="{color: collapseTextColor}"
               v-on:click="collapseMenu"
-              v-on:mouseover="collapseBtnColor = newState.selectFrontColor"
-              v-on:mouseleave="collapseBtnColor = '#fff'">
+              v-on:mouseover="collapseTextColor = newState.selectFrontColor"
+              v-on:mouseleave="collapseTextColor = '#fff'">
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
           <span>{{ isCollapse ? "展开" : "收起" }}</span>
         </span>
@@ -24,7 +24,10 @@
         <span class="user-drop-down">
           <el-dropdown trigger="click"
                        v-on:command="dropDownClick">
-            <span class="el-dropdown-link">
+            <span class="el-dropdown-link"
+                  v-bind:style="{color: dropdownTextColor}"
+                  v-on:mouseover="dropdownTextColor = newState.selectFrontColor"
+                  v-on:mouseleave="dropdownTextColor = '#fff'">
               {{username}}
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
@@ -43,7 +46,11 @@
       <el-footer class="right-footer"
                  height="50px">
         <el-button type="text"
-                   v-on:click="goMyPage">User Management System @2018 Created By Jiaiyizhen</el-button>
+                   v-on:click="goMyPage">
+          <span v-bind:style="{color: footerTextColor}"
+                v-on:mouseover="footerTextColor = newState.selectFrontColor"
+                v-on:mouseleave="footerTextColor = '#fff'">User Management System @2018 Created By Jiaiyizhen</span>
+        </el-button>
       </el-footer>
     </el-container>
   </el-container>
@@ -69,7 +76,9 @@ export default {
   data: function() {
     return {
       isCollapse: true,
-      collapseBtnColor: "#fff"
+      collapseTextColor: "#fff",
+      dropdownTextColor: "#fff",
+      footerTextColor: "#fff"
     };
   },
   methods: {

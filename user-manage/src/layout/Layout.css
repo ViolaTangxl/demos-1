@@ -64,10 +64,6 @@
   color: #fff;
 }
 
-.layout .user-drop-down .el-dropdown-link:hover {
-  color: #ffd04b;
-}
-
 .layout .right-part .right-body {
   width: 100%;
   height: calc(100% - 106px) !important;
@@ -79,15 +75,6 @@
   width: 100%;
   line-height: 50px;
   text-align: center;
-  color: #fff;
   border-left: 1px solid #fff;
   background-color: #231f20;
-}
-
-.layout .right-part .right-footer button {
-  color: #fff;
-}
-
-.layout .right-part .right-footer button:hover {
-  color: #ffd04b;
 }
