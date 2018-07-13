@@ -4,11 +4,13 @@ const Custom = {
     pageLoad: false,
     originState: {
       backgroundColor: "#231f20",
-      frontColor: "#ffd04b"
+      frontColor: "#fff",
+      selectFrontColor: "#ffd04b"
     },
     newState: {
       backgroundColor: "#231f20",
-      frontColor: "#ffd04b"
+      frontColor: "#fff",
+      selectFrontColor: "#ffd04b"
     },
   },
   mutations: {

@@ -33,12 +33,22 @@
               <el-color-picker v-model="backgroundColor"></el-color-picker>
             </div>
           </el-col>
-          <!-- 字体选中颜色色选择器 -->
+          <!-- 未选中字体颜色选择器 -->
           <el-col :span="12"
                   class="theme-item">
             <div class="container">
-              <h3>字体选中颜色</h3>
+              <h3>未选中字体颜色</h3>
               <el-color-picker v-model="frontColor"></el-color-picker>
+            </div>
+          </el-col>
+        </el-row>
+        <el-row :gutter="10">
+          <!-- 选中字体颜色选择器 -->
+          <el-col :span="12"
+                  class="theme-item">
+            <div class="container">
+              <h3>选中字体颜色</h3>
+              <el-color-picker v-model="selectFrontColor"></el-color-picker>
             </div>
           </el-col>
         </el-row>
@@ -65,19 +75,22 @@ export default {
   data: function() {
     return {
       backgroundColor: "#231f20",
-      frontColor: "#ffd04b"
+      frontColor: "#fff",
+      selectFrontColor: "#ffd04b"
     };
   },
   methods: {
     reset: function() {
       this.backgroundColor = "#231f20";
-      this.frontColor = "#ffd04b";
+      this.frontColor = "#fff";
+      this.selectFrontColor = "#ffd04b";
       this.resetState();
     },
     confirm: function() {
       this.confirmState({
         backgroundColor: this.backgroundColor,
-        frontColor: this.frontColor
+        frontColor: this.frontColor,
+        selectFrontColor: this.selectFrontColor
       });
     },
     ...mapMutations("Custom", ["resetState"]),

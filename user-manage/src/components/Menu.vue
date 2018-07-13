@@ -23,7 +23,7 @@ export default {
         default-active={this.matchActiveRouter}
         background-color={this.newState.backgroundColor}
         text-color="#fff"
-        active-text-color={this.newState.frontColor}
+        active-text-color={this.newState.selectFrontColor}
         collapse={this.isCollapse}
         router
       >
@@ -45,7 +45,7 @@ export default {
               <template slot="title">
                 <i
                   class={"el-icon-" + icon}
-                  style={{ color: this.newState.frontColor }}
+                  style={{ color: this.newState.selectFrontColor }}
                 />
                 <span>{item.alias}</span>
               </template>
@@ -61,7 +61,7 @@ export default {
             <el-menu-item index={path} disabled={disabled}>
               <i
                 class={"el-icon-" + icon}
-                style={{ color: this.newState.frontColor }}
+                style={{ color: this.newState.selectFrontColor }}
               />
               <span>{item.alias}</span>
             </el-menu-item>

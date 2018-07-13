@@ -15,7 +15,7 @@
         <span class="collapse-btn"
               v-bind:style="{color: collapseBtnColor}"
               v-on:click="collapseMenu"
-              v-on:mouseover="collapseBtnColor = newState.frontColor"
+              v-on:mouseover="collapseBtnColor = newState.selectFrontColor"
               v-on:mouseleave="collapseBtnColor = '#fff'">
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
           <span>{{ isCollapse ? "展开" : "收起" }}</span>

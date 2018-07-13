@@ -81,7 +81,7 @@ export default {
         backgroundColor: "#fff"
       };
       if (rowIndex % 2 === 1) {
-        rowStyle.backgroundColor = this.newState.frontColor;
+        rowStyle.backgroundColor = this.newState.selectFrontColor;
       }
       return rowStyle;
     },
