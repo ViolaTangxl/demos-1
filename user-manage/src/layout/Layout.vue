@@ -5,7 +5,7 @@
       <div class="logo-container"
            v-bind:style="{backgroundColor: newState.backgroundColor}"
            v-on:click="goHome">
-        <img src="@/assets/images/logo.gif" />
+        <img src="@/assets/images/cartoon.gif" />
       </div>
       <MenuVue v-bind:isCollapse="isCollapse"
                v-bind:navConfig="navConfig" />
