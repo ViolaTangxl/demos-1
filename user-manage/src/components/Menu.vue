@@ -22,7 +22,7 @@ export default {
         class="el-menu-vertical-demo layout-menu"
         default-active={this.matchActiveRouter}
         background-color={this.newState.backgroundColor}
-        text-color="#fff"
+        text-color={this.newState.frontColor}
         active-text-color={this.newState.selectFrontColor}
         collapse={this.isCollapse}
         router

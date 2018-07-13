@@ -15,10 +15,10 @@
                  height="60px"
                  v-bind:style="{backgroundColor: newState.backgroundColor}">
         <span class="collapse-btn"
-              v-bind:style="{color: collapseTextColor}"
+              v-bind:style="{color: newState.frontColor}"
               v-on:click="collapseMenu"
-              v-on:mouseover="collapseTextColor = newState.selectFrontColor"
-              v-on:mouseleave="collapseTextColor = '#fff'">
+              v-on:mouseover="mouseoverFunc"
+              v-on:mouseleave="mouseleaveFunc">
           <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
           <span>{{ isCollapse ? "展开" : "收起" }}</span>
         </span>
@@ -27,9 +27,9 @@
           <el-dropdown trigger="click"
                        v-on:command="dropDownClick">
             <span class="el-dropdown-link"
-                  v-bind:style="{color: dropdownTextColor}"
-                  v-on:mouseover="dropdownTextColor = newState.selectFrontColor"
-                  v-on:mouseleave="dropdownTextColor = '#fff'">
+                  v-bind:style="{color: newState.frontColor}"
+                  v-on:mouseover="mouseoverFunc"
+                  v-on:mouseleave="mouseleaveFunc">
               {{username}}
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
@@ -50,9 +50,9 @@
                  v-bind:style="{backgroundColor: newState.backgroundColor}">
         <el-button type="text"
                    v-on:click="goMyPage">
-          <span v-bind:style="{color: footerTextColor}"
-                v-on:mouseover="footerTextColor = newState.selectFrontColor"
-                v-on:mouseleave="footerTextColor = '#fff'">User Management System @2018 Created By Jiaiyizhen</span>
+          <span v-bind:style="{color: newState.frontColor}"
+                v-on:mouseover="mouseoverFunc"
+                v-on:mouseleave="mouseleaveFunc">User Management System @2018 Created By Jiaiyizhen</span>
         </el-button>
       </el-footer>
     </el-container>
@@ -75,13 +75,9 @@ import { mapState, mapActions, mapGetters } from "vuex";
 export default {
   name: "Layout",
   props: ["navConfig"],
-  created: function() {},
   data: function() {
     return {
-      isCollapse: true,
-      collapseTextColor: "#fff",
-      dropdownTextColor: "#fff",
-      footerTextColor: "#fff"
+      isCollapse: true
     };
   },
   methods: {
@@ -97,6 +93,12 @@ export default {
           this.logout();
           break;
       }
+    },
+    mouseoverFunc: function(evt) {
+      evt.currentTarget.style.color = this.newState.selectFrontColor;
+    },
+    mouseleaveFunc: function(evt) {
+      evt.currentTarget.style.color = this.newState.frontColor;
     },
     goMyPage: function() {
       window.open("https://github.com/war408705279", "_blank");
