@@ -5,12 +5,14 @@ const Custom = {
     originState: {
       backgroundColor: "#231f20",
       frontColor: "#fff",
-      selectFrontColor: "#ffd04b"
+      selectFrontColor: "#ffd04b",
+      transparent: 100
     },
     newState: {
       backgroundColor: "#231f20",
       frontColor: "#fff",
-      selectFrontColor: "#ffd04b"
+      selectFrontColor: "#ffd04b",
+      transparent: 100
     },
   },
   mutations: {

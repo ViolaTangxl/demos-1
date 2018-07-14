@@ -89,13 +89,15 @@ export default {
       this.backgroundColor = "#231f20";
       this.frontColor = "#fff";
       this.selectFrontColor = "#ffd04b";
+      this.transparent = 100;
       this.resetState();
     },
     confirm: function() {
       this.confirmState({
         backgroundColor: this.backgroundColor,
         frontColor: this.frontColor,
-        selectFrontColor: this.selectFrontColor
+        selectFrontColor: this.selectFrontColor,
+        transparent: this.transparent
       });
     },
     ...mapMutations("Custom", ["resetState"]),
