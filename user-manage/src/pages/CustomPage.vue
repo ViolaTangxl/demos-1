@@ -50,6 +50,14 @@
             <el-color-picker v-model="selectFrontColor"></el-color-picker>
           </div>
         </el-col>
+        <!-- 透明度 -->
+        <el-col :span="12"
+                class="theme-item">
+          <div class="container">
+            <h3>透明度</h3>
+            <el-slider v-model="transparent"></el-slider>
+          </div>
+        </el-col>
       </el-row>
     </div>
   </div>
@@ -72,7 +80,8 @@ export default {
     return {
       backgroundColor: "#231f20",
       frontColor: "#fff",
-      selectFrontColor: "#ffd04b"
+      selectFrontColor: "#ffd04b",
+      transparent: 100
     };
   },
   methods: {
