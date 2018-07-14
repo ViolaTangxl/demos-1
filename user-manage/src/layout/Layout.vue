@@ -1,19 +1,20 @@
 <template>
   <el-container class="layout">
     <el-aside class="left-part"
-              width="auto">
+              width="auto"
+              v-bind:style="{opacity: newState.transparent/100}">
       <div class="logo-container"
            v-bind:style="{backgroundColor: newState.backgroundColor}"
            v-on:click="goHome">
         <img src="@/assets/images/cartoon.gif" />
       </div>
-      <MenuVue v-bind:isCollapse="isCollapse"
-               v-bind:navConfig="navConfig" />
+      <Menu v-bind:isCollapse="isCollapse"
+            v-bind:navConfig="navConfig" />
     </el-aside>
     <el-container class="right-part">
       <el-header class="right-header"
                  height="60px"
-                 v-bind:style="{backgroundColor: newState.backgroundColor}">
+                 v-bind:style="{backgroundColor: newState.backgroundColor, opacity: newState.transparent/100}">
         <span class="collapse-btn"
               v-bind:style="{color: newState.frontColor}"
               v-on:click="collapseMenu"
@@ -47,7 +48,7 @@
       </el-main>
       <el-footer class="right-footer"
                  height="50px"
-                 v-bind:style="{backgroundColor: newState.backgroundColor}">
+                 v-bind:style="{backgroundColor: newState.backgroundColor, opacity: newState.transparent/100}">
         <el-button type="text"
                    v-on:click="goMyPage">
           <span v-bind:style="{color: newState.frontColor}"
@@ -68,7 +69,7 @@
  */
 
 // 引入Menu
-import MenuVue from "@/components/Menu.vue";
+import Menu from "@/components/Menu.vue";
 // 引入vuex相关方法
 import { mapState, mapActions, mapGetters } from "vuex";
 
@@ -113,7 +114,7 @@ export default {
     ...mapState("Custom", ["newState"])
   },
   components: {
-    MenuVue
+    Menu
   }
 };
 </script>
