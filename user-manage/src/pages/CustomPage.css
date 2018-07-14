@@ -27,22 +27,20 @@
   position: relative;
 }
 
-.custom-page .theme-container .theme-row {
-  width: 100%;
-  position: relative;
-  top: 5%;
+.custom-page .theme-container .el-row {
+  margin-top: 10px;
 }
 
-.custom-page .theme-row .theme-item {
+.custom-page .theme-item {
   text-align: center;
 }
 
-.custom-page .theme-row .theme-item .container {
+.custom-page .theme-item .container {
   width: 100%;
   border: 1px solid #ddd;
   border-radius: 10px;
 }
 
-.custom-page .theme-row .theme-item .container .el-color-picker {
+.custom-page .theme-item .container .el-color-picker {
   margin-bottom: 1em;
 }

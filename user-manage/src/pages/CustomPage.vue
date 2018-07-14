@@ -22,39 +22,35 @@
       </div>
     </div>
     <div class="theme-container">
-      <div class="theme-row">
-        <!-- 栅格布局 -->
-        <el-row :gutter="10">
-          <!-- 背景色选择器 -->
-          <el-col :span="12"
-                  class="theme-item">
-            <div class="container">
-              <h3>背景颜色</h3>
-              <el-color-picker v-model="backgroundColor"></el-color-picker>
-            </div>
-          </el-col>
-          <!-- 未选中字体颜色选择器 -->
-          <el-col :span="12"
-                  class="theme-item">
-            <div class="container">
-              <h3>未选中字体颜色</h3>
-              <el-color-picker v-model="frontColor"></el-color-picker>
-            </div>
-          </el-col>
-        </el-row>
-        <el-row :gutter="10">
-          <!-- 选中字体颜色选择器 -->
-          <el-col :span="12"
-                  class="theme-item">
-            <div class="container">
-              <h3>选中字体颜色</h3>
-              <el-color-picker v-model="selectFrontColor"></el-color-picker>
-            </div>
-          </el-col>
-        </el-row>
-      </div>
-      <div class="theme-row"
-           style="top: 10%;"></div>
+      <!-- 栅格布局 -->
+      <el-row :gutter="10">
+        <!-- 背景色选择器 -->
+        <el-col :span="12"
+                class="theme-item">
+          <div class="container">
+            <h3>背景颜色</h3>
+            <el-color-picker v-model="backgroundColor"></el-color-picker>
+          </div>
+        </el-col>
+        <!-- 未选中字体颜色选择器 -->
+        <el-col :span="12"
+                class="theme-item">
+          <div class="container">
+            <h3>未选中字体颜色</h3>
+            <el-color-picker v-model="frontColor"></el-color-picker>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="10">
+        <!-- 选中字体颜色选择器 -->
+        <el-col :span="12"
+                class="theme-item">
+          <div class="container">
+            <h3>选中字体颜色</h3>
+            <el-color-picker v-model="selectFrontColor"></el-color-picker>
+          </div>
+        </el-col>
+      </el-row>
     </div>
   </div>
 </template>
