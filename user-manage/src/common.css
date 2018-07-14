@@ -1,5 +1,18 @@
+/* 引入icomoon */
+
+@import url('./assets/icomoon/style.css');
 /* 下拉菜单选项文字居中 */
 
 .el-dropdown-menu .el-dropdown-menu__item {
   text-align: center;
+}
+
+/* icomonn 图标样式 */
+
+.icomoon {
+  font-size: 1em;
+}
+
+.icomoon:before {
+  color: #000;
 }
