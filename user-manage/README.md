@@ -32,6 +32,17 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## src 项目源代码文件
 
+1. src/assets 目录
+
+项目代码的一些动态依赖项
+
+- icomoon: 外部引入的图标，图标源文件（svg文件）从iconfont下载，然后经过icomoon处理得到
+
+- images: 项目引入的一些图片
+
+- plugins: 项目引入的插件
+
+2. src/components 目录
 
 ## static 目录
 
