@@ -13,6 +13,8 @@ import UserPage from "@/pages/UserPage";
 import ManagePage from "@/pages/ManagePage";
 // 引入CustomPage页面
 import CustomPage from "@/pages/CustomPage";
+// 引入EvaluatePage页面
+import EvaluatePage from "@/pages/EvaluatePage";
 
 // 引入404页面
 import NotFoundPage from "@/pages/NotFoundPage";
@@ -53,6 +55,14 @@ export const navConfig = [{
       limit: true,
       content: CustomPage
     }]
+  },
+  {
+    path: "message",
+    name: "message",
+    alias: "反馈",
+    icon: "message",
+    limit: false,
+    content: EvaluatePage
   }
 ];
 
