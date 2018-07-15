@@ -44,6 +44,40 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 2. src/components 目录
 
+项目页面中的组件项
+
+3. src/config 目录
+
+项目中的路由配置/数据配置文件
+
+4. src/layout 目录
+
+项目系统的布局文件
+
+5. src/pages 目录
+
+项目系统的页面文件
+
+6. src/router 目录
+
+设置/引用vue-router
+
+7. src/store 目录
+
+设置/引用vuex
+
+8. src/common.css 文件
+
+项目系统样式的整体/公用设置文件
+
+9. src/Enter.vue 文件
+
+项目系统的主入口vue文件
+
+10. src/main.js 文件
+
+直接引用在index.html文件中，同时是整个系统的主入口
+
 ## static 目录
 
 静态资源目录，保存着一些不需要编译的图片等文件
