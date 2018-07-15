@@ -44,7 +44,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 2. src/components 目录
 
-项目页面中的组件项
+项目页面中的组件项
 
 3. src/config 目录
 
