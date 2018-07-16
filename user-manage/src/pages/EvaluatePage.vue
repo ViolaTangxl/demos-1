@@ -28,15 +28,18 @@
                label-width="100px">
         <el-form-item label="姓名"
                       prop="name">
-          <el-input v-model="evaluateForm.name"></el-input>
+          <el-input v-model="evaluateForm.name"
+                    placeholder="请输入姓名"></el-input>
         </el-form-item>
         <el-form-item label="邮箱"
                       prop="email">
-          <el-input v-model="evaluateForm.email"></el-input>
+          <el-input v-model="evaluateForm.email"
+                    placeholder="请输入邮箱"></el-input>
         </el-form-item>
         <el-form-item label="住址"
                       prop="address">
-          <el-input v-model="evaluateForm.address"></el-input>
+          <el-input v-model="evaluateForm.address"
+                    placeholder="请输入住址"></el-input>
         </el-form-item>
         <el-form-item label="性别"
                       prop="sex">
@@ -51,7 +54,9 @@
         <el-form-item label="反馈信息"
                       prop="content">
           <el-input type="textarea"
-                    v-model="evaluateForm.content"></el-input>
+                    v-model="evaluateForm.content"
+                    placeholder="请输入反馈信息"
+                    v-bind:autosize="{minRows: 5, maxRows: 5}"></el-input>
         </el-form-item>
       </el-form>
     </div>
