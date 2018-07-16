@@ -13,8 +13,10 @@
 }
 
 .evaluate-page .head-container .head-control {
-  width: 100%;
+  width: 80%;
   height: 50px;
+  position: relative;
+  left: 10%;
   line-height: 50px;
 }
 
@@ -23,7 +25,9 @@
 }
 
 .evaluate-page .main-container {
-  width: 100%;
-  height: calc(100% - 70px);
+  width: 80%;
+  height: calc(100% - 80px);
   position: relative;
+  top: 10px;
+  left: 10%;
 }
