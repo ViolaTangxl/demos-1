@@ -5,7 +5,6 @@
        element-loading-spinner="el-icon-loading"
        element-loading-background="rgba(0, 0, 0, 0.6)">
     <div class="head-container">
-      <span class="head-title">反馈页面</span>
       <div class="head-control">
         <!-- 控制器 -->
         <!-- 栅格布局 -->
@@ -31,16 +30,6 @@
           <el-input v-model="evaluateForm.name"
                     placeholder="请输入姓名"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱"
-                      prop="email">
-          <el-input v-model="evaluateForm.email"
-                    placeholder="请输入邮箱"></el-input>
-        </el-form-item>
-        <el-form-item label="住址"
-                      prop="address">
-          <el-input v-model="evaluateForm.address"
-                    placeholder="请输入住址"></el-input>
-        </el-form-item>
         <el-form-item label="性别"
                       prop="sex">
           <el-select v-model="evaluateForm.sex"
@@ -50,6 +39,16 @@
             <el-option label="女"
                        value="female"></el-option>
           </el-select>
+        </el-form-item>
+        <el-form-item label="邮箱"
+                      prop="email">
+          <el-input v-model="evaluateForm.email"
+                    placeholder="请输入邮箱"></el-input>
+        </el-form-item>
+        <el-form-item label="住址"
+                      prop="address">
+          <el-input v-model="evaluateForm.address"
+                    placeholder="请输入住址"></el-input>
         </el-form-item>
         <el-form-item label="反馈信息"
                       prop="content">
