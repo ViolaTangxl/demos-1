@@ -12,9 +12,10 @@
           <el-col :span="24"
                   class="control-btns">
             <!-- 重置按钮 -->
-            <el-button>重置</el-button>
+            <el-button v-on:click="reset('evaluateForm')">重置</el-button>
             <!-- 确定按钮 -->
-            <el-button type="primary">提交</el-button>
+            <el-button type="primary"
+                       v-on:click="confirm('evaluateForm')">提交</el-button>
           </el-col>
         </el-row>
       </div>
@@ -99,6 +100,20 @@ export default {
         ]
       }
     };
+  },
+  methods: {
+    /**
+     * 重置表单
+     */
+    reset(formName) {
+      console.log("重置" + formName);
+    },
+    /**
+     * 提交表单
+     */
+    confirm(formName) {
+      console.log("提交" + formName);
+    }
   }
 };
 </script>
