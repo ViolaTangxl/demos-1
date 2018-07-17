@@ -17,6 +17,8 @@ import UserInfo from "./modules/UserInfo";
 import UserManage from "./modules/UserManage";
 // 引入Custom
 import Custom from "./modules/Custom";
+// 引入Evaluate
+import Evaluate from "./modules/Evaluate";
 
 Vue.use(vuex);
 
@@ -31,6 +33,7 @@ export default new vuex.Store({
   modules: {
     UserInfo: UserInfo,
     UserManage: UserManage,
-    Custom: Custom
+    Custom: Custom,
+    Evaluate: Evaluate
   }
 });

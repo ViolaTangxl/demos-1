@@ -1,9 +1,5 @@
 <template>
-  <div class="evaluate-page"
-       v-loading="pageLoad"
-       element-loading-text="玩儿命加载中"
-       element-loading-spinner="el-icon-loading"
-       element-loading-background="rgba(0, 0, 0, 0.6)">
+  <div class="evaluate-page">
     <div class="head-container">
       <div class="head-control">
         <!-- 控制器 -->
@@ -75,7 +71,6 @@ export default {
   name: "EvaluatePage",
   data: function() {
     return {
-      pageLoad: false,
       evaluateForm: {
         name: "",
         email: "",
