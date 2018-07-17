@@ -3,6 +3,7 @@ const Evaluate = {
   state: {
     btnLoad: false,
     btnDisable: false,
+    btnText: "提交",
     evaluateForm: {
       name: "",
       email: "",
@@ -21,7 +22,19 @@ const Evaluate = {
     /**
      * 重置state
      */
-    resetState(state, payload) {}
+    resetForm(state, payload) {
+      state.btnLoad = false;
+      state.btnDisable = false;
+      state.evaluateForm = {
+        ...{
+          name: "",
+          email: "",
+          address: "",
+          sex: "",
+          content: ""
+        }
+      }
+    }
   },
   actions: {
     /**
@@ -37,11 +50,17 @@ const Evaluate = {
           type: "controlBtnOver",
           isLoad: true
         });
+        state.btnLoad = true;
+        state.btnDisable = true;
+        state.btnText = "提交中...";
         const timeOut = setTimeout(() => {
           commit({
             type: "controlBtnOver",
             isLoad: false
           });
+          state.btnLoad = false;
+          state.btnDisable = false;
+          state.btnText = "提交";
           clearTimeout(timeOut);
           resolve();
         }, 1000);
@@ -57,6 +76,9 @@ const Evaluate = {
     }, payload) {
       await dispatch("simulateShowOverlay");
       return new Promise((resolve, reject) => {
+        const formValue = payload.formValue;
+        console.log(formValue);
+        commit("resetForm");
         resolve(true);
       });
     }

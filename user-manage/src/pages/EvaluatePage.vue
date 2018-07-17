@@ -8,10 +8,13 @@
           <el-col :span="24"
                   class="control-btns">
             <!-- 重置按钮 -->
-            <el-button v-on:click="reset('evaluateForm')">重置</el-button>
+            <el-button v-bind:disabled="this.btnDisable"
+                       v-on:click="reset('evaluateForm')">重置</el-button>
             <!-- 确定按钮 -->
             <el-button type="primary"
-                       v-on:click="confirm('evaluateForm')">提交</el-button>
+                       v-bind:loading="this.btnLoad"
+                       v-bind:disabled="this.btnDisable"
+                       v-on:click="confirm('evaluateForm')">{{this.btnText}}</el-button>
           </el-col>
         </el-row>
       </div>
@@ -67,17 +70,13 @@
  * Create Date: 2018-07-15
  */
 
+// 引入mapState，mapMutations和mapActions
+import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
+
 export default {
   name: "EvaluatePage",
   data: function() {
     return {
-      evaluateForm: {
-        name: "",
-        email: "",
-        address: "",
-        sex: "",
-        content: ""
-      },
       formRules: {
         name: [{ required: true, message: "请输入姓名", trigger: "blur" }],
         email: [
@@ -101,14 +100,34 @@ export default {
      * 重置表单
      */
     reset(formName) {
-      console.log("重置" + formName);
+      this.resetForm();
+      this.$refs[formName].clearValidate();
     },
     /**
      * 提交表单
      */
     confirm(formName) {
-      console.log("提交" + formName);
-    }
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          this.confirmUpload({
+            formValue: this.evaluateForm
+          });
+          this.$refs[formName].clearValidate();
+        } else {
+          return false;
+        }
+      });
+    },
+    ...mapMutations("Evaluate", ["resetForm"]),
+    ...mapActions("Evaluate", ["confirmUpload"])
+  },
+  computed: {
+    ...mapState("Evaluate", [
+      "btnLoad",
+      "btnDisable",
+      "btnText",
+      "evaluateForm"
+    ])
   }
 };
 </script>
