@@ -47,6 +47,12 @@
         </el-form-item>
         <el-form-item label="住址"
                       prop="address">
+          <el-cascader placeholder="请选择城市"
+                       expand-trigger="hover"
+                       v-bind:options="[]"
+                       v-model="selectedCity"
+                       v-on:change="cascaderChange">
+          </el-cascader>
           <el-input v-model="evaluateForm.address"
                     placeholder="请输入住址"></el-input>
         </el-form-item>
@@ -96,6 +102,12 @@ export default {
     };
   },
   methods: {
+    /**
+     * 响应连级选择器变化
+     */
+    cascaderChange(value) {
+      console.log(value);
+    },
     /**
      * 重置表单
      */
