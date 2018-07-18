@@ -1,7 +1,173 @@
 {
   "provinceData": [{
-    "value": "beijing",
-    "label": "北京市",
-    "children": [{}]
-  }]
+      "value": "beijing",
+      "label": "北京市",
+      "children": [{}]
+    },
+    {
+      "value": "tianjin",
+      "label": "天津市",
+      "children": [{}]
+    },
+    {
+      "value": "shanghai",
+      "label": "上海市",
+      "children": [{}]
+    },
+    {
+      "value": "chongqing",
+      "label": "重庆市",
+      "children": [{}]
+    },
+    {
+      "value": "hebei",
+      "label": "河北省",
+      "children": [{}]
+    },
+    {
+      "value": "shanxi",
+      "label": "山西省",
+      "children": [{}]
+    },
+    {
+      "value": "liaoning",
+      "label": "辽宁省",
+      "children": [{}]
+    },
+    {
+      "value": "jilin",
+      "label": "吉林省",
+      "children": [{}]
+    },
+    {
+      "value": "heilongjiang",
+      "label": "黑龙江省",
+      "children": [{}]
+    },
+    {
+      "value": "jiangsu",
+      "label": "江苏省",
+      "children": [{}]
+    },
+    {
+      "value": "zhejiang",
+      "label": "浙江省",
+      "children": [{}]
+    },
+    {
+      "value": "anhui",
+      "label": "安徽省",
+      "children": [{}]
+    },
+    {
+      "value": "fujian",
+      "label": "福建省",
+      "children": [{}]
+    },
+    {
+      "value": "jiangxi",
+      "label": "江西省",
+      "children": [{}]
+    },
+    {
+      "value": "shandong",
+      "label": "山东省",
+      "children": [{}]
+    },
+    {
+      "value": "henan",
+      "label": "河南省",
+      "children": [{}]
+    },
+    {
+      "value": "hubei",
+      "label": "湖北省",
+      "children": [{}]
+    },
+    {
+      "value": "hunan",
+      "label": "湖南省",
+      "children": [{}]
+    },
+    {
+      "value": "guangdong",
+      "label": "广东省",
+      "children": [{}]
+    },
+    {
+      "value": "hainan",
+      "label": "海南省",
+      "children": [{}]
+    },
+    {
+      "value": "sichuan",
+      "label": "四川省",
+      "children": [{}]
+    },
+    {
+      "value": "guizhou",
+      "label": "贵州省",
+      "children": [{}]
+    },
+    {
+      "value": "yunnan",
+      "label": "云南省",
+      "children": [{}]
+    },
+    {
+      "value": "shanxi",
+      "label": "陕西省",
+      "children": [{}]
+    },
+    {
+      "value": "gansu",
+      "label": "甘肃省",
+      "children": [{}]
+    },
+    {
+      "value": "qinghai",
+      "label": "青海省",
+      "children": [{}]
+    },
+    {
+      "value": "taiwan",
+      "label": "台湾省",
+      "children": [{}]
+    },
+    {
+      "value": "neimenggu",
+      "label": "内蒙古自治区",
+      "children": [{}]
+    },
+    {
+      "value": "guangxi",
+      "label": "广西壮族自治区",
+      "children": [{}]
+    },
+    {
+      "value": "xizang",
+      "label": "西藏自治区",
+      "children": [{}]
+    },
+    {
+      "value": "ningxia",
+      "label": "宁夏回族自治区",
+      "children": [{}]
+    },
+    {
+      "value": "xinjiang",
+      "label": "新疆维吾尔自治区",
+      "children": [{}]
+    },
+    {
+      "value": "xianggang",
+      "label": "香港特别行政区",
+      "children": [{}]
+    },
+    {
+      "value": "aomen",
+      "label": "澳门特别行政区",
+      "children": [{}]
+    }
+  ]
 }
