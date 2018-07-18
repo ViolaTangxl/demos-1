@@ -77,7 +77,6 @@ const Evaluate = {
       await dispatch("simulateShowOverlay");
       return new Promise((resolve, reject) => {
         const formValue = payload.formValue;
-        console.log(formValue);
         commit("resetForm");
         resolve(true);
       });

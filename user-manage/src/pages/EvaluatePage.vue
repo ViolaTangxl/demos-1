@@ -84,7 +84,7 @@ export default {
           {
             type: "email",
             message: "请输入正确的邮箱地址",
-            trigger: ["blur", "change"]
+            trigger: ["blur"]
           }
         ],
         address: [{ required: true, message: "请输入地址", trigger: "blur" }],
@@ -111,11 +111,27 @@ export default {
         if (valid) {
           this.confirmUpload({
             formValue: this.evaluateForm
+          }).then(response => {
+            if (response) {
+              this.showMessage("success", "提交成功", 1500);
+              this.$refs[formName].clearValidate();
+            }
           });
-          this.$refs[formName].clearValidate();
         } else {
           return false;
         }
+      });
+    },
+    /**
+     * 显示提示信息
+     */
+    showMessage: function(type, message, duration) {
+      this.$message({
+        type: type,
+        message: message,
+        center: true,
+        duration: duration,
+        onClose: true
       });
     },
     ...mapMutations("Evaluate", ["resetForm"]),
