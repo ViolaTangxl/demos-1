@@ -49,7 +49,7 @@
                       prop="city">
           <el-cascader placeholder="请选择城市"
                        expand-trigger="hover"
-                       v-bind:options="[]"
+                       v-bind:options="provinceData"
                        v-model="evaluateForm.selectedCity"
                        v-on:change="cascaderChange">
           </el-cascader>
@@ -81,11 +81,14 @@
 
 // 引入mapState，mapMutations和mapActions
 import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
+// 引入省/市数据
+import { provinceData } from "@/config/province";
 
 export default {
   name: "EvaluatePage",
   data: function() {
     return {
+      provinceData: provinceData,
       formRules: {
         name: [{ required: true, message: "请输入姓名", trigger: "blur" }],
         email: [
