@@ -45,16 +45,19 @@
           <el-input v-model="evaluateForm.email"
                     placeholder="请输入邮箱"></el-input>
         </el-form-item>
-        <el-form-item label="住址"
-                      prop="address">
+        <el-form-item label="城市"
+                      prop="city">
           <el-cascader placeholder="请选择城市"
                        expand-trigger="hover"
                        v-bind:options="[]"
-                       v-model="selectedCity"
+                       v-model="evaluateForm.selectedCity"
                        v-on:change="cascaderChange">
           </el-cascader>
-          <el-input v-model="evaluateForm.address"
-                    placeholder="请输入住址"></el-input>
+        </el-form-item>
+        <el-form-item label="详细地址"
+                      prop="detailAdd">
+          <el-input v-model="evaluateForm.detailAdd"
+                    placeholder="请输入详细地址"></el-input>
         </el-form-item>
         <el-form-item label="反馈信息"
                       prop="content">
@@ -93,7 +96,10 @@ export default {
             trigger: ["blur"]
           }
         ],
-        address: [{ required: true, message: "请输入地址", trigger: "blur" }],
+        city: [{ required: true, message: "请选择城市", trigger: "change" }],
+        detailAdd: [
+          { required: true, message: "请输入详细地址", trigger: "blur" }
+        ],
         sex: [{ required: true, message: "请选择性别", trigger: "change" }],
         content: [
           { required: true, message: "请输入反馈信息", trigger: "blur" }

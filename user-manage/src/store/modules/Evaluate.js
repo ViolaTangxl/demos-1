@@ -7,7 +7,8 @@ const Evaluate = {
     evaluateForm: {
       name: "",
       email: "",
-      address: "",
+      selectedCity: [],
+      detailAdd: "",
       sex: "",
       content: ""
     }
@@ -29,7 +30,8 @@ const Evaluate = {
         ...{
           name: "",
           email: "",
-          address: "",
+          selectedCity: [],
+          detailAdd: "",
           sex: "",
           content: ""
         }
