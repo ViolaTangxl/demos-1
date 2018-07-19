@@ -177,12 +177,100 @@
     {
       "value": "jilin",
       "label": "吉林省",
-      "children": [{}]
+      "children": [{
+          "value": "changchun",
+          "label": "长春"
+        },
+        {
+          "value": "jilin",
+          "label": "吉林"
+        },
+        {
+          "value": "siping",
+          "label": "四平"
+        },
+        {
+          "value": "liaoyuan",
+          "label": "辽源"
+        },
+        {
+          "value": "tonghua",
+          "label": "通化"
+        },
+        {
+          "value": "baishan",
+          "label": "白山"
+        },
+        {
+          "value": "baicheng",
+          "label": "白城"
+        },
+        {
+          "value": "songyuan",
+          "label": "松原"
+        },
+        {
+          "value": "yanbianchaoxianzu",
+          "label": "延边朝鲜族自治州"
+        }
+      ]
     },
     {
       "value": "heilongjiang",
       "label": "黑龙江省",
-      "children": [{}]
+      "children": [{
+          "value": "haerbin",
+          "label": "哈尔滨"
+        },
+        {
+          "value": "qiqihaer",
+          "label": "齐齐哈尔"
+        },
+        {
+          "value": "mudanjiang",
+          "label": "牡丹江"
+        },
+        {
+          "value": "jiamusi",
+          "label": "佳木斯"
+        },
+        {
+          "value": "daqing",
+          "label": "大庆"
+        },
+        {
+          "value": "yichun",
+          "label": "伊春"
+        },
+        {
+          "value": "jixi",
+          "label": "鸡西"
+        },
+        {
+          "value": "hegang",
+          "label": "鹤岗"
+        },
+        {
+          "value": "shuangyashan",
+          "label": "双鸭山"
+        },
+        {
+          "value": "qitaihe",
+          "label": "七台河"
+        },
+        {
+          "value": "suihua",
+          "label": "绥化"
+        },
+        {
+          "value": "heihe",
+          "label": "黑河"
+        },
+        {
+          "value": "daxinganling",
+          "label": "大兴安岭地区"
+        }
+      ]
     },
     {
       "value": "jiangsu",
@@ -301,13 +389,11 @@
     },
     {
       "value": "xianggang",
-      "label": "香港特别行政区",
-      "children": [{}]
+      "label": "香港特别行政区"
     },
     {
       "value": "aomen",
-      "label": "澳门特别行政区",
-      "children": [{}]
+      "label": "澳门特别行政区"
     }
   ]
 }
