@@ -46,9 +46,9 @@
                     placeholder="请输入邮箱"></el-input>
         </el-form-item>
         <el-form-item label="城市"
-                      prop="city">
+                      prop="selectedCity">
           <el-cascader placeholder="请选择城市"
-                       expand-trigger="hover"
+                       expand-trigger="click"
                        v-bind:options="provinceData"
                        v-model="evaluateForm.selectedCity"
                        v-on:change="cascaderChange">
@@ -99,7 +99,9 @@ export default {
             trigger: ["blur"]
           }
         ],
-        city: [{ required: true, message: "请选择城市", trigger: "change" }],
+        selectedCity: [
+          { required: true, message: "请选择城市", trigger: "change" }
+        ],
         detailAdd: [
           { required: true, message: "请输入详细地址", trigger: "blur" }
         ],

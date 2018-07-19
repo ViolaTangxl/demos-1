@@ -67,12 +67,112 @@
     {
       "value": "shanxi",
       "label": "山西省",
-      "children": [{}]
+      "children": [{
+          "value": "taiyuan",
+          "label": "太原"
+        },
+        {
+          "value": "datong",
+          "label": "大同"
+        },
+        {
+          "value": "shuozhou",
+          "label": "朔州"
+        },
+        {
+          "value": "xinzhou",
+          "label": "忻州"
+        },
+        {
+          "value": "yangquan",
+          "label": "阳泉"
+        },
+        {
+          "value": "lvliang",
+          "label": "吕梁"
+        },
+        {
+          "value": "jinzhong",
+          "label": "晋中"
+        },
+        {
+          "value": "changzhi",
+          "label": "长治"
+        },
+        {
+          "value": "jincheng",
+          "label": "晋城"
+        },
+        {
+          "value": "linfen",
+          "label": "临汾"
+        },
+        {
+          "value": "yuncheng",
+          "label": "运城"
+        }
+      ]
     },
     {
       "value": "liaoning",
       "label": "辽宁省",
-      "children": [{}]
+      "children": [{
+          "value": "shenyang",
+          "label": "沈阳"
+        },
+        {
+          "value": "dalian",
+          "label": "大连"
+        },
+        {
+          "value": "anshan",
+          "label": "鞍山"
+        },
+        {
+          "value": "fushun",
+          "label": "抚顺"
+        },
+        {
+          "value": "benxi",
+          "label": "本溪"
+        },
+        {
+          "value": "dandong",
+          "label": "丹东"
+        },
+        {
+          "value": "jinzhou",
+          "label": "锦州"
+        },
+        {
+          "value": "yingkou",
+          "label": "营口"
+        },
+        {
+          "value": "fuxin",
+          "label": "阜新"
+        },
+        {
+          "value": "liaoyang",
+          "label": "辽阳"
+        },
+        {
+          "value": "panjin",
+          "label": "盘锦"
+        },
+        {
+          "value": "tieling",
+          "label": "铁岭"
+        },
+        {
+          "value": "zhaoyang",
+          "label": "朝阳"
+        },
+        {
+          "value": "huludao",
+          "label": "葫芦岛"
+        }
+      ]
     },
     {
       "value": "jilin",
