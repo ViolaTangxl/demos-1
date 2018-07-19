@@ -1,28 +1,68 @@
 {
   "provinceData": [{
       "value": "beijing",
-      "label": "北京市",
-      "children": [{}]
+      "label": "北京市"
     },
     {
       "value": "tianjin",
-      "label": "天津市",
-      "children": [{}]
+      "label": "天津市"
     },
     {
       "value": "shanghai",
-      "label": "上海市",
-      "children": [{}]
+      "label": "上海市"
     },
     {
       "value": "chongqing",
-      "label": "重庆市",
-      "children": [{}]
+      "label": "重庆市"
     },
     {
       "value": "hebei",
       "label": "河北省",
-      "children": [{}]
+      "children": [{
+          "value": "shijiazhuang",
+          "label": "石家庄"
+        },
+        {
+          "value": "tangshan",
+          "label": "唐山"
+        },
+        {
+          "value": "qinhuangdao",
+          "label": "秦皇岛"
+        },
+        {
+          "value": "handan",
+          "label": "邯郸"
+        },
+        {
+          "value": "xingtai",
+          "label": "邢台"
+        },
+        {
+          "value": "baoding",
+          "label": "保定"
+        },
+        {
+          "value": "zhangjiakou",
+          "label": "张家口"
+        },
+        {
+          "value": "chengde",
+          "label": "承德"
+        },
+        {
+          "value": "cangzhou",
+          "label": "沧州"
+        },
+        {
+          "value": "langfang",
+          "label": "廊坊"
+        },
+        {
+          "value": "hengshui",
+          "label": "衡水"
+        }
+      ]
     },
     {
       "value": "shanxi",
