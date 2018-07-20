@@ -65,7 +65,7 @@
       ]
     },
     {
-      "value": "shanxi",
+      "value": "shanxi-1",
       "label": "山西省",
       "children": [{
           "value": "taiyuan",
@@ -1067,12 +1067,116 @@
     {
       "value": "yunnan",
       "label": "云南省",
-      "children": [{}]
+      "children": [{
+          "value": "kunming",
+          "label": "昆明"
+        },
+        {
+          "value": "qujing",
+          "label": "曲靖"
+        },
+        {
+          "value": "yuxi",
+          "label": "玉溪"
+        },
+        {
+          "value": "zhaotong",
+          "label": "昭通"
+        },
+        {
+          "value": "baoshan",
+          "label": "保山"
+        },
+        {
+          "value": "lijiang",
+          "label": "丽江"
+        },
+        {
+          "value": "puer",
+          "label": "普洱"
+        },
+        {
+          "value": "lincang",
+          "label": "临沧"
+        },
+        {
+          "value": "dehong",
+          "label": "德宏傣族景颇族自治州"
+        },
+        {
+          "value": "nujiang",
+          "label": "怒江傈傈族自治州"
+        },
+        {
+          "value": "diqing",
+          "label": "迪庆藏族自治州"
+        },
+        {
+          "value": "dali",
+          "label": "大理白族自治州"
+        },
+        {
+          "value": "chuxiong",
+          "label": "楚雄黎族自治州"
+        },
+        {
+          "value": "honghe",
+          "label": "红河哈尼族黎族自治州"
+        },
+        {
+          "value": "wenshan",
+          "label": "文山壮族苗族自治州"
+        },
+        {
+          "value": "xishuangbanna",
+          "label": "西双版纳傣族自治州"
+        }
+      ]
     },
     {
-      "value": "shanxi",
+      "value": "shanxi-2",
       "label": "陕西省",
-      "children": [{}]
+      "children": [{
+          "value": "xian",
+          "label": "西安"
+        },
+        {
+          "value": "baoji",
+          "label": "宝鸡"
+        },
+        {
+          "value": "xianyang",
+          "label": "咸阳"
+        },
+        {
+          "value": "tongchuan",
+          "label": "铜川"
+        },
+        {
+          "value": "weinan",
+          "label": "渭南"
+        },
+        {
+          "value": "yanan",
+          "label": "延安"
+        },
+        {
+          "value": "yulin",
+          "label": "榆林"
+        },
+        {
+          "value": "hanzhong",
+          "label": "汉中"
+        },
+        {
+          "value": "ankang",
+          "label": "安康"
+        },
+        {
+          "value": "shangluo",
+          "label": "商洛"
+        }
+      ]
     },
     {
       "value": "gansu",
