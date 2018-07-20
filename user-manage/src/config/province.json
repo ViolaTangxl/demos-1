@@ -543,17 +543,225 @@
     {
       "value": "shandong",
       "label": "山东省",
-      "children": [{}]
+      "children": [{
+          "value": "jinan",
+          "label": "济南"
+        },
+        {
+          "value": "qingdao",
+          "label": "青岛"
+        },
+        {
+          "value": "zibo",
+          "label": "淄博"
+        },
+        {
+          "value": "zaozhuang",
+          "label": "枣庄"
+        },
+        {
+          "value": "dongying",
+          "label": "东营"
+        },
+        {
+          "value": "yantai",
+          "label": "烟台"
+        },
+        {
+          "value": "weifang",
+          "label": "潍坊"
+        },
+        {
+          "value": "jining",
+          "label": "济宁"
+        },
+        {
+          "value": "taian",
+          "label": "泰安"
+        },
+        {
+          "value": "weihai",
+          "label": "威海"
+        },
+        {
+          "value": "rizhao",
+          "label": "日照"
+        },
+        {
+          "value": "binzhou",
+          "label": "滨州"
+        },
+        {
+          "value": "dezhou",
+          "label": "德州"
+        },
+        {
+          "value": "liaocheng",
+          "label": "聊城"
+        },
+        {
+          "value": "linyi",
+          "label": "临沂"
+        },
+        {
+          "value": "heze",
+          "label": "菏泽"
+        },
+        {
+          "value": "laiwu",
+          "label": "莱芜"
+        }
+      ]
     },
     {
       "value": "henan",
       "label": "河南省",
-      "children": [{}]
+      "children": [{
+          "value": "zhengzhou",
+          "label": "郑州"
+        },
+        {
+          "value": "kaifeng",
+          "label": "开封"
+        },
+        {
+          "value": "luoyang",
+          "label": "洛阳"
+        },
+        {
+          "value": "pingdingshan",
+          "label": "平顶山"
+        },
+        {
+          "value": "anyang",
+          "label": "安阳"
+        },
+        {
+          "value": "hebi",
+          "label": "鹤壁"
+        },
+        {
+          "value": "xinxiang",
+          "label": "新乡"
+        },
+        {
+          "value": "jiaozuo",
+          "label": "焦作"
+        },
+        {
+          "value": "puyang",
+          "label": "濮阳"
+        },
+        {
+          "value": "xuchang",
+          "label": "许昌"
+        },
+        {
+          "value": "luohe",
+          "label": "漯河"
+        },
+        {
+          "value": "sanmenxia",
+          "label": "三门峡"
+        },
+        {
+          "value": "shangqiu",
+          "label": "商丘"
+        },
+        {
+          "value": "zhoukou",
+          "label": "周口"
+        },
+        {
+          "value": "zhumadian",
+          "label": "驻马店"
+        },
+        {
+          "value": "nanyang",
+          "label": "南阳"
+        },
+        {
+          "value": "xinyang",
+          "label": "信阳"
+        },
+        {
+          "value": "jiyuan",
+          "label": "济源"
+        }
+      ]
     },
     {
       "value": "hubei",
       "label": "湖北省",
-      "children": [{}]
+      "children": [{
+          "value": "wuhan",
+          "label": "武汉"
+        },
+        {
+          "value": "huangshi",
+          "label": "黄石"
+        },
+        {
+          "value": "shiyan",
+          "label": "十堰"
+        },
+        {
+          "value": "yichang",
+          "label": "宜昌"
+        },
+        {
+          "value": "xiangyang",
+          "label": "襄阳"
+        },
+        {
+          "value": "ezhou",
+          "label": "鄂州"
+        },
+        {
+          "value": "jingmen",
+          "label": "荆门"
+        },
+        {
+          "value": "xiaogan",
+          "label": "孝感"
+        },
+        {
+          "value": "jingzhou",
+          "label": "荆州"
+        },
+        {
+          "value": "huanggang",
+          "label": "黄冈"
+        },
+        {
+          "value": "xianning",
+          "label": "咸宁"
+        },
+        {
+          "value": "suizhou",
+          "label": "随州"
+        },
+        {
+          "value": "enshi",
+          "label": "恩施土家族苗族自治州"
+        },
+        {
+          "value": "xiantao",
+          "label": "仙桃"
+        },
+        {
+          "value": "qianjiang",
+          "label": "潜江"
+        },
+        {
+          "value": "tianmen",
+          "label": "天门"
+        },
+        {
+          "value": "shenongjia",
+          "label": "神农架林区"
+        }
+      ]
     },
     {
       "value": "hunan",
