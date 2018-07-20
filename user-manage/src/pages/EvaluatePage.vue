@@ -50,8 +50,7 @@
           <el-cascader placeholder="请选择城市"
                        expand-trigger="click"
                        v-bind:options="provinceData"
-                       v-model="evaluateForm.selectedCity"
-                       v-on:change="cascaderChange">
+                       v-model="evaluateForm.selectedCity">
           </el-cascader>
         </el-form-item>
         <el-form-item label="详细地址"
@@ -113,12 +112,6 @@ export default {
     };
   },
   methods: {
-    /**
-     * 响应连级选择器变化
-     */
-    cascaderChange(value) {
-      console.log(value);
-    },
     /**
      * 重置表单
      */

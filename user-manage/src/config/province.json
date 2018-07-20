@@ -275,7 +275,58 @@
     {
       "value": "jiangsu",
       "label": "江苏省",
-      "children": [{}]
+      "children": [{
+          "value": "nanjing",
+          "label": "南京"
+        }, {
+          "value": "wuxi",
+          "label": "无锡"
+        },
+        {
+          "value": "xuzhou",
+          "label": "徐州"
+        },
+        {
+          "value": "changzhou",
+          "label": "常州"
+        },
+        {
+          "value": "suzhou",
+          "label": "苏州"
+        },
+        {
+          "value": "nantong",
+          "label": "南通"
+        },
+        {
+          "value": "lianyungang",
+          "label": "连云港"
+        },
+        {
+          "value": "huaian",
+          "label": "淮安"
+        },
+        {
+          "value": "yancheng",
+          "label": "盐城"
+        },
+        {
+          "value": "yangzhou",
+          "label": "扬州"
+        },
+        {
+          "value": "zhenjiang",
+          "label": "镇江"
+        },
+        {
+          "value": "taizhou",
+          "label": "泰州"
+        },
+        {
+          "value": "suqian",
+          "label": "宿迁"
+        }
+      ]
     },
     {
       "value": "zhejiang",
