@@ -331,12 +331,120 @@
     {
       "value": "zhejiang",
       "label": "浙江省",
-      "children": [{}]
+      "children": [{
+          "value": "hangzhou",
+          "label": "杭州"
+        },
+        {
+          "value": "ningbo",
+          "label": "宁波"
+        },
+        {
+          "value": "wenzhou",
+          "label": "温州"
+        },
+        {
+          "value": "shaoxing",
+          "label": "绍兴"
+        },
+        {
+          "value": "huzhou",
+          "label": "湖州"
+        },
+        {
+          "value": "jiaxing",
+          "label": "嘉兴"
+        },
+        {
+          "value": "jinhua",
+          "label": "金华"
+        },
+        {
+          "value": "quzhou",
+          "label": "衢州"
+        },
+        {
+          "value": "taizhou",
+          "label": "台州"
+        },
+        {
+          "value": "lishui",
+          "label": "丽水"
+        },
+        {
+          "value": "zhoushan",
+          "label": "舟山"
+        }
+      ]
     },
     {
       "value": "anhui",
       "label": "安徽省",
-      "children": [{}]
+      "children": [{
+          "value": "hefei",
+          "label": "合肥"
+        },
+        {
+          "value": "wuhu",
+          "label": "芜湖"
+        },
+        {
+          "value": "bengbu",
+          "label": "蚌埠"
+        },
+        {
+          "value": "huainan",
+          "label": "淮南"
+        },
+        {
+          "value": "maanshan",
+          "label": "马鞍山"
+        },
+        {
+          "value": "huaibei",
+          "label": "淮北"
+        },
+        {
+          "value": "tongling",
+          "label": "铜陵"
+        },
+        {
+          "value": "anqing",
+          "label": "安庆"
+        },
+        {
+          "value": "huangshan",
+          "label": "黄山"
+        },
+        {
+          "value": "fuyang",
+          "label": "阜阳"
+        },
+        {
+          "value": "suzhou",
+          "label": "宿州"
+        },
+        {
+          "value": "chuzhou",
+          "label": "滁州"
+        },
+        {
+          "value": "luan",
+          "label": "六安"
+        },
+        {
+          "value": "xuancheng",
+          "label": "宣城"
+        },
+        {
+          "value": "chizhou",
+          "label": "池州"
+        },
+        {
+          "value": "bozhou",
+          "label": "亳州"
+        }
+      ]
     },
     {
       "value": "fujian",
