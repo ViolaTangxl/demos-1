@@ -49,6 +49,7 @@
                       prop="selectedCity">
           <el-cascader placeholder="请选择城市"
                        expand-trigger="click"
+                       style="width: 100%;"
                        v-bind:options="provinceData"
                        v-model="evaluateForm.selectedCity">
           </el-cascader>

@@ -1181,17 +1181,141 @@
     {
       "value": "gansu",
       "label": "甘肃省",
-      "children": [{}]
+      "children": [{
+          "value": "lanzhou",
+          "label": "兰州"
+        },
+        {
+          "value": "jiayuguan",
+          "label": "嘉峪关"
+        },
+        {
+          "value": "jinchang",
+          "label": "金昌"
+        },
+        {
+          "value": "baiyin",
+          "label": "白银"
+        },
+        {
+          "value": "tianshui",
+          "label": "天水"
+        },
+        {
+          "value": "jiuquan",
+          "label": "酒泉"
+        },
+        {
+          "value": "zhangye",
+          "label": "张掖"
+        },
+        {
+          "value": "wuwei",
+          "label": "武威"
+        },
+        {
+          "value": "dingxi",
+          "label": "定西"
+        },
+        {
+          "value": "longnan",
+          "label": "陇南"
+        },
+        {
+          "value": "pingyuan",
+          "label": "平原"
+        },
+        {
+          "value": "qingyang",
+          "label": "庆阳"
+        },
+        {
+          "value": "linxia",
+          "label": "临夏回族自治州"
+        },
+        {
+          "value": "gannan",
+          "label": "甘南藏族自治州"
+        }
+      ]
     },
     {
       "value": "qinghai",
       "label": "青海省",
-      "children": [{}]
+      "children": [{
+          "value": "xining",
+          "label": "西宁"
+        },
+        {
+          "value": "haidong",
+          "label": "海东"
+        },
+        {
+          "value": "haibei",
+          "label": "海北藏族自治州"
+        },
+        {
+          "value": "huangnan",
+          "label": "黄南藏族自治州"
+        },
+        {
+          "value": "hainan",
+          "label": "海南藏族自治州"
+        },
+        {
+          "value": "guoluo",
+          "label": "果洛藏族自治州"
+        },
+        {
+          "value": "yushu",
+          "label": "玉树藏族自治州"
+        },
+        {
+          "value": "haixi",
+          "label": "海西蒙古族藏族自治州"
+        }
+      ]
     },
     {
       "value": "taiwan",
       "label": "台湾省",
-      "children": [{}]
+      "children": [{
+          "value": "taibei",
+          "label": "台北"
+        },
+        {
+          "value": "xinbei",
+          "label": "新北"
+        },
+        {
+          "value": "taoyuan",
+          "label": "桃园"
+        },
+        {
+          "value": "taizhong",
+          "label": "台中"
+        },
+        {
+          "value": "tainan",
+          "label": "台南"
+        },
+        {
+          "value": "gaoxiong",
+          "label": "高雄"
+        },
+        {
+          "value": "jilong",
+          "label": "基隆"
+        },
+        {
+          "value": "xinzhu",
+          "label": "新竹"
+        },
+        {
+          "value": "jiayi",
+          "label": "嘉义"
+        }
+      ]
     },
     {
       "value": "neimenggu",
