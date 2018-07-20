@@ -937,12 +937,132 @@
     {
       "value": "sichuan",
       "label": "四川省",
-      "children": [{}]
+      "children": [{
+          "value": "chengdu",
+          "label": "成都"
+        },
+        {
+          "value": "mianyang",
+          "label": "绵阳"
+        },
+        {
+          "value": "zigong",
+          "label": "自贡"
+        },
+        {
+          "value": "panzhihua",
+          "label": "攀枝花"
+        },
+        {
+          "value": "luzhou",
+          "label": "泸州"
+        },
+        {
+          "value": "deyang",
+          "label": "德阳"
+        },
+        {
+          "value": "guangyuan",
+          "label": "广元"
+        },
+        {
+          "value": "suining",
+          "label": "遂宁"
+        },
+        {
+          "value": "neijiang",
+          "label": "内江"
+        },
+        {
+          "value": "leshan",
+          "label": "乐山"
+        },
+        {
+          "value": "ziyang",
+          "label": "资阳"
+        },
+        {
+          "value": "yibin",
+          "label": "宜宾"
+        },
+        {
+          "value": "nanchong",
+          "label": "南充"
+        },
+        {
+          "value": "dazhou",
+          "label": "达州"
+        },
+        {
+          "value": "yaan",
+          "label": "雅安"
+        },
+        {
+          "value": "aba",
+          "label": "阿坝藏族羌族自治州"
+        },
+        {
+          "value": "ganzi",
+          "label": "甘孜藏族自治州"
+        },
+        {
+          "value": "liangshan",
+          "label": "凉山彝族自治州"
+        },
+        {
+          "value": "guangan",
+          "label": "广安"
+        },
+        {
+          "value": "bazhong",
+          "label": "巴中"
+        },
+        {
+          "value": "meishan",
+          "label": "眉山"
+        }
+      ]
     },
     {
       "value": "guizhou",
       "label": "贵州省",
-      "children": [{}]
+      "children": [{
+          "value": "guiyang",
+          "label": "贵阳"
+        },
+        {
+          "value": "zunyi",
+          "label": "遵义"
+        },
+        {
+          "value": "liupanshui",
+          "label": "六盘水"
+        },
+        {
+          "value": "anshun",
+          "label": "安顺"
+        },
+        {
+          "value": "bijie",
+          "label": "毕节"
+        },
+        {
+          "value": "tongren",
+          "label": "铜仁"
+        },
+        {
+          "value": "qiandongnan",
+          "label": "黔东南苗族侗族自治州"
+        },
+        {
+          "value": "qiannan",
+          "label": "黔南布依族苗族自治州"
+        },
+        {
+          "value": "qianxinan",
+          "label": "黔西南布依族苗族自治州"
+        }
+      ]
     },
     {
       "value": "yunnan",
