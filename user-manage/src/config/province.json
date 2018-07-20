@@ -766,17 +766,173 @@
     {
       "value": "hunan",
       "label": "湖南省",
-      "children": [{}]
+      "children": [{
+          "value": "changsha",
+          "label": "长沙"
+        },
+        {
+          "value": "zhuzhou",
+          "label": "株洲"
+        },
+        {
+          "value": "xiangtan",
+          "label": "湘潭"
+        },
+        {
+          "value": "hengyang",
+          "label": "衡阳"
+        },
+        {
+          "value": "shaoyang",
+          "label": "邵阳"
+        },
+        {
+          "value": "yueyang",
+          "label": "岳阳"
+        },
+        {
+          "value": "changde",
+          "label": "常德"
+        },
+        {
+          "value": "zhangjiajie",
+          "label": "张家界"
+        },
+        {
+          "value": "yiyang",
+          "label": "益阳"
+        },
+        {
+          "value": "loudi",
+          "label": "娄底"
+        },
+        {
+          "value": "chenzhou",
+          "label": "郴州"
+        },
+        {
+          "value": "yongzhou",
+          "label": "永州"
+        },
+        {
+          "value": "huaihua",
+          "label": "怀化"
+        },
+        {
+          "value": "xiangxi",
+          "label": "湘西土家族苗族自治州"
+        }
+      ]
     },
     {
       "value": "guangdong",
       "label": "广东省",
-      "children": [{}]
+      "children": [{
+          "value": "guangzhou",
+          "label": "广州"
+        },
+        {
+          "value": "shenzhen",
+          "label": "深圳"
+        },
+        {
+          "value": "zhuhai",
+          "label": "珠海"
+        },
+        {
+          "value": "shantou",
+          "label": "汕头"
+        },
+        {
+          "value": "foshan",
+          "label": "佛山"
+        },
+        {
+          "value": "shaoguan",
+          "label": "韶关"
+        },
+        {
+          "value": "zhanjiang",
+          "label": "湛江"
+        },
+        {
+          "value": "zhaoqing",
+          "label": "肇庆"
+        },
+        {
+          "value": "jiangmen",
+          "label": "江门"
+        },
+        {
+          "value": "maoming",
+          "label": "茂名"
+        },
+        {
+          "value": "huizhou",
+          "label": "惠州"
+        },
+        {
+          "value": "meizhou",
+          "label": "梅州"
+        },
+        {
+          "value": "shanwei",
+          "label": "汕尾"
+        },
+        {
+          "value": "heyuan",
+          "label": "河源"
+        },
+        {
+          "value": "yangjiang",
+          "label": "阳江"
+        },
+        {
+          "value": "qingyuan",
+          "label": "清远"
+        },
+        {
+          "value": "dongguan",
+          "label": "东莞"
+        },
+        {
+          "value": "zhongshan",
+          "label": "中山"
+        },
+        {
+          "value": "chaozhou",
+          "label": "潮州"
+        },
+        {
+          "value": "jieyang",
+          "label": "揭阳"
+        },
+        {
+          "value": "yunfu",
+          "label": "云浮"
+        }
+      ]
     },
     {
       "value": "hainan",
       "label": "海南省",
-      "children": [{}]
+      "children": [{
+          "value": "haikou",
+          "label": "海口"
+        },
+        {
+          "value": "sanya",
+          "label": "三亚"
+        },
+        {
+          "value": "sansha",
+          "label": "三沙"
+        },
+        {
+          "value": "danzhou",
+          "label": "儋州"
+        }
+      ]
     },
     {
       "value": "sichuan",
