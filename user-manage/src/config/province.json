@@ -1320,22 +1320,178 @@
     {
       "value": "neimenggu",
       "label": "内蒙古自治区",
-      "children": [{}]
+      "children": [{
+          "value": "huhehaote",
+          "label": "呼和浩特"
+        },
+        {
+          "value": "baotou",
+          "label": "包头"
+        },
+        {
+          "value": "wuhai",
+          "label": "乌海"
+        },
+        {
+          "value": "chifeng",
+          "label": "赤峰"
+        },
+        {
+          "value": "tongliao",
+          "label": "通辽"
+        },
+        {
+          "value": "eerduosi",
+          "label": "鄂尔多斯"
+        },
+        {
+          "value": "hulunbeier",
+          "label": "呼伦贝尔"
+        },
+        {
+          "value": "bayannaoer",
+          "label": "巴彦淖尔"
+        },
+        {
+          "value": "wulanchabu",
+          "label": "乌兰察布"
+        },
+        {
+          "value": "xingan",
+          "label": "兴安盟"
+        },
+        {
+          "value": "xilinguole",
+          "label": "锡林郭勒盟"
+        },
+        {
+          "value": "alashan",
+          "label": "阿拉善盟"
+        }
+      ]
     },
     {
       "value": "guangxi",
       "label": "广西壮族自治区",
-      "children": [{}]
+      "children": [{
+          "value": "nanning",
+          "label": "南宁"
+        },
+        {
+          "value": "liuzhou",
+          "label": "柳州"
+        },
+        {
+          "value": "guilin",
+          "label": "桂林"
+        },
+        {
+          "value": "wuzhou",
+          "label": "梧州"
+        },
+        {
+          "value": "beihai",
+          "label": "北海"
+        },
+        {
+          "value": "fangchenggang",
+          "label": "防城港"
+        },
+        {
+          "value": "qinzhou",
+          "label": "钦州"
+        },
+        {
+          "value": "guigang",
+          "label": "贵港"
+        },
+        {
+          "value": "yulin",
+          "label": "玉林"
+        },
+        {
+          "value": "baise",
+          "label": "百色"
+        },
+        {
+          "value": "hezhou",
+          "label": "贺州"
+        },
+        {
+          "value": "hechi",
+          "label": "河池"
+        },
+        {
+          "value": "laibin",
+          "label": "来宾"
+        },
+        {
+          "value": "chongzuo",
+          "label": "崇左"
+        }
+      ]
     },
     {
       "value": "xizang",
       "label": "西藏自治区",
-      "children": [{}]
+      "children": [{
+          "value": "lasa",
+          "label": "拉萨"
+        },
+        {
+          "value": "naqu",
+          "label": "那曲专区"
+        },
+        {
+          "value": "changdu",
+          "label": "昌都专区"
+        },
+        {
+          "value": "shannan",
+          "label": "山南地区"
+        },
+        {
+          "value": "jiangzi",
+          "label": "江孜地区"
+        },
+        {
+          "value": "rikaze",
+          "label": "日喀则专区"
+        },
+        {
+          "value": "ali",
+          "label": "阿里专区"
+        },
+        {
+          "value": "linzhi",
+          "label": "林芝专区"
+        }
+      ]
     },
     {
       "value": "ningxia",
       "label": "宁夏回族自治区",
-      "children": [{}]
+      "children": [{
+          "value": "yinchuan",
+          "label": "银川"
+        },
+        {
+          "value": "shizuishan",
+          "label": "石嘴山"
+        },
+        {
+          "value": "wuzhong",
+          "label": "吴中"
+        },
+        {
+          "value": "guyuan",
+          "label": "固原"
+        },
+        {
+          "value": "zhongwei",
+          "label": "中卫"
+        }
+      ]
     },
     {
       "value": "xinjiang",
