@@ -19,23 +19,6 @@ const Evaluate = {
      */
     controlBtnOver(state, payload) {
       state.btnLoad = payload.isLoad;
-    },
-    /**
-     * 重置state
-     */
-    resetForm(state, payload) {
-      state.btnLoad = false;
-      state.btnDisable = false;
-      state.evaluateForm = {
-        ...{
-          name: "",
-          email: "",
-          selectedCity: [],
-          detailAdd: "",
-          sex: "",
-          content: ""
-        }
-      }
     }
   },
   actions: {
@@ -69,6 +52,31 @@ const Evaluate = {
       });
     },
     /**
+     * 重置state
+     */
+    async resetForm({
+      state,
+      commit,
+      dispatch
+    }, payload) {
+      await dispatch("simulateShowOverlay");
+      return new Promise((resolve, reject) => {
+        state.btnLoad = false;
+        state.btnDisable = false;
+        state.evaluateForm = {
+          ...{
+            name: "",
+            email: "",
+            selectedCity: [],
+            detailAdd: "",
+            sex: "",
+            content: ""
+          }
+        };
+        resolve(true);
+      });
+    },
+    /**
      * 确定提交
      */
     async confirmUpload({
@@ -79,6 +87,7 @@ const Evaluate = {
       await dispatch("simulateShowOverlay");
       return new Promise((resolve, reject) => {
         const formValue = payload.formValue;
+        console.log(formValue);
         commit("resetForm");
         resolve(true);
       });

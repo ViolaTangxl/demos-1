@@ -116,9 +116,11 @@ export default {
     /**
      * 重置表单
      */
-    reset(formName) {
-      this.resetForm();
-      this.$refs[formName].clearValidate();
+    async reset(formName) {
+      const response = await this.resetForm();
+      if (response) {
+        this.$refs[formName].clearValidate();
+      }
     },
     /**
      * 提交表单
@@ -151,8 +153,7 @@ export default {
         onClose: true
       });
     },
-    ...mapMutations("Evaluate", ["resetForm"]),
-    ...mapActions("Evaluate", ["confirmUpload"])
+    ...mapActions("Evaluate", ["confirmUpload", "resetForm"])
   },
   computed: {
     ...mapState("Evaluate", [
