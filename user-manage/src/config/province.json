@@ -1496,7 +1496,63 @@
     {
       "value": "xinjiang",
       "label": "新疆维吾尔自治区",
-      "children": [{}]
+      "children": [{
+          "value": "wulumuqi",
+          "label": "乌鲁木齐"
+        },
+        {
+          "value": "kelamayi",
+          "label": "克拉玛依"
+        },
+        {
+          "value": "tulufan",
+          "label": "吐鲁番"
+        },
+        {
+          "value": "hami",
+          "label": "哈密"
+        },
+        {
+          "value": "akesu",
+          "label": "阿克苏"
+        },
+        {
+          "value": "kashi",
+          "label": "喀什"
+        },
+        {
+          "value": "hetian",
+          "label": "和田"
+        },
+        {
+          "value": "changji",
+          "label": "昌吉回族自治州"
+        },
+        {
+          "value": "boertala",
+          "label": "博尔塔拉蒙古自治州"
+        },
+        {
+          "value": "bayinguoleng",
+          "label": "巴音郭楞蒙古自治州"
+        },
+        {
+          "value": "kezilesukeerkezi",
+          "label": "克孜勒苏柯尔克孜自治州"
+        },
+        {
+          "value": "yilihasake",
+          "label": "伊犁哈萨克自治州"
+        },
+        {
+          "value": "tacheng",
+          "label": "塔城地区"
+        },
+        {
+          "value": "aletai",
+          "label": "阿勒泰地区"
+        }
+      ]
     },
     {
       "value": "xianggang",
