@@ -8,13 +8,14 @@
           <el-col :span="24"
                   class="control-btns">
             <!-- 重置按钮 -->
-            <el-button v-bind:disabled="this.btnDisable"
-                       v-on:click="reset('evaluateForm')">重置</el-button>
+            <el-button v-bind:loading="this.resetLoad"
+                       v-bind:disabled="this.btnDisable"
+                       v-on:click="reset('evaluateForm')">{{this.resetText}}</el-button>
             <!-- 确定按钮 -->
             <el-button type="primary"
-                       v-bind:loading="this.btnLoad"
+                       v-bind:loading="this.confirmLoad"
                        v-bind:disabled="this.btnDisable"
-                       v-on:click="confirm('evaluateForm')">{{this.btnText}}</el-button>
+                       v-on:click="confirm('evaluateForm')">{{this.confirmText}}</el-button>
           </el-col>
         </el-row>
       </div>
@@ -157,9 +158,11 @@ export default {
   },
   computed: {
     ...mapState("Evaluate", [
-      "btnLoad",
+      "resetLoad",
+      "confirmLoad",
       "btnDisable",
-      "btnText",
+      "resetText",
+      "confirmText",
       "evaluateForm"
     ])
   }
