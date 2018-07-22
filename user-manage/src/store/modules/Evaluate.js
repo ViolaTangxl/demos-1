@@ -13,7 +13,8 @@ const Evaluate = {
       detailAdd: "",
       sex: "",
       content: ""
-    }
+    },
+    inputDisabled: true
   },
   mutations: {
     /**

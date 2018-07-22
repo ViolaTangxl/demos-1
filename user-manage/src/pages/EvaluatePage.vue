@@ -28,12 +28,14 @@
                label-width="100px">
         <el-form-item label="姓名"
                       prop="name">
-          <el-input v-model="evaluateForm.name"
+          <el-input v-bind:disabled="inputDisabled"
+                    v-model="evaluateForm.name"
                     placeholder="请输入姓名"></el-input>
         </el-form-item>
         <el-form-item label="性别"
                       prop="sex">
-          <el-select v-model="evaluateForm.sex"
+          <el-select v-bind:disabled="inputDisabled"
+                     v-model="evaluateForm.sex"
                      placeholder="请选择性别">
             <el-option label="男"
                        value="male"></el-option>
@@ -43,7 +45,8 @@
         </el-form-item>
         <el-form-item label="邮箱"
                       prop="email">
-          <el-input v-model="evaluateForm.email"
+          <el-input v-bind:disabled="inputDisabled"
+                    v-model="evaluateForm.email"
                     placeholder="请输入邮箱"></el-input>
         </el-form-item>
         <el-form-item label="城市"
@@ -51,20 +54,23 @@
           <el-cascader placeholder="请选择城市"
                        expand-trigger="click"
                        style="width: 100%;"
+                       v-bind:disabled="inputDisabled"
                        v-bind:options="provinceData"
                        v-model="evaluateForm.selectedCity">
           </el-cascader>
         </el-form-item>
         <el-form-item label="详细地址"
                       prop="detailAdd">
-          <el-input v-model="evaluateForm.detailAdd"
+          <el-input v-bind:disabled="inputDisabled"
+                    v-model="evaluateForm.detailAdd"
                     placeholder="请输入详细地址"></el-input>
         </el-form-item>
         <el-form-item label="反馈信息"
                       prop="content">
           <el-input type="textarea"
-                    v-model="evaluateForm.content"
                     placeholder="请输入反馈信息"
+                    v-bind:disabled="inputDisabled"
+                    v-model="evaluateForm.content"
                     v-bind:autosize="{minRows: 5, maxRows: 5}"></el-input>
         </el-form-item>
       </el-form>
@@ -163,7 +169,8 @@ export default {
       "btnDisable",
       "resetText",
       "confirmText",
-      "evaluateForm"
+      "evaluateForm",
+      "inputDisabled"
     ])
   }
 };
