@@ -14,7 +14,7 @@ const Evaluate = {
       sex: "",
       content: ""
     },
-    inputDisabled: true
+    inputDisabled: false
   },
   mutations: {
     /**
@@ -22,12 +22,14 @@ const Evaluate = {
      */
     controlResetBtnOver(state, payload) {
       state.resetLoad = payload.isLoad;
+      state.inputDisabled = payload.isLoad;
     },
     /**
      * 控制提交按钮载入状态
      */
     controlConfirmBtnOver(state, payload) {
       state.confirmLoad = payload.isLoad;
+      state.inputDisabled = payload.isLoad;
     }
   },
   actions: {
