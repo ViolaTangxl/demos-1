@@ -29,3 +29,14 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.evaluate-page .main-container .el-rate {
+  position: relative;
+  top: 10px;
+}
+
+.evaluate-page .main-container .el-rate__text {
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}

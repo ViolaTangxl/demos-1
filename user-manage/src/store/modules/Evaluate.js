@@ -12,7 +12,8 @@ const Evaluate = {
       selectedCity: [],
       detailAdd: "",
       sex: "",
-      content: ""
+      content: "",
+      score: null
     },
     inputDisabled: false
   },
@@ -108,7 +109,8 @@ const Evaluate = {
             selectedCity: [],
             detailAdd: "",
             sex: "",
-            content: ""
+            content: "",
+            score: null
           }
         };
         resolve(true);

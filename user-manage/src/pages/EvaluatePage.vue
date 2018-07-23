@@ -65,13 +65,22 @@
                     v-model="evaluateForm.detailAdd"
                     placeholder="请输入详细地址"></el-input>
         </el-form-item>
-        <el-form-item label="反馈信息"
+        <el-form-item label="评价"
                       prop="content">
           <el-input type="textarea"
-                    placeholder="请输入反馈信息"
+                    placeholder="请输入评价内容"
                     v-bind:disabled="inputDisabled"
                     v-model="evaluateForm.content"
                     v-bind:autosize="{minRows: 5, maxRows: 5}"></el-input>
+        </el-form-item>
+        <el-form-item label="打分"
+                      prop="score">
+          <el-rate show-text
+                   v-bind:texts="['没意思', '一般般', '有点儿意思', '不错', '真棒']"
+                   v-bind:disabled="inputDisabled"
+                   v-model="evaluateForm.score"
+                   v-bind:colors="['#99A9BF', '#F7BA2A', '#FF9900']">
+          </el-rate>
         </el-form-item>
       </el-form>
     </div>
@@ -113,9 +122,7 @@ export default {
           { required: true, message: "请输入详细地址", trigger: "blur" }
         ],
         sex: [{ required: true, message: "请选择性别", trigger: "change" }],
-        content: [
-          { required: true, message: "请输入反馈信息", trigger: "blur" }
-        ]
+        score: [{ required: true, message: "请打个分吧", trigger: "change" }]
       }
     };
   },
@@ -176,7 +183,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* 引入EvaluatePage样式 */
 @import url("./EvaluatePage.css");
 </style>
