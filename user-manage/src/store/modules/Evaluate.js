@@ -13,7 +13,7 @@ const Evaluate = {
       detailAdd: "",
       sex: "",
       content: "",
-      score: null
+      score: 5
     },
     inputDisabled: false
   },
@@ -110,7 +110,7 @@ const Evaluate = {
             detailAdd: "",
             sex: "",
             content: "",
-            score: null
+            score: 5
           }
         };
         resolve(true);
@@ -128,7 +128,6 @@ const Evaluate = {
       return new Promise((resolve, reject) => {
         const formValue = payload.formValue;
         console.log(formValue);
-        commit("resetForm");
         resolve(true);
       });
     }

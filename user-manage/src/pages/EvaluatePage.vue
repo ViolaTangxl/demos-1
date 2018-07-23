@@ -121,8 +121,7 @@ export default {
         detailAdd: [
           { required: true, message: "请输入详细地址", trigger: "blur" }
         ],
-        sex: [{ required: true, message: "请选择性别", trigger: "change" }],
-        score: [{ required: true, message: "请打个分吧", trigger: "change" }]
+        sex: [{ required: true, message: "请选择性别", trigger: "change" }]
       }
     };
   },
@@ -147,7 +146,7 @@ export default {
           }).then(response => {
             if (response) {
               this.showMessage("success", "提交成功", 1500);
-              this.$refs[formName].clearValidate();
+              this.reset(formName);
             }
           });
         } else {
