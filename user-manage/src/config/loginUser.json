@@ -5,8 +5,13 @@
       "isadmin": true
     },
     {
-      "username": "qiniu",
-      "password": "qiniu",
+      "username": "admin",
+      "password": "admin",
+      "isadmin": true
+    },
+    {
+      "username": "common",
+      "password": "123",
       "isadmin": false
     }
   ]
