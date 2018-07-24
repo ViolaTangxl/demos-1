@@ -26,7 +26,8 @@ export default new vuex.Store({
   state: {
     islogin: false,
     username: "未登录",
-    isadmin: false
+    isadmin: false,
+    path: []
   },
   actions: actions,
   getters: getters,
