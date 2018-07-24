@@ -25,12 +25,14 @@ export const navConfig = [{
     alias: "用户",
     icon: "menu",
     limit: false,
+    fullpath: ["用户"],
     content: [{
       path: "info",
       name: "info",
       alias: "用户信息表",
       icon: "info",
       limit: false,
+      fullpath: ["用户", "用户信息表"],
       content: UserPage
     }, {
       path: "manage",
@@ -38,6 +40,7 @@ export const navConfig = [{
       alias: "用户管理",
       icon: "setting",
       limit: true,
+      fullpath: ["用户", "用户管理"],
       content: ManagePage
     }]
   },
@@ -47,12 +50,14 @@ export const navConfig = [{
     alias: "设置",
     icon: "setting",
     limit: false,
+    fullpath: ["设置"],
     content: [{
       path: "theme",
       name: "theme",
       alias: "自定义主题",
       icon: "edit",
       limit: true,
+      fullpath: ["设置", "自定义主题"],
       content: CustomPage
     }]
   },
@@ -62,6 +67,7 @@ export const navConfig = [{
     alias: "反馈",
     icon: "message",
     limit: false,
+    fullpath: ["反馈"],
     content: EvaluatePage
   }
 ];

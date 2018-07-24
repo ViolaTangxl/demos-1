@@ -55,10 +55,12 @@ import { userData } from "@/config/userInfo";
 import { columnData } from "@/config/userInfoColumn";
 // 导入UserInfo组件
 import UserInfo from "@/components/UserInfo";
+import { mapState } from "vuex";
 
 export default {
   name: "UserPage",
   mounted: function() {
+    console.log(this.routePath);
     // 模拟产生autocomplete的数据
     this.userData.map(item => {
       this.autoCompleteData.push({
@@ -102,6 +104,9 @@ export default {
   },
   components: {
     UserInfo
+  },
+  computed: {
+    ...mapState(["routePath"])
   }
 };
 </script>

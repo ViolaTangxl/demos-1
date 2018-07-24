@@ -44,7 +44,8 @@ function getRoutes(routes, navItems, previous) {
       routes.push({
         path: path,
         name: item.name,
-        component: item.content
+        component: item.content,
+        fullpath: item.fullpath ? item.fullpath : []
       });
     }
   });

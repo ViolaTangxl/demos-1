@@ -29,7 +29,7 @@ export default new vuex.Store({
     islogin: false,
     username: "未登录",
     isadmin: false,
-    path: []
+    routePath: ""
   },
   getters: getters,
   mutations: mutations,

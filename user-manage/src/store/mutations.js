@@ -5,6 +5,11 @@
  * Create Date: 2018-07-24
  */
 
-const mutations = {};
+const mutations = {
+  // 设置state里面的routePath
+  setRoutePath(state, payload) {
+    state.routePath = payload.routePath;
+  }
+};
 
 export default mutations;

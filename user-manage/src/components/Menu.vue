@@ -8,11 +8,17 @@
  */
 
 // 引入vuex相关方法
-import { mapState, mapActions, mapGetters } from "vuex";
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "Menu",
   props: ["isCollapse", "navConfig"],
+  mounted: function() {
+    const currentPath = this.$router.history.current.path;
+    this.setRoutePath({
+      routePath: currentPath
+    });
+  },
   data: function() {
     return {};
   },
@@ -70,9 +76,12 @@ export default {
         }
       });
     },
-    menuSelect: function(index, path) {
-      console.log(index, path);
-    }
+    menuSelect: function(index) {
+      this.setRoutePath({
+        routePath: index
+      });
+    },
+    ...mapMutations(["setRoutePath"])
   },
   computed: {
     matchActiveRouter: function() {
