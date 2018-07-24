@@ -7,10 +7,12 @@
 
 import Vue from "vue";
 import vuex from "vuex";
-// 导入公共actions
-import actions from "./actions";
+// 导入公共mutations
+import mutations from "./mutations";
 // 导入公共getters
 import getters from "./getters";
+// 导入公共actions
+import actions from "./actions";
 // 导入UserInfo
 import UserInfo from "./modules/UserInfo";
 // 导入UserManage
@@ -29,8 +31,9 @@ export default new vuex.Store({
     isadmin: false,
     path: []
   },
-  actions: actions,
   getters: getters,
+  mutations: mutations,
+  actions: actions,
   modules: {
     UserInfo: UserInfo,
     UserManage: UserManage,
