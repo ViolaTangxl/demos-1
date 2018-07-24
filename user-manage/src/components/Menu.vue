@@ -25,6 +25,7 @@ export default {
         text-color={this.newState.frontColor}
         active-text-color={this.newState.selectFrontColor}
         collapse={this.isCollapse}
+        onSelect={this.menuSelect}
         router
       >
         {this.createMenu(h, this.navConfig, "")}
@@ -68,6 +69,9 @@ export default {
           );
         }
       });
+    },
+    menuSelect: function(index, path) {
+      console.log(index, path);
     }
   },
   computed: {

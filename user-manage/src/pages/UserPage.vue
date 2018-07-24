@@ -2,7 +2,7 @@
   <div class="user-page">
     <div class="head-container">
       <span class="head-title">
-        <el-breadcrumb separator="/">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item v-bind:to="{ path: '/' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item>用户</el-breadcrumb-item>
           <el-breadcrumb-item>用户信息表</el-breadcrumb-item>
