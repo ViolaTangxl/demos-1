@@ -5,7 +5,13 @@
        element-loading-spinner="el-icon-loading"
        element-loading-background="rgba(0, 0, 0, 0.6)">
     <div class="head-container">
-      <span class="head-title">自定义主题</span>
+      <span class="head-title">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+          <el-breadcrumb-item v-bind:to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in fullPath"
+                              v-bind:key="index">{{ item }}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </span>
       <div class="head-control">
         <!-- 控制器 -->
         <!-- 栅格布局 -->
@@ -76,8 +82,16 @@ import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "CustomPage",
+  mounted: function() {
+    // 生成面包屑导航
+    const match = this.$router.options.routes.find(
+      item => item.path === this.routePath
+    );
+    this.fullPath = match ? match.fullpath : [];
+  },
   data: function() {
     return {
+      fullPath: [],
       backgroundColor: "#231f20",
       frontColor: "#fff",
       selectFrontColor: "#ffd04b",
@@ -104,6 +118,7 @@ export default {
     ...mapActions("Custom", ["confirmState"])
   },
   computed: {
+    ...mapState(["routePath"]),
     ...mapState("Custom", ["pageLoad"])
   }
 };

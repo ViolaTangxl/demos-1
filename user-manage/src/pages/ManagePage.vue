@@ -1,7 +1,13 @@
 <template>
   <div class="manage-page">
     <div class="head-container">
-      <span class="head-title">用户管理</span>
+      <span class="head-title">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+          <el-breadcrumb-item v-bind:to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in fullPath"
+                              v-bind:key="index">{{ item }}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </span>
       <div class="head-control">
         <!-- 控制器 -->
         <!-- 栅格布局 -->
@@ -51,6 +57,11 @@ import UserManage from "@/components/UserManage";
 export default {
   name: "ManagePage",
   mounted: function() {
+    // 生成面包屑导航
+    const match = this.$router.options.routes.find(
+      item => item.path === this.routePath
+    );
+    this.fullPath = match ? match.fullpath : [];
     // 模拟产生autocomplete的数据
     this.userData.map(item => {
       this.autoCompleteData.push({
@@ -61,6 +72,7 @@ export default {
   },
   data: function() {
     return {
+      fullPath: [],
       userSearchInput: "",
       columnData: columnData,
       userData: userData,
@@ -91,6 +103,9 @@ export default {
   },
   components: {
     UserManage
+  },
+  computed: {
+    ...mapState(["routePath"])
   }
 };
 </script>

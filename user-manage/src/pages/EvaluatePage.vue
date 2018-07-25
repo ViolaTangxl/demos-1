@@ -1,6 +1,13 @@
 <template>
   <div class="evaluate-page">
     <div class="head-container">
+      <span class="head-title">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+          <el-breadcrumb-item v-bind:to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in fullPath"
+                              v-bind:key="index">{{ item }}</el-breadcrumb-item>
+        </el-breadcrumb>
+      </span>
       <div class="head-control">
         <!-- 控制器 -->
         <!-- 栅格布局 -->
@@ -102,8 +109,16 @@ import { provinceData } from "@/config/province";
 
 export default {
   name: "EvaluatePage",
+  mounted: function() {
+    // 生成面包屑导航
+    const match = this.$router.options.routes.find(
+      item => item.path === this.routePath
+    );
+    this.fullPath = match ? match.fullpath : [];
+  },
   data: function() {
     return {
+      fullPath: [],
       provinceData: provinceData,
       formRules: {
         name: [{ required: true, message: "请输入姓名", trigger: "blur" }],
@@ -169,6 +184,7 @@ export default {
     ...mapActions("Evaluate", ["confirmUpload", "resetForm"])
   },
   computed: {
+    ...mapState(["routePath"]),
     ...mapState("Evaluate", [
       "resetLoad",
       "confirmLoad",
