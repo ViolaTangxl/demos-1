@@ -60,7 +60,8 @@ import { mapState } from "vuex";
 export default {
   name: "UserPage",
   mounted: function() {
-    console.log(this.routePath);
+    // 生成面包屑导航
+    console.log(this.routePath, this.$router.options.routes);
     // 模拟产生autocomplete的数据
     this.userData.map(item => {
       this.autoCompleteData.push({

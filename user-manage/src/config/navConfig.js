@@ -73,7 +73,7 @@ export const navConfig = [{
 ];
 
 export const otherConfig = [{
-  path: "/",
+  path: "",
   name: "homepage",
   alias: "主页",
   icon: "",
