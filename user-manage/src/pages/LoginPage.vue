@@ -2,7 +2,7 @@
   <div class="login-page">
     <div class="login-container">
       <div class="login-img">
-        <img src="@/assets/images/github.jpg" />
+        <img src="@/assets/images/logo.gif" />
       </div>
       <el-form v-bind:model="loginForm"
                v-bind:rules="rules"
@@ -112,6 +112,9 @@ export default {
       });
     },
     ...mapActions(["login"])
+  },
+  computed: {
+    ...mapState("Custom", ["newState"])
   }
 };
 </script>
