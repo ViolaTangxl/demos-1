@@ -4,8 +4,8 @@
       <span class="head-title">
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item v-bind:to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>用户</el-breadcrumb-item>
-          <el-breadcrumb-item>用户信息表</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in fullPath"
+                              v-bind:key="index">{{ item }}</el-breadcrumb-item>
         </el-breadcrumb>
       </span>
       <div class="head-control">
@@ -61,7 +61,10 @@ export default {
   name: "UserPage",
   mounted: function() {
     // 生成面包屑导航
-    console.log(this.routePath, this.$router.options.routes);
+    const match = this.$router.options.routes.find(
+      item => item.path === this.routePath
+    );
+    this.fullPath = match ? match.fullpath : [];
     // 模拟产生autocomplete的数据
     this.userData.map(item => {
       this.autoCompleteData.push({
@@ -72,6 +75,7 @@ export default {
   },
   data: function() {
     return {
+      fullPath: [],
       userSearchInput: "",
       columnData: columnData,
       userData: userData,
