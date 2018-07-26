@@ -148,6 +148,7 @@ export default {
       const response = await this.resetForm();
       if (response) {
         this.$refs[formName].clearValidate();
+        this.showNotification("success", "重置成功", 1500);
       }
     },
     /**
@@ -160,7 +161,7 @@ export default {
             formValue: this.evaluateForm
           }).then(response => {
             if (response) {
-              this.showMessage("success", "提交成功", 1500);
+              this.showNotification("success", "提交成功", 1500);
               this.reset(formName);
             }
           });
@@ -172,13 +173,12 @@ export default {
     /**
      * 显示提示信息
      */
-    showMessage: function(type, message, duration) {
-      this.$message({
+    showNotification: function(type, message, duration) {
+      this.$notify({
+        title: "提示",
         type: type,
         message: message,
-        center: true,
-        duration: duration,
-        onClose: true
+        duration: duration
       });
     },
     ...mapActions("Evaluate", ["confirmUpload", "resetForm"])
