@@ -90,6 +90,18 @@
           </el-rate>
         </el-form-item>
       </el-form>
+      <!-- 提交结果对话框 -->
+      <el-dialog title="提示"
+                 v-bind:visible="dialogVisible"
+                 width="30%">
+        <span>这是一段信息</span>
+        <span slot="footer"
+              class="dialog-footer">
+          <el-button v-on:click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary"
+                     v-on:click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
   </div>
 </template>
@@ -137,7 +149,8 @@ export default {
           { required: true, message: "请输入详细地址", trigger: "blur" }
         ],
         sex: [{ required: true, message: "请选择性别", trigger: "change" }]
-      }
+      },
+      dialogVisible: false
     };
   },
   methods: {
@@ -163,6 +176,7 @@ export default {
             if (response) {
               this.showNotification("success", "提交成功", 1500);
               this.reset(formName);
+              this.dialogVisible = true;
             }
           });
         } else {
