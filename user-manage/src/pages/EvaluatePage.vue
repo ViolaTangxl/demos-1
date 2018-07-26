@@ -92,14 +92,18 @@
       </el-form>
       <!-- 提交结果对话框 -->
       <el-dialog title="提示"
+                 width="30%"
+                 class="result-dialog"
                  v-bind:visible="dialogVisible"
-                 width="30%">
-        <span>这是一段信息</span>
+                 v-bind:close-on-click-modal="false"
+                 v-bind:close-on-press-escape="false"
+                 v-bind:show-close="false">
+        <span slot="title"
+              class="dialog-title">反馈内容</span>
+        <div class="evaluate-result"></div>
         <span slot="footer"
               class="dialog-footer">
-          <el-button v-on:click="dialogVisible = false">取 消</el-button>
-          <el-button type="primary"
-                     v-on:click="dialogVisible = false">确 定</el-button>
+          <el-button v-on:click="dialogVisible = false">关闭</el-button>
         </span>
       </el-dialog>
     </div>

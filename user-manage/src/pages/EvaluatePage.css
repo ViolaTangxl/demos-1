@@ -46,3 +46,13 @@
   top: 2px;
   margin-left: 5px;
 }
+
+.evaluate-page .main-container .result-dialog .dialog-title {
+  font-size: 18px;
+}
+
+.evaluate-page .main-container .result-dialog .evaluate-result {
+  width: 100%;
+  height: 50px;
+  background-color: #ddd;
+}
