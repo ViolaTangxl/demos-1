@@ -127,8 +127,7 @@ const Evaluate = {
       await dispatch("simulateShowConfirmOverlay");
       return new Promise((resolve, reject) => {
         const formValue = payload.formValue;
-        console.log(formValue);
-        resolve(true);
+        resolve(formValue);
       });
     }
   }

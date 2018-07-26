@@ -91,8 +91,8 @@
         </el-form-item>
       </el-form>
       <!-- 提交结果对话框 -->
-      <el-dialog title="提示"
-                 width="30%"
+      <el-dialog title="反馈结果"
+                 width="50%"
                  class="result-dialog"
                  v-bind:visible="dialogVisible"
                  v-bind:close-on-click-modal="false"
@@ -100,7 +100,37 @@
                  v-bind:show-close="false">
         <span slot="title"
               class="dialog-title">反馈内容</span>
-        <div class="evaluate-result"></div>
+        <el-form v-bind:model="resultForm"
+                 label-width="100px">
+          <el-form-item label="姓名">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.name"></el-input>
+          </el-form-item>
+          <el-form-item label="性别">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.sex"></el-input>
+          </el-form-item>
+          <el-form-item label="邮箱">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.email"></el-input>
+          </el-form-item>
+          <el-form-item label="城市">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.selectedCity"></el-input>
+          </el-form-item>
+          <el-form-item label="详细地址">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.detailAdd"></el-input>
+          </el-form-item>
+          <el-form-item label="评价">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.content"></el-input>
+          </el-form-item>
+          <el-form-item label="打分">
+            <el-input v-bind:disabled="true"
+                      v-model="resultForm.score"></el-input>
+          </el-form-item>
+        </el-form>
         <span slot="footer"
               class="dialog-footer">
           <el-button v-on:click="dialogVisible = false">关闭</el-button>
@@ -154,7 +184,16 @@ export default {
         ],
         sex: [{ required: true, message: "请选择性别", trigger: "change" }]
       },
-      dialogVisible: false
+      dialogVisible: false,
+      resultForm: {
+        name: "",
+        email: "",
+        selectedCity: "",
+        detailAdd: "",
+        sex: "",
+        content: "",
+        score: 0
+      }
     };
   },
   methods: {
@@ -180,6 +219,7 @@ export default {
             if (response) {
               this.showNotification("success", "提交成功", 1500);
               this.reset(formName);
+              console.log(response);
               this.dialogVisible = true;
             }
           });
