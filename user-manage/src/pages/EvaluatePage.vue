@@ -222,7 +222,22 @@ export default {
             if (response) {
               this.showNotification("success", "提交成功", 1500);
               this.reset(formName);
-              console.log(response);
+              const scoreList = [
+                "没意思",
+                "一般般",
+                "有点儿意思",
+                "不错",
+                "真棒"
+              ];
+              this.resultForm = {
+                name: response.name,
+                email: response.email,
+                selectedCity: response.selectedCity,
+                detailAdd: response.detailAdd,
+                sex: response.sex === "male" ? "男" : "女",
+                content: response.content,
+                score: scoreList[response.score - 1]
+              };
               this.dialogVisible = true;
             }
           });
