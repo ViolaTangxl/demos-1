@@ -93,6 +93,7 @@
       <!-- 提交结果对话框 -->
       <el-dialog title="反馈结果"
                  width="50%"
+                 top="50px"
                  class="result-dialog"
                  v-bind:visible="dialogVisible"
                  v-bind:close-on-click-modal="false"
@@ -120,10 +121,12 @@
           </el-form-item>
           <el-form-item label="详细地址">
             <el-input v-bind:disabled="true"
+                      type="textarea"
                       v-model="resultForm.detailAdd"></el-input>
           </el-form-item>
           <el-form-item label="评价">
             <el-input v-bind:disabled="true"
+                      type="textarea"
                       v-model="resultForm.content"></el-input>
           </el-form-item>
           <el-form-item label="打分">
