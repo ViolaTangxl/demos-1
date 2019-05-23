@@ -18,3 +18,9 @@
 .glide/
 .DS_Store
 */.DS_Store
+
+# lock file
+*.lock
+*/*.lock
+package-lock.json
+*/package-lock.json

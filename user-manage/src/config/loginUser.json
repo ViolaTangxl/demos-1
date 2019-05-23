@@ -1,0 +1,18 @@
+{
+  "loginUsers": [{
+      "username": "jiayizhen",
+      "password": "jiayizhen",
+      "isadmin": true
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "isadmin": true
+    },
+    {
+      "username": "common",
+      "password": "123",
+      "isadmin": false
+    }
+  ]
+}

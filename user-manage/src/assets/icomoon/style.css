@@ -1,0 +1,352 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon.eot?xjr6yp');
+  src: url('fonts/icomoon.eot?xjr6yp#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?xjr6yp') format('truetype'), url('fonts/icomoon.woff?xjr6yp') format('woff'), url('fonts/icomoon.svg?xjr6yp#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-emoji-line-20:before {
+  content: "\e900";
+  color: #fff;
+}
+
+.icon-emoji-line-22:before {
+  content: "\e901";
+  color: #fff;
+}
+
+.icon-emoji-line-23:before {
+  content: "\e902";
+  color: #fff;
+}
+
+.icon-emoji-line-24:before {
+  content: "\e903";
+  color: #fff;
+}
+
+.icon-emoji-line-25:before {
+  content: "\e904";
+  color: #fff;
+}
+
+.icon-emoji-line-26:before {
+  content: "\e905";
+  color: #fff;
+}
+
+.icon-emoji-line-27:before {
+  content: "\e906";
+  color: #fff;
+}
+
+.icon-emoji-line-28:before {
+  content: "\e907";
+  color: #fff;
+}
+
+.icon-emoji-line-29:before {
+  content: "\e908";
+  color: #fff;
+}
+
+.icon-emoji-line-30:before {
+  content: "\e909";
+  color: #fff;
+}
+
+.icon-emoji-line-31:before {
+  content: "\e90a";
+  color: #fff;
+}
+
+.icon-emoji-line-32:before {
+  content: "\e90b";
+  color: #fff;
+}
+
+.icon-emoji-line-33:before {
+  content: "\e90c";
+  color: #fff;
+}
+
+.icon-emoji-line-34:before {
+  content: "\e90d";
+  color: #fff;
+}
+
+.icon-emoji-line-35:before {
+  content: "\e90e";
+  color: #fff;
+}
+
+.icon-emoji-line-36:before {
+  content: "\e90f";
+  color: #fff;
+}
+
+.icon-emoji-line-37:before {
+  content: "\e910";
+  color: #fff;
+}
+
+.icon-emoji-line-38:before {
+  content: "\e911";
+  color: #fff;
+}
+
+.icon-emoji-line-39:before {
+  content: "\e912";
+  color: #fff;
+}
+
+.icon-emoji-line-42:before {
+  content: "\e913";
+  color: #fff;
+}
+
+.icon-emoji-line-61:before {
+  content: "\e914";
+  color: #fff;
+}
+
+.icon-emoji-line-63:before {
+  content: "\e915";
+  color: #fff;
+}
+
+.icon-emoji-line-64:before {
+  content: "\e916";
+  color: #fff;
+}
+
+.icon-emoji-line-65:before {
+  content: "\e917";
+  color: #fff;
+}
+
+.icon-emoji-line-66:before {
+  content: "\e918";
+  color: #fff;
+}
+
+.icon-emoji-line-67:before {
+  content: "\e919";
+  color: #fff;
+}
+
+.icon-emoji-line-40:before {
+  content: "\e91a";
+  color: #fff;
+}
+
+.icon-emoji-line-41:before {
+  content: "\e91b";
+  color: #fff;
+}
+
+.icon-emoji-line-43:before {
+  content: "\e91c";
+  color: #fff;
+}
+
+.icon-emoji-line-44:before {
+  content: "\e91d";
+  color: #fff;
+}
+
+.icon-emoji-line-45:before {
+  content: "\e91e";
+  color: #fff;
+}
+
+.icon-emoji-line-46:before {
+  content: "\e91f";
+  color: #fff;
+}
+
+.icon-emoji-line-47:before {
+  content: "\e920";
+  color: #fff;
+}
+
+.icon-emoji-line-48:before {
+  content: "\e921";
+  color: #fff;
+}
+
+.icon-emoji-line-49:before {
+  content: "\e922";
+  color: #fff;
+}
+
+.icon-emoji-line-50:before {
+  content: "\e923";
+  color: #fff;
+}
+
+.icon-emoji-line-51:before {
+  content: "\e924";
+  color: #fff;
+}
+
+.icon-emoji-line-52:before {
+  content: "\e925";
+  color: #fff;
+}
+
+.icon-emoji-line-53:before {
+  content: "\e926";
+  color: #fff;
+}
+
+.icon-emoji-line-55:before {
+  content: "\e927";
+  color: #fff;
+}
+
+.icon-emoji-line-56:before {
+  content: "\e928";
+  color: #fff;
+}
+
+.icon-emoji-line-57:before {
+  content: "\e929";
+  color: #fff;
+}
+
+.icon-emoji-line-58:before {
+  content: "\e92a";
+  color: #fff;
+}
+
+.icon-emoji-line-59:before {
+  content: "\e92b";
+  color: #fff;
+}
+
+.icon-emoji-line-60:before {
+  content: "\e92c";
+  color: #fff;
+}
+
+.icon-emoji-line-62:before {
+  content: "\e92d";
+  color: #fff;
+}
+
+.icon-emoji-line-1:before {
+  content: "\e92e";
+  color: #fff;
+}
+
+.icon-emoji-line-2:before {
+  content: "\e92f";
+  color: #fff;
+}
+
+.icon-emoji-line-3:before {
+  content: "\e930";
+  color: #fff;
+}
+
+.icon-emoji-line-4:before {
+  content: "\e931";
+  color: #fff;
+}
+
+.icon-emoji-line-5:before {
+  content: "\e932";
+  color: #fff;
+}
+
+.icon-emoji-line-6:before {
+  content: "\e933";
+  color: #fff;
+}
+
+.icon-emoji-line-7:before {
+  content: "\e934";
+  color: #fff;
+}
+
+.icon-emoji-line-8:before {
+  content: "\e935";
+  color: #fff;
+}
+
+.icon-emoji-line-9:before {
+  content: "\e936";
+  color: #fff;
+}
+
+.icon-emoji-line-10:before {
+  content: "\e937";
+  color: #fff;
+}
+
+.icon-emoji-line-11:before {
+  content: "\e938";
+  color: #fff;
+}
+
+.icon-emoji-line-12:before {
+  content: "\e939";
+  color: #fff;
+}
+
+.icon-emoji-line-13:before {
+  content: "\e93a";
+  color: #fff;
+}
+
+.icon-emoji-line-14:before {
+  content: "\e93b";
+  color: #fff;
+}
+
+.icon-emoji-line-15:before {
+  content: "\e93c";
+  color: #fff;
+}
+
+.icon-emoji-line-16:before {
+  content: "\e93d";
+  color: #fff;
+}
+
+.icon-emoji-line-17:before {
+  content: "\e93e";
+  color: #fff;
+}
+
+.icon-emoji-line-18:before {
+  content: "\e93f";
+  color: #fff;
+}
+
+.icon-emoji-line-19:before {
+  content: "\e940";
+  color: #fff;
+}
+
+.icon-emoji-line-21:before {
+  content: "\e941";
+  color: #fff;
+}

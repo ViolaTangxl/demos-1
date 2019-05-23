@@ -1,5 +1,5 @@
 // import { ADD_TO_CART, UPDATE_CART, DELETE_FROM_CART } from "../actions/oneAction";
-import { PAGE_ONE_ADD_ONE, PAGE_ONE_REDUCE_ONE, LOADING_CHANGE } from "../actions/oneAction";
+import { PAGE_ONE_ADD_ONE, PAGE_ONE_REDUCE_ONE, LOADING_ONE_CHANGE } from "../actions/oneAction";
 
 // const initialState = {
 //     cart: [
@@ -17,8 +17,8 @@ import { PAGE_ONE_ADD_ONE, PAGE_ONE_REDUCE_ONE, LOADING_CHANGE } from "../action
 // }
 
 const initialState = {
-    count: 0,
-    loading: false
+  count: 0,
+  loading: false
 }
 
 // export default function (state = initialState, action) {
@@ -48,29 +48,29 @@ const initialState = {
 // }
 
 export default function (state = initialState, action) {
-    switch (action.type) {
-        case PAGE_ONE_ADD_ONE:
-            return addOne(state);
-        case PAGE_ONE_REDUCE_ONE:
-            return reduceOne(state);
-        case LOADING_CHANGE:
-            return {
-                ...state,
-                loading: action.payload
-            }
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case PAGE_ONE_ADD_ONE:
+      return addOne(state);
+    case PAGE_ONE_REDUCE_ONE:
+      return reduceOne(state);
+    case LOADING_ONE_CHANGE:
+      return {
+        ...state,
+        loading: action.payload
+      }
+    default:
+      return state;
+  }
 }
 
 function addOne(state) {
-    return {
-        ...state, count: state.count + 1
-    }
+  return {
+    ...state, count: state.count + 1
+  }
 }
 
 function reduceOne(state) {
-    return {
-        ...state, count: state.count - 1
-    }
+  return {
+    ...state, count: state.count - 1
+  }
 }

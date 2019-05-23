@@ -2,38 +2,55 @@
 export default {
   name: "Table",
   props: ["tableConfig"],
-  data: () => ({
-    tableData: [
-      {
-        date: "2016-05-02",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1518 弄"
-      },
-      {
-        date: "2016-05-04",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1517 弄"
-      },
-      {
-        date: "2016-05-01",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1519 弄"
-      },
-      {
-        date: "2016-05-03",
-        name: "王小虎",
-        address: "上海市普陀区金沙江路 1516 弄"
-      }
-    ]
-  }),
-  render() {
+  data: () => ({}),
+  render(h) {
+    if (!this.tableConfig) {
+      this.showMessage("can not find tableConfig", "warning");
+      return;
+    }
+    const {
+      className,
+      stripe,
+      border,
+      columnData,
+      bodyData
+    } = this.tableConfig;
+    if (!columnData) {
+      this.showMessage("can not find columnData in tableConfig", "warning");
+      return;
+    }
     return (
-      <el-table class="table" data={this.tableData} stripe>
-        <el-table-column prop="date" label="日期" align="center" />
-        <el-table-column prop="name" label="姓名" align="center" />
-        <el-table-column prop="address" label="地址" align="center" />
+      <el-table
+        class={className ? className : ""}
+        data={bodyData ? bodyData : []}
+        stripe={stripe ? stripe : false}
+        border={border ? border : false}
+      >
+        {this.createTableColumn(h, columnData)}
       </el-table>
     );
+  },
+  methods: {
+    showMessage: function(message, type) {
+      this.$message({
+        message: message,
+        type: type,
+        center: true,
+        duration: 2000
+      });
+    },
+    createTableColumn: function(h, columnData) {
+      return columnData.map(item => {
+        const { prop, label, align } = item;
+        return (
+          <el-table-column
+            prop={prop ? prop : ""}
+            label={label ? label : ""}
+            align={align ? align : "left"}
+          />
+        );
+      });
+    }
   }
 };
 </script>

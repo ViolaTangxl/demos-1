@@ -17,7 +17,7 @@
 
 <script>
 // 导入水印插件
-import { waterPrint } from "../plugins/waterprint";
+import { waterPrint } from "../assets/plugins/waterprint";
 
 export default {
   name: "AddReduceOne",
@@ -47,6 +47,17 @@ export default {
     },
     controlOverlayer: function(isShow) {
       this.loading = isShow;
+    }
+  },
+  watch: {
+    count: function() {
+      this.$message({
+        message: "count发生了变化",
+        type: "info",
+        center: true,
+        showClose: true,
+        duration: 2000
+      });
     }
   }
 };

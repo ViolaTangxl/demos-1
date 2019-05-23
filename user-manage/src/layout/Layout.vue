@@ -1,0 +1,125 @@
+<template>
+  <el-container class="layout">
+    <el-aside class="left-part"
+              width="auto"
+              v-bind:style="{opacity: newState.transparent/100}">
+      <div class="logo-container"
+           v-bind:style="{backgroundColor: newState.backgroundColor}"
+           v-on:click="goHome">
+        <img src="@/assets/images/cartoon.gif" />
+      </div>
+      <Menu v-bind:isCollapse="isCollapse"
+            v-bind:navConfig="navConfig" />
+    </el-aside>
+    <el-container class="right-part">
+      <el-header class="right-header"
+                 height="60px"
+                 v-bind:style="{backgroundColor: newState.backgroundColor, opacity: newState.transparent/100}">
+        <span class="collapse-btn"
+              v-bind:style="{color: newState.frontColor}"
+              v-on:click="collapseMenu"
+              v-on:mouseover="mouseoverFunc"
+              v-on:mouseleave="mouseleaveFunc">
+          <i v-bind:class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
+          <span>{{ isCollapse ? "展开" : "收起" }}</span>
+        </span>
+        <!-- 用户下拉菜单 -->
+        <span class="user-drop-down">
+          <el-dropdown trigger="click"
+                       v-on:command="dropDownClick">
+            <span class="el-dropdown-link"
+                  v-bind:style="{color: newState.frontColor}"
+                  v-on:mouseover="mouseoverFunc"
+                  v-on:mouseleave="mouseleaveFunc">
+              {{username}}
+              <i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="homepage">首页</el-dropdown-item>
+              <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </span>
+      </el-header>
+      <el-main class="right-body">
+        <transition name="el-fade-in">
+          <router-view/>
+        </transition>
+      </el-main>
+      <el-footer class="right-footer"
+                 height="50px"
+                 v-bind:style="{backgroundColor: newState.backgroundColor, opacity: newState.transparent/100}">
+        <el-button type="text"
+                   v-on:click="goMyPage">
+          <span v-bind:style="{color: newState.frontColor}"
+                v-on:mouseover="mouseoverFunc"
+                v-on:mouseleave="mouseleaveFunc">User Management System @2018 Created By Jiaiyizhen</span>
+        </el-button>
+      </el-footer>
+    </el-container>
+  </el-container>
+</template>
+
+<script>
+/**
+ * File name: Layout.vue
+ * Description: System layout file
+ * Auther: Zhazha jiayizhen
+ * Create Date: 2018-06-25
+ */
+
+// 引入Menu
+import Menu from "@/components/Menu.vue";
+// 引入vuex相关方法
+import { mapState, mapActions, mapGetters } from "vuex";
+
+export default {
+  name: "Layout",
+  props: ["navConfig"],
+  data: function() {
+    return {
+      isCollapse: true
+    };
+  },
+  methods: {
+    collapseMenu: function() {
+      this.isCollapse = !this.isCollapse;
+    },
+    dropDownClick: function(command) {
+      switch (command) {
+        case "homepage":
+          this.$router.push({ path: "/" });
+          break;
+        case "logout":
+          this.logout();
+          break;
+      }
+    },
+    mouseoverFunc: function(evt) {
+      evt.currentTarget.style.color = this.newState.selectFrontColor;
+    },
+    mouseleaveFunc: function(evt) {
+      evt.currentTarget.style.color = this.newState.frontColor;
+    },
+    goMyPage: function() {
+      window.open("https://github.com/war408705279", "_blank");
+    },
+    goHome: function() {
+      this.$router.push({ path: "/" });
+    },
+    ...mapActions(["login", "logout"])
+  },
+  computed: {
+    ...mapState(["username"]),
+    ...mapState("Custom", ["newState"])
+  },
+  components: {
+    Menu
+  }
+};
+</script>
+
+<style>
+/* 引入Layout样式 */
+@import url("./Layout.css");
+</style>
