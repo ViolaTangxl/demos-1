@@ -20,7 +20,7 @@
 */.DS_Store
 
 # lock file
-# *.lock
-# */*.lock
-# package-lock.json
-# */package-lock.json
+*.lock
+*/*.lock
+package-lock.json
+*/package-lock.json
