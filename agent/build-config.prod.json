@@ -1,0 +1,11 @@
+{
+  "extends": "./build-config.json",
+  "envVariables": {
+    "HOSTS_CONFIG": {
+      "janus": "https://web-api.qiniu.com",
+      "sso": "https://sso.qiniu.com",
+      "www": "https://www.qiniu.com",
+      "qmall": "https://qmall.qiniu.com"
+    }
+  }
+}
