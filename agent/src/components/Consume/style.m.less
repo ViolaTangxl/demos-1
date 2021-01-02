@@ -1,0 +1,21 @@
+@import "~utils/styles/colors/less/index.less";
+@import "~utils/styles/mixins.less";
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+  flex: 0;
+
+  .c-pagination();
+}

@@ -24,6 +24,7 @@ import BaseProvider from 'portal-base/common/components/Provider'
 
 import Overview from 'components/Overview'
 import Customer from 'components/Customer'
+import Consume from 'components/Consume'
 
 import { basename } from 'constants/route'
 
@@ -85,7 +86,7 @@ export default class App extends React.Component<any, any> {
               </Route>
               <Route relative exact title="推广概览" path="/overview"><Overview /></Route>
               <Route relative exact title="客户管理" path="/customer"><Customer /></Route>
-              <Route relative exact title="消费历史" path="/consume">消费历史</Route>
+              <Route relative exact title="消费历史" path="/consume"><Consume /></Route>
               <Route relative path="*"><NotFound /></Route>
             </Switch>
           </Layout>
