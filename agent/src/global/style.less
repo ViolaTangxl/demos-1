@@ -1,0 +1,82 @@
+/**
+ * @file global style
+ * @author jiayizhen <jiayizhen@qiniu.com>
+ */
+
+@import "~react-icecream/style/index.less";
+
+html, body, .main-view-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 28px;
+  margin: 15px 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+// 临时解决 antd 时间选择器箭头乱码的问题
+// antd reference：https://github.com/ant-design/ant-design/pull/17480/files
+// @huangbinjie
+.ant-calendar-prev-year-btn::after {
+  content: "\00ab" !important;
+}
+
+.ant-calendar-next-year-btn::after {
+  content: "\00bb" !important;
+}
+
+.ant-calendar-prev-month-btn::after {
+  content: "\2039" !important;
+}
+
+.ant-calendar-next-month-btn::after {
+  content: "\203A" !important;
+}
+
+// 全局修改 antd popover 的样式
+// TODO: 后面应该把这部分样式修改挪到公共组件里面
+.ant-popover-inner {
+  .ant-popover-title,
+  .ant-popover-inner-content {
+    padding: 8px;
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+
+  .ant-popover-inner-content {
+    font-weight: 400;
+  }
+}
+
+// 全局修改 antd table 的样式
+// TODO: 后面应该把这部分样式修改挪到公共组件里面
+.ant-table {
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 15px 20px;
+    color: #333;
+    line-height: 22px;
+  }
+
+  .ant-table-thead > tr > th {
+    background-color: #F5F5F5;
+  }
+
+  .ant-table-tbody > tr {
+    border-bottom: 2px solid #F5F5F5;
+  }
+}

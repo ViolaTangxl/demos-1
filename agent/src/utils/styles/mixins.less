@@ -1,0 +1,75 @@
+.c-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// support webkit only
+// http://caniuse.com/#search=line-clamp
+// 使用时注意第二个参数
+.c-ellipsis-line-clamp(@n: 3, @maxheight: 80px) {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @n;
+  -webkit-box-orient: vertical;
+  max-height: @maxheight; // 非 webkit 浏览器
+}
+
+// 清除浮动
+.c-clearfix() {
+  &::after {
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+}
+
+// 等宽字体
+.c-monospaced() {
+  font-family: monospace, Courier New, Courier;
+}
+
+.c-word-wrap() {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+.c-word-nowrap() {
+  word-wrap: normal;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.c-line-ellipsis() {
+  .c-ellipsis();
+  .c-word-nowrap();
+}
+
+// TODO
+// 颜色覆盖需要修改的地方比较多
+// 这边先简单改变一下布局
+// 后面应该把这部分样式修改挪到公共组件里面
+.c-pagination() {
+  :global {
+    .ant-pagination-item a {
+      padding: 0 8px;
+    }
+
+    .ant-select-selection__rendered {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+
+    .ant-select-dropdown-menu-item {
+      text-align: left;
+    }
+
+    .ant-pagination-options-quick-jumper input {
+      padding: 0 12px;
+    }
+  }
+}
