@@ -1,0 +1,35 @@
+@import "~utils/styles/colors/less/index.less";
+@import "~utils/styles/mixins.less";
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tips {
+  padding: 12px 16px;
+  background-color: @icecream-color-grey-3;
+  flex: 0;
+
+  .tip {
+    color: @icecream-color-grey-8;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+.table {
+  margin-top: 20px;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+  flex: 0;
+
+  .c-pagination();
+}

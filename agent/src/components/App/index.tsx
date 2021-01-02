@@ -22,6 +22,9 @@ import Toaster from 'portal-base/common/components/Toaster'
 import { Route, Switch, Redirect } from 'portal-base/common/components/Router'
 import BaseProvider from 'portal-base/common/components/Provider'
 
+import Overview from 'components/Overview'
+import Customer from 'components/Customer'
+
 import { basename } from 'constants/route'
 
 import Layout from '../Layout'
@@ -80,8 +83,8 @@ export default class App extends React.Component<any, any> {
               <Route relative exact path="/">
                 <Redirect relative to="/overview" />
               </Route>
-              <Route relative exact title="推广概览" path="/overview">推广概览</Route>
-              <Route relative exact title="客户管理" path="/customer">客户管理</Route>
+              <Route relative exact title="推广概览" path="/overview"><Overview /></Route>
+              <Route relative exact title="客户管理" path="/customer"><Customer /></Route>
               <Route relative exact title="消费历史" path="/consume">消费历史</Route>
               <Route relative path="*"><NotFound /></Route>
             </Switch>
