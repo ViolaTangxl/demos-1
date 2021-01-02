@@ -6,6 +6,7 @@
       "sso": "https://sso.qiniu.com",
       "www": "https://www.qiniu.com",
       "qmall": "https://qmall.qiniu.com"
-    }
+    },
+    "ALLOW_DOMAINS": ["qiniu.com"]
   }
 }

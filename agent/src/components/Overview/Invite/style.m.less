@@ -1,0 +1,48 @@
+@import "~utils/styles/colors/less/index.less";
+
+.main {
+  margin-top: 60px;
+}
+
+.title {
+  color: @icecream-color-grey-8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.formItem {
+  margin-top: 20px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .input {
+    max-width: 440px;
+    margin-right: 12px;
+    flex: 1 1 auto;
+  }
+
+  .button {
+    margin-right: 12px;
+    top: 1px;
+    flex: 0 0 auto;
+
+    &.copy {
+      color: @icecream-color-blue-6;
+      border-color: @icecream-color-blue-6;
+
+      &:hover {
+        color: @icecream-color-grey-1;
+        background-color: @icecream-color-blue-6;
+      }
+    }
+  }
+
+  :global {
+    .ant-form-item-control-wrapper {
+      width: 100%;
+    }
+  }
+}

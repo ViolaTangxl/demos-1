@@ -71,6 +71,7 @@
       "sso": "http://bo-staging-sso.qa.qiniu.io",
       "www": "http://www-2020.dev.qiniu.io",
       "qmall": "http://www-qmall.dev.qiniu.io"
-    }
+    },
+    "ALLOW_DOMAINS": ["qiniu.io"]
   }
 }
