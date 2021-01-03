@@ -3,7 +3,7 @@
  * @author jiayizhen <jiayizhen@qiniu.com>
  */
 
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, reaction } from 'mobx'
 import autobind from 'autobind-decorator'
 import { FormState, FieldState } from 'formstate-x'
 
@@ -14,6 +14,7 @@ import Disposable from 'qn-fe-core/disposable'
 
 import { Toaster } from 'portal-base/common/stores/toaster'
 import { Loadings } from 'portal-base/common/stores/loadings'
+import { formatURL } from 'portal-base/common/utils/url'
 
 import { allowDomains } from 'constants/env'
 
@@ -25,17 +26,20 @@ const validateUrl = textOfPattern(/^https?:\/\//, 'URL 需要以 http:// 或 htt
 
 // TODO
 // 联调完成后移除
-const MOCK_URL = 'http://index-portal-v4-env-dev.qa.qiniu.io/signup?code=test'
+const MOCK_URL_PREFIX = 'http://index-portal-v4-env-dev.qa.qiniu.io/signup?code='
+// TODO
+// 文案修改
+const QQ_SHARE_CONTENT = '[连接数据 重塑价值]七牛云合作伙伴推荐'
 
-export function createFormState() {
+export function createFormState(url: string) {
   return new FormState({
-    url: new FieldState('').validators(validateUrlNotEmpty, validateUrl, value => {
+    url: new FieldState(url).validators(validateUrlNotEmpty, validateUrl, value => {
       const domain = getTopLevelDomain(value)
 
       // 目前测试环境允许地址为 qiniu.io 域名
       // 线上允许地址为 qiniu.com 域名
       if (allowDomains.indexOf(domain) === -1) {
-        return 'URL 不属于七牛云的页面'
+        return '您输入的 URL 不属于七牛云的页面'
       }
 
       return null
@@ -59,7 +63,13 @@ export default class LocalStore extends Disposable {
 
   loadings = Loadings.collectFrom(this, LoadingType)
 
-  @observable.ref formState = createFormState()
+  @observable.ref url = ''
+  @observable.ref formState = createFormState(this.url)
+
+  @action
+  updateUrl(url: string) {
+    this.url = url || ''
+  }
 
   @action
   copyShortUrl(url: string) {
@@ -77,6 +87,17 @@ export default class LocalStore extends Disposable {
     }
 
     this.toasterStore.warning('复制失败，请手动选择复制')
+  }
+
+  @computed get qqZoneShareLink() {
+    const params = {
+      to: 'qzone',
+      url: this.url,
+      desc: QQ_SHARE_CONTENT,
+      title: QQ_SHARE_CONTENT
+    }
+
+    return formatURL('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey', params)
   }
 
   @computed get isFetching() {
@@ -107,10 +128,10 @@ export default class LocalStore extends Disposable {
 
     // TODO
     // 接口联调
-    const fields = this.formState.$
-    fields.url.set(MOCK_URL)
+    const shortUrl = `${MOCK_URL_PREFIX}short`
+    this.updateUrl(shortUrl)
     // 短链生成成功后直接复制到剪贴板
-    this.copyShortUrl(MOCK_URL)
+    this.copyShortUrl(shortUrl)
   }
 
   @autobind
@@ -121,8 +142,7 @@ export default class LocalStore extends Disposable {
     // 接口联调
     const promise = new Promise(resolve => {
       const timeout = setTimeout(() => {
-        const fields = this.formState.$
-        fields.url.set(MOCK_URL)
+        this.updateUrl(`${MOCK_URL_PREFIX}origin`)
 
         clearTimeout(timeout)
         resolve()
@@ -134,6 +154,15 @@ export default class LocalStore extends Disposable {
 
   init() {
     this.addDisposer(this.formState.dispose)
+
+    this.addDisposer(reaction(
+      () => this.url,
+      url => {
+        if (!url) return
+
+        this.formState = createFormState(url)
+      }
+    ))
 
     this.fetch()
   }
