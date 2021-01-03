@@ -12,6 +12,8 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 
 import { useLocalStore } from 'qn-fe-core/local-store'
 
+import SVGIcon from 'portal-base/common/components/SVGIcon'
+
 import Form from 'react-icecream/lib/form'
 import Input from 'react-icecream/lib/input'
 import Popover from 'react-icecream/lib/popover'
@@ -20,6 +22,9 @@ import Button from 'react-icecream/lib/button'
 import { bindFormItem, bindTextInput } from 'portal-base/common/utils/form'
 
 import LocalStore from './store'
+
+import iconWechat from './images/icon-wechat.svg'
+import iconQQ from './images/icon-qq.svg'
 
 import styles from './style.m.less'
 
@@ -107,6 +112,10 @@ export default observer(function Invite() {
           type="default"
           disabled
         >
+          <SVGIcon
+            className={styles.icon}
+            src={iconWechat}
+          />
           分享到微信
         </Button>
       )
@@ -135,6 +144,13 @@ export default observer(function Invite() {
           className={styles.button}
           type="default"
         >
+          <SVGIcon
+            className={cls(
+              styles.icon,
+              styles.wechat
+            )}
+            src={iconWechat}
+          />
           分享到微信
         </Button>
       </Popover>
@@ -151,6 +167,10 @@ export default observer(function Invite() {
           rel="noreferrer noopener"
           disabled
         >
+          <SVGIcon
+            className={styles.icon}
+            src={iconQQ}
+          />
           分享到 QQ
         </Button.Link>
       )
@@ -164,6 +184,13 @@ export default observer(function Invite() {
           target="_blank"
           rel="noreferrer noopener"
         >
+          <SVGIcon
+            className={cls(
+              styles.icon,
+              styles.qq
+            )}
+            src={iconQQ}
+          />
           分享到 QQ
         </Button.Link>
       </Popover>

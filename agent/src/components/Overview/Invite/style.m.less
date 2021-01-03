@@ -26,8 +26,27 @@
 
   .button {
     margin-right: 12px;
+    padding: 0 16px;
     top: 1px;
+    font-size: 12px;
     flex: 0 0 auto;
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      top: 4px;
+      margin-right: 8px;
+      fill: @icecream-color-grey-5;
+
+      &.wechat {
+        fill: @icecream-color-green-6;
+      }
+
+      &.qq {
+        fill: #34A1EC;
+      }
+    }
 
     &.copy {
       color: @icecream-color-blue-6;
