@@ -3566,9 +3566,9 @@ pn@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-"portal-base@git+ssh://git@github.com/qbox/portal-base.git#v2.35.1":
-  version "2.35.1"
-  resolved "git+ssh://git@github.com/qbox/portal-base.git#86f2c59099c4867d9686190acdd977e5cbacd5a7"
+"portal-base@git+ssh://git@github.com/war408705279/portal-base.git#v2.35.2":
+  version "2.35.2"
+  resolved "git+ssh://git@github.com/war408705279/portal-base.git#9e2b3f32b9b6df1717d28357a4af34fd0dbf0d3d"
   dependencies:
     autobind-decorator "^2.4.0"
     classnames "^2.2.6"

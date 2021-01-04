@@ -11,9 +11,8 @@
 #!/bin/bash
 set -ex
 
-# TODO: 目录修改
-WORK_DIR_PATH=$WORKSPACE/agent/front/portal.com
-PKG_PATH=$WORKSPACE/agent/_package
+WORK_DIR_PATH=$WORKSPACE/cps/front-agent/portal.com
+PKG_PATH=$WORKSPACE/cps/_package
 PORTAL_AGENT_FRONT_DIST_PATH=$WORK_DIR_PATH/dist
 PORTAL_AGENT_FRONT_SPOCK_PATH=$WORK_DIR_PATH/spock
 

@@ -26,7 +26,7 @@
     "mobx": "^4.0.0",
     "mobx-react": "^6.0.0",
     "moment": "^2.15.1",
-    "portal-base": "git+ssh://git@github.com/qbox/portal-base.git#v2.35.1",
+    "portal-base": "git+ssh://git@github.com/war408705279/portal-base.git#v2.35.2",
     "qn-fe-core": "git+ssh://git@github.com/qbox/fe-core.git#v1.12.3",
     "qrcode.react": "^1.0.0",
     "react": "^16.8.6",
@@ -71,9 +71,8 @@
     "node": ">=12.0.0"
   },
   "repository": {
-    "_TODO": "git url 修改",
     "type": "git",
-    "url": "https://github.com/qbox/agent.git"
+    "url": "https://github.com/qbox/cps.git"
   },
   "license": "ISC"
 }
