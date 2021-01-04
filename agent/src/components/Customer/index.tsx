@@ -81,7 +81,7 @@ const COLUMNS = [{
   key: 'last_expense',
   render: (v: number) => asYuan(v)
 }, {
-  title: '绑定期累计消费金额（元）',
+  title: '累计消费金额（元）',
   dataIndex: 'total',
   key: 'total',
   render: (v: number) => asYuan(v)
