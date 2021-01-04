@@ -6,7 +6,29 @@
   flex-direction: column;
 }
 
+.query {
+  flex: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .picker {
+    max-width: 120px;
+    margin-right: 12px;
+    flex: 0 1 auto;
+  }
+
+  .arrow {
+    margin-right: 12px;
+    color: @icecream-color-grey-5;
+    font-size: 14px;
+    line-height: 22px;
+    flex: 0 0 auto;
+  }
+}
+
 .table {
+  margin-top: 20px;
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;

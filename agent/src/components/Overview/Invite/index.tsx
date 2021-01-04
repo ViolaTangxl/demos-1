@@ -88,7 +88,7 @@ export default observer(function Invite() {
           type="default"
           disabled
         >
-          生成短链
+          复制短链
         </Button>
       )
     }
@@ -99,7 +99,7 @@ export default observer(function Invite() {
         htmlType="submit"
         type="default"
       >
-        生成短链
+        复制短链
       </Button>
     )
   }

@@ -9,12 +9,15 @@ import moment from 'moment'
 
 import { useLocalStore } from 'qn-fe-core/local-store'
 
+import Form from 'react-icecream/lib/form'
+import DatePicker from 'react-icecream/lib/date-picker'
 import Table from 'react-icecream/lib/table'
 import Pagination from 'react-icecream/lib/pagination'
 
 import Page from 'components/Page'
 
 import { asYuan } from 'utils/transforms/money'
+import { bindSingleDatePicker } from 'utils/form'
 
 import LocalStore from './store'
 
@@ -47,15 +50,52 @@ export default observer(function Consume() {
 
   const {
     isLoading,
-    tableData,
+    formState, tableData,
     total, page, pageSize, updatePage, updatePageSize
   } = store
+  const fields = formState.$
 
+  // 开始月份不能晚于结束月份 && 不能晚于当前月份
+  // 结束月份不能早于开始月份 && 不能晚于当前月份
   return (
     <Page
       className={styles.content}
       title="消费历史"
     >
+      <Form className={styles.query}>
+        <DatePicker.MonthPicker
+          className={styles.picker}
+          placeholder="开始月份"
+          allowClear={false}
+          disabled={isLoading}
+          disabledDate={current => (
+            !!current
+            && (
+              current > moment(fields.endMonth.value).endOf('month')
+              || current > moment().endOf('month')
+            )
+          )}
+          {...bindSingleDatePicker(fields.startMonth)}
+        />
+
+        <div className={styles.arrow}>&#8594;</div>
+
+        <DatePicker.MonthPicker
+          className={styles.picker}
+          placeholder="结束月份"
+          allowClear={false}
+          disabled={isLoading}
+          disabledDate={current => (
+            !!current
+            && (
+              current < moment(fields.startMonth.value).startOf('month')
+              || current > moment().endOf('month')
+            )
+          )}
+          {...bindSingleDatePicker(fields.endMonth)}
+        />
+      </Form>
+
       <div className={styles.table}>
         <Table
           loading={isLoading}

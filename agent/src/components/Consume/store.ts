@@ -5,6 +5,8 @@
 
 import { observable, action, computed, autorun } from 'mobx'
 import autobind from 'autobind-decorator'
+import moment, { Moment } from 'moment'
+import { FormState, FieldState } from 'formstate-x'
 
 import { injectable } from 'qn-fe-core/di'
 import Disposable from 'qn-fe-core/disposable'
@@ -21,6 +23,14 @@ enum LoadingType {
   Fetch = 'fetch'
 }
 
+export function createFormState() {
+  // 默认查询上个月的数据
+  return new FormState({
+    startMonth: new FieldState<Moment>(moment().subtract(1, 'month')),
+    endMonth: new FieldState<Moment>(moment().subtract(1, 'month'))
+  })
+}
+
 @injectable()
 export default class LocalStore extends Disposable {
   constructor(
@@ -31,6 +41,8 @@ export default class LocalStore extends Disposable {
   }
 
   loadings = Loadings.collectFrom(this, LoadingType)
+
+  @observable.ref formState = createFormState()
 
   @observable.ref total = 0
   @observable.ref page = DEFAULT_PAGE
@@ -62,7 +74,16 @@ export default class LocalStore extends Disposable {
   // TODO
   // fetch options 类型
   @computed get fetchOptions(): any {
+    const fields = this.formState.$
+
+    // 前端页面时间展示遵循左闭右闭的原则
+    // 传递到后端的时间参数遵循左闭右开的原则
+    const start = moment(fields.startMonth.value).startOf('month').toISOString()
+    const end = moment(fields.endMonth.value).add(1, 'month').startOf('month').toISOString()
+
     return {
+      date_from: start,
+      date_to: end,
       page: this.page,
       page_size: this.pageSize
     }
@@ -90,6 +111,8 @@ export default class LocalStore extends Disposable {
   }
 
   init() {
+    this.addDisposer(this.formState.dispose)
+
     this.addDisposer(autorun(() => this.fetch()))
   }
 }

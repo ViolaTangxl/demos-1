@@ -39,7 +39,7 @@ export function createFormState(url: string) {
       // 目前测试环境允许地址为 qiniu.io 域名
       // 线上允许地址为 qiniu.com 域名
       if (allowDomains.indexOf(domain) === -1) {
-        return '您输入的 URL 不属于七牛云的页面'
+        return '当前 URL 不属于七牛云的页面'
       }
 
       return null
@@ -76,7 +76,7 @@ export default class LocalStore extends Disposable {
     if (!url) return
 
     if (copy(url)) {
-      this.toasterStore.success('复制成功！')
+      this.toasterStore.success('短链复制成功！')
     }
   }
 
@@ -128,10 +128,8 @@ export default class LocalStore extends Disposable {
 
     // TODO
     // 接口联调
-    const shortUrl = `${MOCK_URL_PREFIX}short`
-    this.updateUrl(shortUrl)
     // 短链生成成功后直接复制到剪贴板
-    this.copyShortUrl(shortUrl)
+    this.copyShortUrl(`${MOCK_URL_PREFIX}short`)
   }
 
   @autobind
