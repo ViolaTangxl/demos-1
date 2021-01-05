@@ -80,29 +80,16 @@ export default observer(function Invite() {
     )
   }
 
-  function renderMakeUrlShortBtn() {
-    if (!url || isFetching || isMakingUrlShort) {
-      return (
-        <Button
-          className={styles.button}
-          type="default"
-          disabled
-        >
-          复制短链
-        </Button>
-      )
-    }
-
-    return (
-      <Button
-        className={styles.button}
-        htmlType="submit"
-        type="default"
-      >
-        复制短链
-      </Button>
-    )
-  }
+  const copyShortUrlBtn = (
+    <Button
+      className={styles.button}
+      htmlType="submit"
+      type="default"
+      disabled={!url || isFetching || isMakingUrlShort}
+    >
+      复制短链
+    </Button>
+  )
 
   function renderWechatShareBtn() {
     if (!url || isFetching || isMakingUrlShort) {
@@ -213,7 +200,7 @@ export default observer(function Invite() {
           />
 
           {renderCopyBtn()}
-          {renderMakeUrlShortBtn()}
+          {copyShortUrlBtn}
           {renderWechatShareBtn()}
           {renderQQShareBtn()}
         </Form.Item>
