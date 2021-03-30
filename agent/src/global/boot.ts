@@ -14,9 +14,6 @@ import exceptionStore from 'portal-base/common/stores/exception'
 
 import { isDev } from 'constants/env'
 
-// TODO
-// 后面如果迁移到 portal proxy 移除
-// 包括下面对应的 bindRealFetch
 import proxyFetchStore from 'stores/fetch/proxy'
 
 import history from './history'

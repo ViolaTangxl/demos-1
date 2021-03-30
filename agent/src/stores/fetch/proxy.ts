@@ -2,7 +2,6 @@
  * @file common proxy store
  * @author jiayizhen <jiayizhen@qiniu.com>
  * @description copy from https://github.com/qbox/portal-base/blob/master/common/stores/fetch/proxy.ts
- * TODO: 后面如果迁移到 portal proxy 移除
  */
 
 import { injectable } from 'qn-fe-core/di'

@@ -91,4 +91,3 @@ npm 包与 docker 镜像的对比，优点：
 依赖使用 yarn 管理，安装依赖执行 `yarn`，更新依赖执行 `yarn upgrade`。
 
 ### TODO: UT
-### TODO: portal-base repo 需要切换成 qbox

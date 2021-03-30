@@ -46,7 +46,6 @@ export default class App extends React.Component<any, any> {
             sensors.login(userInfoStore.uid + '')
           }
 
-          // TODO: 判断 && 重定向逻辑待定
           // 如果是 iam 子账号或 oem 账号
           // 直接返回首页，不允许访问 agent 分站
           if (userInfoStore.isIamUser || userInfoStore.isOem) {
@@ -54,7 +53,6 @@ export default class App extends React.Component<any, any> {
             return
           }
 
-          // TODO: 判断 && 重定向逻辑待定
           // 如果不是 agent 用户
           // 重定向到 invitation 页面
           // if (!userInfoStore.isAgent) {
