@@ -22,7 +22,7 @@
     "classnames": "^2.2.5",
     "formstate-x": "^1.2.0",
     "history": "^3.0.0",
-    "lodash": "~4.17.19",
+    "lodash": "~4.17.21",
     "mobx": "^4.0.0",
     "mobx-react": "^6.0.0",
     "moment": "^2.15.1",
