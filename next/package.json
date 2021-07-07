@@ -1,0 +1,62 @@
+{
+  "name": "next",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "dev": "next dev",
+    "dev-server": "node server.js",
+    "clean": "rm -rf .next out",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit && eslint --ignore-path .gitignore --ext .ts,.tsx ./",
+    "test": "jest --coverage",
+    "travis:script": "npm run lint && npm test && npm run build",
+    "travis:before-script": "yarn"
+  },
+  "dependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-less": "^1.0.1",
+    "autoprefixer": "^9.8.0",
+    "classnames": "^2.2.6",
+    "express": "^4.17.1",
+    "less": "^3.11.1",
+    "lodash": "^4.17.15",
+    "next": "^9.4.4",
+    "next-compose-plugins": "^2.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@qiniu/eslint-config": "0.0.4",
+    "@types/classnames": "^2.2.10",
+    "@types/lodash": "^4.14.150",
+    "@types/node": "^12.12.21",
+    "@types/react": "^16.9.16",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@zeit/next-source-maps": "^0.0.3",
+    "eslint": "^6.5.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^6.0.0",
+    "next-global-less": "^0.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "qiniu": "^7.3.1",
+    "svgo-loader": "^2.2.1",
+    "terser-webpack-plugin": "^1.4.3",
+    "typescript": "3.7.3",
+    "url-loader": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE 10"
+  ]
+}

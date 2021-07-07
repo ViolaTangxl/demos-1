@@ -1,0 +1,84 @@
+@import "~utils/less/index.less";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: @centered-content-width;
+  line-height: 1.5715;
+  color: @grey-7;
+  overflow-y: auto;
+  font-size: 14px;
+  font-family: @font-family;
+
+  .mobile({
+    background-color: #FAFAFA;
+  });
+}
+
+svg {
+  // 防止 svg 放在 flex 里面收缩
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+svg tspan::selection {
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s;
+
+  &:hover {
+    color: @blue-6;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button,
+select {
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+figcaption {
+  margin-top: 12px;
+
+  .mobile({
+    font-size: 12px;
+  });
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+p {
+  color: inherit;
+}
+
+@font-face {
+  font-family: "number-regular";
+  src: url("../utils/less/51-Number-Regular.ttf");
+}
+
+@font-face {
+  font-family: "din-condensed";
+  src: url("../utils/less/DIN-Condensed-Bold-2.ttf");
+}

@@ -1,0 +1,133 @@
+@import "./color.less";
+
+@centered-content-width: 1176px;
+@centered-content-width-lg: 1440px;
+@modal-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+@main-bg-color: @grey-1;
+
+@ui-modal-z-index: 2000;
+@feedback-z-index: 2000;
+@product-navigator-z-index: 1000;
+
+// 悬浮的操作入口组件
+@operation-entry-z-index: 1000;
+
+// https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+@font-family: -apple-system, PingFang SC, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei,
+  Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+// 目前只做移动端 & PC 端两种适配，宽度小于 @screen-sm 认为是移动端
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1600px;
+
+.mobile(@rules) {
+  @media only screen and (max-width: @screen-sm - 1) {
+    @rules();
+  }
+}
+
+.notMobile(@rules) {
+  @media only screen and (min-width: @screen-sm) {
+    @rules();
+  }
+}
+
+.pcLessMd(@rules) {
+  @media only screen and (max-width: @screen-md - 1) {
+    @rules();
+  }
+}
+
+.pcLessLg(@rules) {
+  @media only screen and (max-width: @screen-lg - 1) {
+    @rules();
+  }
+}
+
+.pcLg(@rules){
+  @media only screen and (min-width: @screen-lg) {
+    @rules();
+  }
+}
+
+.centered() {
+  width: @centered-content-width;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  .mobile({
+    width: 100%;
+  });
+}
+
+.centeredWithLg() {
+  .centered();
+
+  .pcLg({
+    width: @centered-content-width-lg;
+  });
+}
+
+.ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// support webkit only
+// http://caniuse.com/#search=line-clamp
+// 使用时注意第二个参数
+.ellipsis-line-clamp(@n: 3, @maxheight: 80px) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @n;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  max-height: @maxheight; // 非 webkit 浏览器
+}
+
+.background-image(@image, @position: center, @origin: border-box, @size: contain) {
+  background-size: @size;
+  background-repeat: no-repeat;
+  background-position: @position;
+  background-origin: @origin;
+  background-image: @image;
+}
+
+.fadeIn(@time: .2s, @ease: linear, @delay: 0s) {
+  :global {
+    animation-name: fadeIn;
+  }
+
+  animation-duration: @time;
+  animation-timing-function: @ease;
+  animation-delay: @delay;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hover-transition(@property: transform, @duration: .3s, @transform: translateY(-5px), @mobile-transform: none) {
+  transition-property: @property;
+  transition-duration: @duration;
+
+  &:hover {
+    transform: @transform !important;
+  }
+
+  .mobile({
+    &:hover {
+      transform: @mobile-transform !important;
+    }
+  })
+}
