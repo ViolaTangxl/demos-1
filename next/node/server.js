@@ -2,7 +2,9 @@ const express = require('express')
 const { parse } = require('url')
 const next = require('next')
 
-const port = parseInt(process.env.PORT, 10) || 3000
+const config = require('./config')
+
+const port = parseInt(process.env.PORT, 10) || config.port
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
@@ -15,12 +17,11 @@ app.prepare().then(() => {
     handle(req, res)
   })
 
-  server.get('/blog/', (req, res) => {
+  server.get('/blog/*', (req, res) => {
     const parseUrl = parse(req.url, true)
-    const { pathname, query } = parseUrl
-    const id = pathname.replace('/blog/', '')
-    query.id = id
-    app.render(req, res, '/blog', query)
+    const { pathname } = parseUrl
+    // const id = pathname.replace('/blog/', '')
+    app.render(req, res, '/blog')
   })
 
   server.get('/404', (req, res) => {
