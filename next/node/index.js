@@ -52,10 +52,9 @@ nextApp.prepare().then(() => {
 
   server.get('/blog/*', (req, res) => {
     const parseUrl = parse(req.url, true)
-    const { pathname, query } = parseUrl
+    const { pathname } = parseUrl
     const blogID = pathname.replace('/blog/', '')
-    query.blogID = blogID
-    nextApp.render(req, res, '/blog', query)
+    nextApp.render(req, res, `/blog/${blogID}`)
   })
 
   server.get('/404', (req, res) => {
