@@ -4,6 +4,9 @@ const schema = mongoose.Schema
 
 const blogModel = new schema({
   id: { type: String },
+  title: { type: String },
+  description: { type: String },
+  keywords: { type: String },
   content: { type: String }
 })
 
