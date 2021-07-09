@@ -1,3 +1,4 @@
 module.exports = {
-  port: 3000
+  serverPort: 3000,
+  mongoAddr: 'mongodb://localhost:27017'
 }
