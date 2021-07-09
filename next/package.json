@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "dev": "next dev",
-    "dev-server": "node node/index.js",
+    "dev": "node node/index.js",
+    "next-dev": "next dev",
     "clean": "rm -rf .next out",
     "build": "next build",
     "start": "next start",
@@ -27,6 +27,7 @@
     "mongoose": "^5.13.2",
     "next": "^9.4.4",
     "next-compose-plugins": "^2.2.0",
+    "query-string": "^7.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
