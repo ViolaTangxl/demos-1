@@ -28,6 +28,17 @@ module.exports = withPlugins(
   ],
   {
     webpack(config, options) {
+      const originalEntry = config.entry
+      config.entry = async () => {
+        const entries = await originalEntry()
+
+        if (entries['main.js'] && !entries['main.js'].includes('./utils/polyfills.ts')) {
+          entries['main.js'].unshift('./utils/polyfills.ts')
+        }
+
+        return entries
+      }
+
       config.module.rules.push(
         {
           test: /\.(eot|ttf|woff|woff2|png|jpe?g|gif)$/i,
