@@ -16,9 +16,9 @@ export default class MyDocument extends Document {
         <body>
           {/* https://stackoverflow.com/a/57888310 */}
           <script> </script>
+          <script src={externalsLoaderUrl}></script>
           <Main />
           <NextScript />
-          <script src={externalsLoaderUrl}></script>
           {/* https://stackoverflow.com/a/42969608 修复 Chrome 下 transition 会立即触发的问题 */}
           <script> </script>
         </body>
