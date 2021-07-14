@@ -4,18 +4,9 @@ import React from 'react'
 
 import Layout from 'components/Layout'
 
-import {
-  Blog,
-  getBlogsList,
-  getBlogByID
-} from 'apis/blog'
+import { Blog, getBlogByID } from 'apis/blog'
 
-export type Props = {
-  title: string
-  description: string
-  keywords: string
-  content: string
-}
+export type Props = Blog
 
 export default function BlogPage({
   title,
@@ -39,25 +30,55 @@ export default function BlogPage({
   )
 }
 
-export async function getStaticPaths() {
-  const blogs = await getBlogsList()
+// export async function getStaticPaths() {
+//   const blogs = await getBlogsList()
 
-  const paths: any = blogs.map(
-    (blog: Blog) => ({
-      params: { id: blog.id }
-    })
-  )
+//   const paths: any = blogs.map(
+//     (blog: Blog) => ({
+//       params: { id: blog.id }
+//     })
+//   )
 
-  return {
-    paths,
-    fallback: false
+//   return {
+//     paths,
+//     fallback: false
+//   }
+// }
+
+// export async function getStaticProps({ params }: any) {
+//   const blog = await getBlogByID(params.id)
+
+//   return {
+//     props: { ...blog }
+//   }
+// }
+
+export async function getServerSideProps({ res, params }: any) {
+  const blogID = params.id || ''
+
+  if (!blogID) {
+    res.setHeader('Location', '/404')
+    res.statusCode = 307
+    res.end()
   }
-}
 
-export async function getStaticProps({ params }: any) {
-  const blog = await getBlogByID(params.id)
+  try {
+    const blog = await getBlogByID(blogID)
+
+    return {
+      props: { ...blog }
+    }
+  } catch (err) {
+    const { data: { code: errCode } } = err
+
+    if (errCode === 404) {
+      res.setHeader('Location', '/404')
+      res.statusCode = 307
+      res.end()
+    }
+  }
 
   return {
-    props: { ...blog }
+    props: {}
   }
 }
