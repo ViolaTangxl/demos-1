@@ -42,27 +42,27 @@ nextApp.prepare().then(() => {
   routes(server)
 
   // 页面路由
-  // server.get('/', (req, res) => {
-  //   handle(req, res)
-  // })
+  server.get('/', (req, res) => {
+    handle(req, res)
+  })
 
-  // server.get('/blog', (req, res) => {
-  //   handle(req, res)
-  // })
+  server.get('/blog', (req, res) => {
+    handle(req, res)
+  })
 
-  // server.get('/blog/*', (req, res) => {
-  //   const parseUrl = parse(req.url, true)
-  //   const { pathname } = parseUrl
-  //   nextApp.render(req, res, pathname)
-  // })
+  server.get('/blog/*', (req, res) => {
+    const parseUrl = parse(req.url, true)
+    const { pathname } = parseUrl
+    nextApp.render(req, res, pathname)
+  })
 
-  // server.get('/404', (req, res) => {
-  //   handle(req, res)
-  // })
+  server.get('/404', (req, res) => {
+    handle(req, res)
+  })
 
-  // server.all('*', (req, res) => {
-  //   nextApp.render(req, res, '/404')
-  // })
+  server.all('*', (req, res) => {
+    nextApp.render(req, res, '/404')
+  })
 
   server.listen(port, 'localhost', err => {
     if (err) {
