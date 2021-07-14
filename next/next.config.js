@@ -1,8 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const withCss = require('@zeit/next-css')
 const withLess = require('@zeit/next-less')
-const withSourceMaps = require('@zeit/next-source-maps')
-const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const withGlobalLess = require('next-global-less')
 const path = require('path')
@@ -23,8 +21,7 @@ module.exports = withPlugins(
           esModule: true
         }
       }
-    ],
-    [ withSourceMaps ]
+    ]
   ],
   {
     webpack(config, options) {
@@ -154,14 +151,6 @@ module.exports = withPlugins(
 
       config.optimization.minimize = true
       config.optimization.minimizer = []
-      config.optimization.minimizer.push(
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true,
-          terserOptions: {}
-        })
-      )
       config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}))
 
       return config
