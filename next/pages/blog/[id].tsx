@@ -2,13 +2,19 @@
 
 import React from 'react'
 
+import Router from 'next/router'
+
 import Layout from 'components/Layout'
 
 import { Blog, getBlogByID } from 'apis/blog'
 
+import { pageRoutes } from 'constants/page'
+
+import { isBrowser } from 'utils'
+
 export type Props = Blog
 
-export default function BlogPage({
+export default function BlogContentPage({
   title,
   description,
   keywords,
@@ -55,11 +61,18 @@ export default function BlogPage({
 
 export async function getServerSideProps({ res, params }: any) {
   const blogID = params.id || ''
+  const notFoundPageRoute = pageRoutes.notFound
+
+  const redirectOnError = () => (
+    isBrowser() ? Router.push(notFoundPageRoute) : res.writeHead(302, { Location: notFoundPageRoute }).end()
+  )
 
   if (!blogID) {
-    res.setHeader('Location', '/404')
-    res.statusCode = 307
-    res.end()
+    redirectOnError()
+
+    return {
+      props: {}
+    }
   }
 
   try {
@@ -72,9 +85,11 @@ export async function getServerSideProps({ res, params }: any) {
     const { data: { code: errCode } } = err
 
     if (errCode === 404) {
-      res.setHeader('Location', '/404')
-      res.statusCode = 307
-      res.end()
+      redirectOnError()
+
+      return {
+        props: {}
+      }
     }
   }
 
