@@ -13,7 +13,7 @@ import { checkInSite } from 'utils/route'
 
 import { host } from 'constants/env'
 
-import styles from './index.less'
+import styles from './style.less'
 import sourceUrls from './source-url'
 
 export type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
