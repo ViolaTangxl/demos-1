@@ -5,6 +5,7 @@ import React from 'react'
 import Router from 'next/router'
 
 import Layout from 'components/Layout'
+import BlogViewer from 'components/BlogViewer'
 
 import { Blog, getBlogByID } from 'apis/blog'
 
@@ -31,7 +32,9 @@ export default function BlogContentPage({
       description={description}
       keywords={keywords}
     >
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      <BlogViewer
+        content={content}
+      />
     </Layout>
   )
 }
