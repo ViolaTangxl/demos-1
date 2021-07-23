@@ -1,0 +1,70 @@
+@import '~utils/less/index.less';
+
+.main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @grey-8;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  a {
+    .blueLink();
+  }
+
+  table {
+    width: 100%;
+    margin: 10px 0;
+    border-spacing: 0;
+    border: 1px solid @grey-7;
+    background-color: @grey-1;
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid @grey-7;
+      text-align: center;
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background-color: @grey-3;
+      }
+    }
+  }
+
+  ul li {
+    list-style: disc inside;
+  }
+
+  ol li {
+    list-style: decimal inside;
+  }
+
+  blockquote {
+    padding-left: 10px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-left: 4px solid @green-6;
+  }
+
+  code {
+    padding-left: 10px;
+    border-left: 4px solid @blue-6;
+    white-space: nowrap;
+  }
+}
