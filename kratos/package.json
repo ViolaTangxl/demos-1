@@ -1,0 +1,75 @@
+{
+  "name": "kratos",
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint --ignore-path .gitignore --ext .ts,.tsx ./",
+    "test": "jest",
+    "clear": "jest --clearCache",
+    "snapshot": "jest -u",
+    "validate": "npm run lint && npm run test",
+    "dev": "fec-builder -p 8080",
+    "build": "fec-builder --verbose -e production -c build-config.prod.json build"
+  },
+  "keywords": [
+    "Qiniu",
+    "CRM",
+    "Kratos"
+  ],
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "formstate-x": "^1.2.0",
+    "history": "^3.0.0",
+    "lodash": "~4.17.21",
+    "mobx": "^4.0.0",
+    "mobx-react": "^6.0.0",
+    "moment": "^2.15.1",
+    "portal-base": "git+ssh://git@github.com/war408705279/portal-base.git#v2.35.2",
+    "qn-fe-core": "git+ssh://git@github.com/qbox/fe-core.git#v1.12.3",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.8.6",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^16.8.6",
+    "react-ga": "2.5.5",
+    "react-hot-loader": "^4.8.0",
+    "react-icecream": "^1.7.6",
+    "react-transition-group": "^2.6.1",
+    "recompose": "^0.30.0",
+    "sa-sdk-javascript": "^1.14.22",
+    "url-polyfill": "^1.1.12",
+    "uuid": "^2.0.2",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "@qiniu/eslint-config": "^0.0.4",
+    "@types/classnames": "^2.2.10",
+    "@types/history": "^3.2.3",
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^8.0.0",
+    "@types/qrcode.react": "^1.0.1",
+    "@types/react": "^16.8.17",
+    "@types/react-copy-to-clipboard": "^4.3.0",
+    "@types/react-dom": "^16.8.4",
+    "@types/recompose": "^0.23.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.5.0",
+    "moment-timezone": "^0.5.14",
+    "react-test-renderer": "^16.8.4",
+    "ts-jest": "^24.0.0",
+    "typescript": "~3.4.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/war408705279/demos.git"
+  },
+  "license": "ISC"
+}

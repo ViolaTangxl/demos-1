@@ -1,0 +1,77 @@
+{
+  "extends": "typescript-react",
+  "srcDir": "src",
+  "publicUrl": "https://qiniu.staticfile.org/",
+  "targets": {
+    "browsers": [
+      "ie >= 10",
+      "Chrome >= 46",
+      "Firefox ESR"
+    ]
+  },
+  "entries": {
+    "kratos": "src/index.tsx"
+  },
+  "pages": {
+    "index": {
+      "template": "src/index.ejs",
+      "entries": "kratos",
+      "path": "^/"
+    }
+  },
+  "transforms": {
+    "less": {
+      "transformer": "less",
+      "config": {
+        "options": {
+          "javascriptEnabled": true
+        },
+        "modules": false
+      }
+    },
+    "m.less": {
+      "transformer": "less",
+      "config": {
+        "options": {
+          "javascriptEnabled": true
+        },
+        "modules": true
+      }
+    },
+    "m.css": {
+      "transformer": "css",
+      "config": {
+        "modules": true
+      }
+    },
+    "svg@less": "file",
+    "svg@m.css": "file"
+  },
+  "devProxy": {
+    "/api": "http://portalv4.dev.qiniu.io",
+    "/signin": "http://portalv4.dev.qiniu.io",
+    "/financial": "http://portalv4.dev.qiniu.io",
+    "/dashboard": "http://portalv4.dev.qiniu.io",
+    "/create": "http://portalv4.dev.qiniu.io",
+    "/dynamic": "http://portalv4.dev.qiniu.io"
+  },
+  "deploy": {
+    "config": {
+      "accessKey": "tkabCgtBh5OiAbZ32-BC3KbLpWO274oY4nL6e5hr",
+      "secretKey": "1oUlrJlpJprkl4sLZQYdJLsGoVTCZaZXEbmiZTNh",
+      "bucket": "portal-v4-static"
+    }
+  },
+  "engines": {
+    "builder": "1.17.0"
+  },
+  "envVariables": {
+    "HOSTS_CONFIG": {
+      "janus": "http://www-staging-janus.qa.qiniu.io",
+      "sso": "http://bo-staging-sso.qa.qiniu.io",
+      "www": "http://www-2020.dev.qiniu.io",
+      "qmall": "http://www-qmall.dev.qiniu.io"
+    },
+    "ALLOW_DOMAINS": ["qiniu.io"]
+  }
+}
