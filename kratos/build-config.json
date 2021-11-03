@@ -45,7 +45,8 @@
       }
     },
     "svg@less": "file",
-    "svg@m.css": "file"
+    "svg@m.css": "file",
+    "svg@tsx": "file"
   },
   "devProxy": {
     "/api": "http://portalv4.dev.qiniu.io",
