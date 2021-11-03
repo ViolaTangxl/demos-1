@@ -5,13 +5,18 @@
 
 import React from 'react'
 
+import Page from 'components/Page'
+
 import ImgNotFound from './images/img-not-found.svg'
 
 import styles from './style.m.less'
 
 export default function NotFound() {
   return (
-    <div className={styles.main}>
+    <Page
+      className={styles.main}
+      title="404"
+    >
       <div className={styles.container}>
         <img
           className={styles.img}
@@ -26,6 +31,6 @@ export default function NotFound() {
           代码君搭乘 404 航班去寻找诗和远方了~
         </p>
       </div>
-    </div>
+    </Page>
   )
 }
