@@ -40,6 +40,7 @@
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
+    "@pqina/flip": "^1.7.7",
     "@qiniu/eslint-config": "^0.0.4",
     "@types/classnames": "^2.2.10",
     "@types/history": "^3.2.3",
