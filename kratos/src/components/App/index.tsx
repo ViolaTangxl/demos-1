@@ -16,6 +16,7 @@ import BaseProvider from 'portal-base/common/components/Provider'
 import { Route, Switch, Redirect } from 'portal-base/common/components/Router'
 
 import Overview from 'components/Overview'
+import BirthdayCountdown from 'components/BirthdayCountdown'
 import NotFound from 'components/NotFound'
 
 import { basename } from 'constants/route'
@@ -38,6 +39,7 @@ export default class App extends React.Component<any, any> {
                 <Redirect relative to="/overview" />
               </Route>
               <Route relative exact title="概览" path="/overview"><Overview /></Route>
+              <Route relative exact title="生日倒计时" path="/birthday"><BirthdayCountdown /></Route>
               <Route relative exact title="404" path="/404"><NotFound /></Route>
               <Route relative path="*">
                 <Redirect to="/404" />
