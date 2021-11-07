@@ -14,6 +14,7 @@ export default function SubSidebar() {
   return (
     <BaseSubSidebar title={name}>
       <LinkItem to={`${basename}/overview`}>概览</LinkItem>
+      <LinkItem to={`${basename}/birthday`}>生日倒计时</LinkItem>
     </BaseSubSidebar>
   )
 }
