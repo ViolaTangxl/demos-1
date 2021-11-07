@@ -4,12 +4,13 @@
  */
 
 import React from 'react'
+import { observer } from 'mobx-react'
 
 import Page from 'components/Page'
 
 import styles from './style.m.less'
 
-export default function BirthdayCountdown() {
+export default observer(function BirthdayCountdown() {
   return (
     <Page
       className={styles.main}
@@ -18,4 +19,4 @@ export default function BirthdayCountdown() {
       生日倒计时
     </Page>
   )
-}
+})

@@ -4,6 +4,7 @@
  */
 
 import React, { PropsWithChildren, ReactNode } from 'react'
+import { observer } from 'mobx-react'
 import cls from 'classnames'
 
 import PageTitle from 'components/PageTitle'
@@ -15,7 +16,7 @@ export type Props = PropsWithChildren<{}> & {
   className?: string
 }
 
-export default function Page({
+export default observer(function Page({
   title,
   className,
   children
@@ -33,4 +34,4 @@ export default function Page({
       </div>
     </div>
   )
-}
+})

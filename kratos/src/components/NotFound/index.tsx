@@ -4,6 +4,7 @@
  */
 
 import React from 'react'
+import { observer } from 'mobx-react'
 
 import Page from 'components/Page'
 
@@ -11,7 +12,7 @@ import ImgNotFound from './images/img-not-found.svg'
 
 import styles from './style.m.less'
 
-export default function NotFound() {
+export default observer(function NotFound() {
   return (
     <Page
       className={styles.main}
@@ -33,4 +34,4 @@ export default function NotFound() {
       </div>
     </Page>
   )
-}
+})

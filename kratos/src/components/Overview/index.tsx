@@ -4,6 +4,7 @@
  */
 
 import React from 'react'
+import { observer } from 'mobx-react'
 
 import Page from 'components/Page'
 
@@ -11,7 +12,7 @@ import IconWJDLNB from './images/icon-wjdlnb.jpg'
 
 import styles from './style.m.less'
 
-export default function Overview() {
+export default observer(function Overview() {
   return (
     <Page
       className={styles.main}
@@ -25,4 +26,4 @@ export default function Overview() {
       />
     </Page>
   )
-}
+})
