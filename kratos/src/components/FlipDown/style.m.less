@@ -1,5 +1,39 @@
 @import "~utils/styles/colors/less/index.less";
 
 .main {
-  // TODO
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headerWrapper {
+  flex: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .headerItem {
+    width: 140px;
+    margin: 0 12px;
+    color: @grey-6;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+.tickWrapper {
+  flex: 1;
+  margin-top: 12px;
+  font-size: 48px;
+  text-align: center;
+
+  :global {
+    .tick-flip {
+      width: 140px;
+      margin: 0 12px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .08);
+    }
+  }
 }
