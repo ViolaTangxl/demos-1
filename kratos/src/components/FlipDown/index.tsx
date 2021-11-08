@@ -12,7 +12,17 @@ import Tick from '@pqina/flip'
 
 import styles from './style.m.less'
 
-export default observer(function FlipDown() {
+export type Props = {
+  month: number
+  date: number
+  className?: string
+}
+
+export default observer(function FlipDown({
+  month = 1,
+  date = 1,
+  className
+}: Props) {
   const mainRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -20,10 +30,16 @@ export default observer(function FlipDown() {
       return
     }
 
-    const towDaysAfter = moment().add(2, 'days').format()
+    const curTime = moment()
+    const targetTime = moment().set({ month: month - 1, date }).startOf('day')
+
+    if (curTime.isAfter(targetTime)) {
+      targetTime.add(1, 'year')
+    }
+
     Tick.DOM.create(mainRef.current, {
       didInit: (tick: any) => {
-        const counter = Tick.count.down(towDaysAfter, {
+        const counter = Tick.count.down(targetTime.format(), {
           format: ['d', 'h', 'm', 's'],
           interval: 1000
         })
@@ -37,17 +53,15 @@ export default observer(function FlipDown() {
     const current = mainRef.current
 
     return () => Tick.DOM.destroy(current)
-  }, [mainRef])
+  }, [mainRef, month, date])
 
   return (
-    <div className={styles.main}>
-      <div className={styles.headerWrapper}>
-        <div className={styles.headerItem}>天</div>
-        <div className={styles.headerItem}>小时</div>
-        <div className={styles.headerItem}>分</div>
-        <div className={styles.headerItem}>秒</div>
-      </div>
-
+    <div
+      className={cls(
+        styles.main,
+        className
+      )}
+    >
       <div
         className={cls(
           styles.tickWrapper,
@@ -61,6 +75,13 @@ export default observer(function FlipDown() {
         >
           <span data-view="flip"></span>
         </div>
+      </div>
+
+      <div className={styles.footerWrapper}>
+        <div className={styles.footerItem}>天</div>
+        <div className={styles.footerItem}>小时</div>
+        <div className={styles.footerItem}>分</div>
+        <div className={styles.footerItem}>秒</div>
       </div>
     </div>
   )
