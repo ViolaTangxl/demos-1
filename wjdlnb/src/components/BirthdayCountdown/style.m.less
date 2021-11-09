@@ -1,21 +1,19 @@
 @import "~utils/styles/colors/less/index.less";
 
-.main {
-  .flipDownWrapper {
-    margin-top: 24px;
+.panel {
+  .tip {
+    color: @grey-8;
+    font-size: 18px;
+    text-align: center;
+  }
 
-    .tip {
-      color: @grey-8;
-      font-size: 18px;
-      text-align: center;
-    }
+  .flipDown {
+    margin-top: 12px;
+  }
 
-    .flipDown {
-      margin-top: 12px;
-    }
-
-    &:first-of-type {
-      margin-top: 0;
+  :global {
+    .ant-collapse-content > .ant-collapse-content-box {
+      padding: 20px 16px;
     }
   }
 }

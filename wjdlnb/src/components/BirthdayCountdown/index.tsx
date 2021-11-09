@@ -6,10 +6,13 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 
+import Collapse from 'antd/lib/collapse'
+
 import Page from 'components/Page'
 import FlipDown from 'components/FlipDown'
 
 import {
+  MemberName,
   MemberNameTextMap,
   MemberNameList
 } from 'constants/member'
@@ -17,38 +20,48 @@ import { BirthdayMap } from 'constants/birthday'
 
 import styles from './style.m.less'
 
-export default observer(function BirthdayCountdown() {
-  function renderFlipDowns() {
-    return MemberNameList.map(
-      (name: string, index: number) => {
-        const matchBirthday = BirthdayMap[name]
-        const { month, date } = matchBirthday
+const { Panel } = Collapse
 
-        return (
-          <div
-            key={index}
-            className={styles.flipDownWrapper}
-          >
-            <div className={styles.tip}>
-              距离{MemberNameTextMap[name]}的生日还有
-            </div>
-            <FlipDown
-              className={styles.flipDown}
-              month={month}
-              date={date}
-            />
+export default observer(function BirthdayCountdown() {
+  const panelView = MemberNameList.map(
+    (name: string) => {
+      const matchBirthday = BirthdayMap[name]
+      const { month, date } = matchBirthday
+
+      return (
+        <Panel
+          className={styles.panel}
+          key={name}
+          header={MemberNameTextMap[name]}
+          forceRender
+        >
+          <div className={styles.tip}>
+            距离{MemberNameTextMap[name]}的生日还有
           </div>
-        )
-      }
+          <FlipDown
+            className={styles.flipDown}
+            month={month}
+            date={date}
+          />
+        </Panel>
+      )
+    }
+  )
+
+  function renderCollapse() {
+    return (
+      <Collapse
+        defaultActiveKey={[MemberName.SheWeiJun]}
+        accordion
+      >
+        {panelView}
+      </Collapse>
     )
   }
 
   return (
-    <Page
-      className={styles.main}
-      title="生日倒计时"
-    >
-      {renderFlipDowns()}
+    <Page title="生日倒计时">
+      {renderCollapse()}
     </Page>
   )
 })
