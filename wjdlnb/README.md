@@ -1,6 +1,8 @@
 # WJDLNB 前端站点
 
-`WJDLNB` 前端站点
+`WJDLNB`：维军大佬牛逼！！！
+
+![维军大佬牛逼](./static/wjdlnb.jpg)
 
 ## 结构
 
