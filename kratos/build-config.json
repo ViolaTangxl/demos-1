@@ -10,12 +10,12 @@
     ]
   },
   "entries": {
-    "kratos": "src/index.tsx"
+    "wjdlnb": "src/index.tsx"
   },
   "pages": {
     "index": {
       "template": "src/index.ejs",
-      "entries": "kratos",
+      "entries": "wjdlnb",
       "path": "^/"
     }
   },

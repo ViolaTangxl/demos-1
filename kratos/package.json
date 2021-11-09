@@ -1,5 +1,5 @@
 {
-  "name": "kratos",
+  "name": "wjdlnb",
   "version": "0.0.1",
   "scripts": {
     "lint": "tsc --noEmit && eslint --ignore-path .gitignore --ext .ts,.tsx ./",
@@ -13,7 +13,7 @@
   "keywords": [
     "Qiniu",
     "CRM",
-    "Kratos"
+    "WJDLNB"
   ],
   "dependencies": {
     "classnames": "^2.2.5",
