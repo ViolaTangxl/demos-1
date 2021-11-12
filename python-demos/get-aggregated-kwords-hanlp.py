@@ -1,3 +1,7 @@
+import os
+# 设置 os environ 的内存为 12G
+# 否则运行 HanLP 摘要部分代码的时候 jpype._jclass.OutOfMemoryError: Java heap space 错误
+os.environ['HANLP_JVM_XMS'] = os.environ['HANLP_JVM_XMX'] = '12g'
 from pyhanlp import *
 import time
 
