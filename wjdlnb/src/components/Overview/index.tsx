@@ -3,8 +3,9 @@
  * @author jiayizhen <jiayizhen@qiniu.com>
  */
 
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import cls from 'classnames'
+import { Fireworks, useFireworks } from 'fireworks-js/dist/react'
 import { observer } from 'mobx-react'
 
 import Page from 'components/Page'
@@ -14,11 +15,41 @@ import IconWJDLNB from './images/icon-wjdlnb.jpg'
 import styles from './style.m.less'
 
 export default observer(function Overview() {
+  const {
+    enabled,
+    options
+  } = useFireworks({
+    initialStart: true,
+    initialOptions: {
+      acceleration: 1.08,
+      particles: 120,
+      explosion: 8,
+      mouse: {
+        click: true
+      }
+    }
+  })
+
+  const fireworkStyle: CSSProperties = {
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    zIndex: 0
+  }
+
   return (
     <Page
       className={styles.main}
       title="概览"
     >
+      <Fireworks
+        style={fireworkStyle}
+        enabled={enabled}
+        options={options}
+      />
+
       <div className={styles.info}>
         <img
           className={cls(
