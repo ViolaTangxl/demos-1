@@ -4,6 +4,7 @@
  */
 
 import { configure } from 'mobx'
+import 'animate.css'
 
 import fetchStore from 'portal-base/common/stores/fetch'
 import storageStore from 'portal-base/common/stores/storage'
