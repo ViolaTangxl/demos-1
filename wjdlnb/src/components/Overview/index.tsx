@@ -76,7 +76,7 @@ export default observer(function Overview() {
         <p className="animate__animated animate__fadeInUp animate__delay-2s">
           毕业于重庆大学计算机学院
         </p>
-        <p className="animate__animated animate__fadeInUp animate__delay-3s">
+        <p className="animate__animated animate__fadeInUp animate__delay-2s">
           读研期间曾发表
           <a
             href="http://61.181.120.82:8080/kcms/detail/detail.aspx?filename=JYXH201611001&dbcode=CJFD&dbname=CJFD2016"
@@ -97,7 +97,7 @@ export default observer(function Overview() {
           </a>
           等学术著作
         </p>
-        <p className="animate__animated animate__fadeInUp animate__delay-4s">
+        <p className="animate__animated animate__fadeInUp animate__delay-3s">
           现任上海七牛信息技术有限公司 CRM 团队研发 Leader，资深研发工程师
         </p>
         <p className="animate__animated animate__fadeInUp animate__delay-4s">
